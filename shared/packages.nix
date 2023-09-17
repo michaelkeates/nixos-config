@@ -18,12 +18,9 @@ with pkgs; [
   neofetch
   openssh
   pandoc
-  sqlite
   wget
-  zip
 
   # Encryption and security tools
-  _1password
   age
   age-plugin-yubikey
   gnupg
@@ -79,8 +76,6 @@ with pkgs; [
   slack
   tree
   tmux
-  unrar
-  unzip
   zsh-powerlevel10k
 
   # Python packages
