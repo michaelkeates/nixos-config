@@ -7,7 +7,7 @@ RED='\033[1;31m'
 CLEAR='\033[0m'
 
 USER=$(whoami)
-FLAKE="Mikes-MBPAir"
+FLAKE="Mikes-MBA"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
 export NIXPKGS_ALLOW_UNFREE=1

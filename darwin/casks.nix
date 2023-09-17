@@ -20,18 +20,15 @@
   # Utility Tools
   "appcleaner"
   "syncthing"
+  "keepingyouawake"
 
   # Entertainment Tools
   "steam"
   "vlc"
 
   # Productivity Tools
-  "raycast"
   "asana"
 
   # Browsers
   "google-chrome"
-
-  # AI
-  "diffusionbee"
 ]

@@ -36,12 +36,18 @@ in
   # $ mas search <app name>
   #
   homebrew.masApps = {
-    "1password" = 1333542190;
-    "canva" = 897446215;
-    "drafts" = 1435957248;
     "hidden-bar" = 1452453066;
-    "wireguard" = 1451685025;
-    "yoink" = 457622435;
+    "magnet" = 441258766;
+    "Microsoft Remote Desktop" = 1295203466;
+    "Infuse" = 1136220934;
+    "Spark" = 1176895641;
+    "Tailscale" = 1475387142;
+    "WhatsApp" = 1147396723;
+    "Steam Link" = 1246969117;
+    "Bitwarden" = 1352778147;
+    "Color Picker" = 1545870783;
+    "The Unarchiver" = 425424353;
+    "Prime Video" = 545519333;
   };
 
   # Enable home-manager
@@ -106,19 +112,12 @@ in
   # Fully declarative dock using the latest from Nix Store
   local.dock.enable = true;
   local.dock.entries = [
-    { path = "/Applications/Slack.app/"; }
+    { path = "/System/Applications/Finder.app/"; }
     { path = "/System/Applications/Messages.app/"; }
-    { path = "/System/Applications/Facetime.app/"; }
-    { path = "/Applications/Telegram.app/"; }
+    { path = "/Applications/Spark.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-    { path = "/System/Applications/Music.app/"; }
-    { path = "/System/Applications/News.app/"; }
-    { path = "/System/Applications/Photos.app/"; }
-    { path = "/System/Applications/Photo Booth.app/"; }
-    { path = "/System/Applications/TV.app/"; }
     { path = "/Applications/Asana.app/"; }
     { path = "/Applications/Drafts.app/"; }
-    { path = "/System/Applications/Home.app/"; }
     {
       path = toString myEmacsLauncher;
       section = "others";
