@@ -16,6 +16,7 @@
   "syncthing"
   "raycast"
   "keepingyouawake"
+  "warp"
 
   # Entertainment Tools
   "steam"
@@ -23,5 +24,5 @@
   # Productivity Tools
 
   # Browsers
-  "google-chrome"
+  "min"
 ]

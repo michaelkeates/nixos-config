@@ -115,6 +115,7 @@ in
     { path = "/System/Applications/Finder.app/"; }
     { path = "/System/Applications/Messages.app/"; }
     { path = "/Applications/Spark.app/"; }
+    { path = "/Applications/Min.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
     { path = "/Applications/Asana.app/"; }
     { path = "/Applications/Drafts.app/"; }

@@ -24,6 +24,8 @@ with pkgs; [
   # Encryption and security tools
   age
   age-plugin-yubikey
+  bitwarden
+  bitwarden-cli
   gnupg
   libfido2
   pinentry
@@ -72,7 +74,6 @@ with pkgs; [
   jetbrains-mono
   jq
   ripgrep
-  slack
   tree
   tmux
   zsh-powerlevel10k
