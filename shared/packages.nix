@@ -32,9 +32,7 @@ with pkgs; [
   docker
   docker-compose
   awscli2
-  cloudflared
   flyctl
-  google-cloud-sdk
   go
   gopls
   ngrok
