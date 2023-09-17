@@ -16,7 +16,7 @@ export NIXPKGS_ALLOW_UNFREE=1
 cd $(dirname $(readlink -f $0))
 cd ..
 
-echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
+echo "${GREEN}Requesting sudo to set homebrew tap & secure control center preferences permissions...${CLEAR}"
 
 # this is reset by nix-homebrew, we need write permission to this dir to manage homebrew taps
 # sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/ && sudo /bin/chmod +a "$USER allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/

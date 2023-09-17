@@ -44,7 +44,6 @@ in
     "Tailscale" = 1475387142;
     "WhatsApp" = 1147396723;
     "Steam Link" = 1246969117;
-    "Bitwarden" = 1352778147;
     "Color Picker" = 1545870783;
     "The Unarchiver" = 425424353;
     "Prime Video" = 545519333;
