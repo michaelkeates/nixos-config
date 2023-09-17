@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/dustinlyons/nix-secrets.git";
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
     };
   };
@@ -63,7 +63,7 @@
       devShells = forAllSystems devShell;
 
       darwinConfigurations = let user = "mike"; in {
-        "Mikes-MBPAir" = darwin.lib.darwinSystem {
+        "Mikes-MBA" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
