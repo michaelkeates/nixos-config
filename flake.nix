@@ -127,12 +127,6 @@
               rm -rf nixos-config-main.zip nixos-config-main nixos-config
             }
 
-            download_config() {
-              curl -LJ0 https://github.com/dustinlyons/nixos-config/archive/main.zip -o nixos-config-main.zip
-              unzip nixos-config-main.zip
-              mv nixos-config-main/templates/starter nixos-config
-            }
-
             run_disko() {
               sudo nix run --extra-experimental-features nix-command --extra-experimental-features flakes \
                 github:nix-community/disko -- --mode zap_create_mount ./nixos-config/nixos/disk-config.nix
@@ -190,12 +184,6 @@
 
             cleanup() {
               rm -rf nixos-config-main.zip nixos-config-main nixos-config
-            }
-
-            download_config() {
-              curl -LJ0 https://github.com/dustinlyons/nixos-config/archive/main.zip -o nixos-config-main.zip
-              unzip nixos-config-main.zip
-              mv nixos-config-main/templates/starter-with-secrets nixos-config
             }
 
             run_disko() {
