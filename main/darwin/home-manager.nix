@@ -112,9 +112,11 @@ in
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/System/Applications/Messages.app/"; }
-    { path = "/Applications/Spark.app/"; }
     { path = "/Applications/Min.app/"; }
+    { path = "/Applications/Spark.app/"; }
+    { path = "/Applications/Visual Studio Code.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
+    { path = "/Applications/System Settings.app/"; }
     {
       path = toString myEmacsLauncher;
       section = "others";
