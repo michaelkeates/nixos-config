@@ -67,8 +67,8 @@
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
-            nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
                 enable = true;

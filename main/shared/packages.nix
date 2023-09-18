@@ -23,8 +23,6 @@ with pkgs; [
   # Encryption and security tools
   age
   age-plugin-yubikey
-  bitwarden
-  bitwarden-cli
   gnupg
   libfido2
   pinentry
