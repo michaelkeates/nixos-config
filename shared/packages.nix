@@ -14,7 +14,6 @@ with pkgs; [
   du-dust
   gcc
   git-filter-repo
-  github-desktop
   killall
   neofetch
   openssh
