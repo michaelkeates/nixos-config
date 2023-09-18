@@ -10,11 +10,29 @@ USER=$(whoami)
 FLAKE="Mikes-MBA"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
-export NIXPKGS_ALLOW_UNFREE=1
+# define an array of paths. must be a better way when i need to build again!?!??!
+paths=(
+    "/Users/mike/.gnupg"
+    "/Users/mike/Library/Application Support/Code/1.82-main.sock"
+)
 
-# Navigate to the directory of this script
+# navigate to the directory of this script
 cd $(dirname $(readlink -f $0))
 cd ..
+
+echo "${GREEN}Cleaning...${CLEAR}"
+
+# loop through each path
+for path in "${paths[@]}"; do
+    # check if the file/directory exists
+    if [ -e "$path" ]; then
+        # remove the file/directory
+        rm -r "$path"
+        echo "Removed $path"
+    else
+        echo "$path does not exist, skipping removal."
+    fi
+done
 
 echo "${GREEN}Requesting sudo to set homebrew tap & secure control center preferences permissions...${CLEAR}"
 

@@ -17,6 +17,7 @@
   "raycast"
   "keepingyouawake"
   "warp"
+  "utm"
 
   # Entertainment Tools
   "steam"

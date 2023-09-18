@@ -135,12 +135,12 @@
 
             run_disko() {
               sudo nix run --extra-experimental-features nix-command --extra-experimental-features flakes \
-                github:nix-community/disko -- --mode zap_create_mount ./nixos-config/nixos/disk-config.nix
+                github:nix-community/disko -- --mode zap_create_mount ./nixos-config/disk-config.nix
             }
 
             setup_files() {
               sudo mkdir -p /mnt/etc/nixos
-              sudo cp -r nixos-config/* /mnt/etc/nixos
+              sudo cp -r * /mnt/etc/nixos
               cd /mnt/etc/nixos
             }
 
@@ -162,6 +162,7 @@
             download_config
             run_disko
             setup_files
+            run_apply
             install_nixos
             cleanup
             prompt_reboot
