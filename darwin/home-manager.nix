@@ -111,13 +111,10 @@ in
   # Fully declarative dock using the latest from Nix Store
   local.dock.enable = true;
   local.dock.entries = [
-    { path = "/System/Applications/Finder.app/"; }
     { path = "/System/Applications/Messages.app/"; }
     { path = "/Applications/Spark.app/"; }
     { path = "/Applications/Min.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-    { path = "/Applications/Asana.app/"; }
-    { path = "/Applications/Drafts.app/"; }
     {
       path = toString myEmacsLauncher;
       section = "others";
