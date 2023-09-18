@@ -49,16 +49,16 @@
       };
     in
     {
-      #templates = {
-      #  starter = {
-      #    path = ./templates/starter;
-      #    description = "Starter configuration";
-      #  };
+      templates = {
+        main = {
+          path = ./templates/main;
+          description = "Starter configuration";
+        };
       #  starterWithSecrets = {
       #    path = ./templates/starterWithSecrets;
       #    description = "Starter configuration with secrets";
       #  };
-      #};
+      };
 
       devShells = forAllSystems devShell;
 
