@@ -51,7 +51,7 @@
     {
       templates = {
         main = {
-          path = ./templates/main;
+          path = ./main;
           description = "Starter configuration";
         };
       #  starterWithSecrets = {
