@@ -1,6 +1,6 @@
 { config, pkgs, agenix, secrets, ... }:
 
-let user = "%USER%"; in
+let user = "mike"; in
 {
 
   age.identityPaths = [
@@ -11,6 +11,15 @@ let user = "%USER%"; in
     symlink = true;
     path = "/home/${user}/.config/syncthing/cert.pem";
     file =  "${secrets}/felix-syncthing-cert.age";
+    mode = "600";
+    owner = "${user}";
+    group = "users";
+  };
+
+  age.secrets."bitwarden-masterpassword" = {
+    symlink = false;
+    path = "/home/${user}/.config/Bitwarden CLI/masterpassword";
+    file =  "${secrets}/bitwarden-masterpassword.age";
     mode = "600";
     owner = "${user}";
     group = "users";
