@@ -72,7 +72,7 @@
     {
       templates = {
         starter = {
-          path = ./templates/starter;
+          path = ./templates/default;
           description = "Starter configuration with secrets";
         };
       };

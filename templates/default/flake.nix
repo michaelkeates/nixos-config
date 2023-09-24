@@ -53,7 +53,7 @@
       devShells = forAllSystems devShell;
 
       darwinConfigurations = let user = "mike"; in {
-        macos = darwin.lib.darwinSystem {
+        Mikes-MBA = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [

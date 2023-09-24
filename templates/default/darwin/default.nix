@@ -77,6 +77,8 @@ let user = "mike"; in
         "com.apple.mouse.tapBehavior" = 1;
         "com.apple.sound.beep.volume" = 0.0;
         "com.apple.sound.beep.feedback" = 0;
+        "com.apple.swipescrolldirection" = false;
+        "com.apple.nsautomaticwindowanimationsenabled" = false;
       };
 
       dock = {
@@ -84,7 +86,7 @@ let user = "mike"; in
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 48;
+        tilesize = 32;
       };
 
       finder = {
