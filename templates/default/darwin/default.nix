@@ -79,7 +79,7 @@ let user = "mike"; in
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.swipescrolldirection" = false;
         "NSAutomaticWindowAnimationsEnabled" = false;
-        "AppleShowAllFiles" = true;
+        "AppleShowAllFiles" = false;
       };
 
       dock = {

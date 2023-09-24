@@ -17,6 +17,7 @@ paths=(
     "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.browser"
     "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.extra"
     "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.ssh"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.scdaemon"
     "/Users/mike/Library/Application Support/Code/1.82-main.sock"
 )
 
@@ -43,6 +44,7 @@ echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
 # This is reset by nix-homebrew, we need write permission to this dir to manage homebrew taps
 # sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
 # sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
+sudo chmod -R +rwX /opt/
 sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
 
 echo "${GREEN}Starting build...${CLEAR}"
