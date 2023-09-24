@@ -22,6 +22,7 @@ with pkgs; [
   utm
   transmission
   caprine-bin
+  joplin-desktop
 
   # Encryption and security tools
   age
@@ -31,6 +32,7 @@ with pkgs; [
   libfido2
   pinentry
   yubikey-manager
+  tailscale
 
   # Cloud-related tools and SDKs
   docker

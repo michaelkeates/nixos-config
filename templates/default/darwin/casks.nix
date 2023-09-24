@@ -3,7 +3,6 @@
 [
   # Development Tools
   "homebrew/cask/docker"
-  "postico"
   "visual-studio-code"
 
   # Communication Tools
@@ -17,6 +16,7 @@
   "keepingyouawake"
   "warp"
   "bitwarden"
+  "nextcloud"
 
   # Entertainment Tools
   "steam"
