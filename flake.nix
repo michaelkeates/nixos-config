@@ -54,10 +54,10 @@
           path = ./main;
           description = "Starter configuration";
         };
-      #  starterWithSecrets = {
-      #    path = ./templates/starterWithSecrets;
-      #    description = "Starter configuration with secrets";
-      #  };
+        starterWithSecrets = {
+          path = ./main;
+          description = "Starter configuration with secrets";
+        };
       };
 
       devShells = forAllSystems devShell;
@@ -140,7 +140,7 @@
 
             setup_files() {
               sudo mkdir -p /mnt/etc/nixos
-              sudo cp -r nixos-config/* /mnt/etc/nixos
+              sudo cp -r * /mnt/etc/nixos
               cd /mnt/etc/nixos
             }
 
