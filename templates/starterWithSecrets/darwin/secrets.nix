@@ -1,6 +1,6 @@
 { config, pkgs, agenix, secrets, ... }:
 
-let user = "miker"; in
+let user = "mike"; in
 {
   
   age.identityPaths = [ 
