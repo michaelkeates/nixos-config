@@ -51,8 +51,7 @@
         type = "app";
         program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
           #!/usr/bin/env bash
-          PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
-          print "Running ${scriptName} for ${system}"
+
           exec ${self}/apps/${system}/${scriptName}
         '')}/bin/${scriptName}";
       };
