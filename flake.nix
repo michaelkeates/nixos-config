@@ -71,7 +71,7 @@
     in
     {
       templates = {
-        starter = {
+        default = {
           path = ./templates/default;
           description = "Starter configuration with secrets";
         };

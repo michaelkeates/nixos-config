@@ -18,14 +18,15 @@ with pkgs; [
   neofetch
   openssh
   pandoc
-  sqlite
   wget
-  zip
+  utm
+  transmission
+  caprine-bin
 
   # Encryption and security tools
-  _1password
   age
   age-plugin-yubikey
+  bitwarden-cli
   gnupg
   libfido2
   pinentry
@@ -57,6 +58,7 @@ with pkgs; [
   noto-fonts
   noto-fonts-emoji
   meslo-lgs-nf
+  roboto
 
   # Node.js development tools
   fzf
