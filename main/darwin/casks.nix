@@ -17,7 +17,7 @@
   "raycast"
   "keepingyouawake"
   "warp"
-  "utm"
+  "bitwarden"
 
   # Entertainment Tools
   "steam"
