@@ -83,8 +83,8 @@
 
       devShells = forAllSystems devShell;
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
-      darwinConfigurations = let user = "dustin"; in {
-        "Dustins-MBP" = darwin.lib.darwinSystem {
+      darwinConfigurations = let user = "mike"; in {
+        "Mikes-MBP" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
