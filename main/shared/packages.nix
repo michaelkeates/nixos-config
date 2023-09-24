@@ -21,6 +21,7 @@ with pkgs; [
   wget
   utm
   transmission
+  caprine-bin
 
   # Encryption and security tools
   age
