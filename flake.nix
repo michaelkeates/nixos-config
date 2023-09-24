@@ -1,6 +1,6 @@
 
 {
-  description = "Dustin's Configuration for NixOS and MacOS";
+  description = "Mike's Configuration for NixOS and MacOS";
 
   inputs = {
     nixpkgs.url = "github:dustinlyons/nixpkgs/master";
@@ -26,14 +26,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/dustinlyons/nix-secrets.git";
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
     };
   };
 
   outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
-      user = "dustin";
+      user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" ];
       forAllLinuxSystems = f: nixpkgs.lib.genAttrs linuxSystems (system: f system);
@@ -51,7 +51,8 @@
         type = "app";
         program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
           #!/usr/bin/env bash
-
+          PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
+          print "Running ${scriptName} for ${system}"
           exec ${self}/apps/${system}/${scriptName}
         '')}/bin/${scriptName}";
       };
@@ -105,7 +106,7 @@
           ];
         };
       };
-      nixosConfigurations = let user = "dustin"; in {
+      nixosConfigurations = let user = "mike"; in {
         felix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = inputs;
