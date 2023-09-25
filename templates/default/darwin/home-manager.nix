@@ -114,7 +114,7 @@ in
     { path = "/Applications/Spark.app/"; }
     { path = "/Applications/Visual Studio Code.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-    { path = "/Applications/System Settings.app/"; }
+    { path = "System/Applications/System Settings.app/"; }
     {
       path = toString myEmacsLauncher;
       section = "others";

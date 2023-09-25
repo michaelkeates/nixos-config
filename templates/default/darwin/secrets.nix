@@ -16,6 +16,15 @@ let user = "mike"; in
     group = "staff";
   };
 
+    age.secrets."bitwarden-masterpassword" = {
+    symlink = false;
+    path = "/home/${user}/.config/Bitwarden CLI/masterpassword";
+    file =  "${secrets}/bitwarden-masterpassword.age";
+    mode = "600";
+    owner = "${user}";
+    group = "users";
+  };
+
   age.secrets."syncthing-key" = {
     symlink = true;
     path = "/Users/${user}/Library/Application Support/Syncthing/key.pem";

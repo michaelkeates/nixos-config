@@ -19,6 +19,7 @@ paths=(
     "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.ssh"
     "/Users/mike/.emacs.d/elpa/gnupg/S.scdaemon"
     "/Users/mike/Library/Application Support/Code/1.82-main.sock"
+    "/Users/mike/Library/Group Containers/com.nextcloud.desktopclient/.socket"
 )
 
 export NIXPKGS_ALLOW_UNFREE=1
