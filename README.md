@@ -66,7 +66,7 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 
 <h3 align="left">Mentions</h3>
 <ul>
-<p>dustinlyons for his Nix configuration files that this is heavily based on and what I learnt from so all rights to him <a href="https://github.com/dustinlyons/nixos-config"></a>Repository</p>
+<p>dustinlyons for his Nix configuration files that this is heavily based on and what I learnt from so all rights to him <a href="https://github.com/dustinlyons/nixos-config">Repository</a>.</p>
 </ul>
 <h3 align="left">Author</h3>
 <ul>
