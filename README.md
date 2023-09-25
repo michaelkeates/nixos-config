@@ -57,7 +57,7 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 <ul>
 <li>For the first-time, it is required to move the current /etc/nix/nix.conf out of the way</li>
 <pre>sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin</pre>
-<li>Then finally run the script below. This wraps the Nix commands and build and deploy a new Nix Generation as well as removes files that will crash the script.</li>
+<li>Then finally run the script below. This wraps the Nix commands, builds and deploys a new Nix Generation as well as removes files that will crash the script.</li>
 <pre>chmod +x bin/darwin-build && chmod +x bin/build && bin/build</pre>
 </ul>
 <br></br>
