@@ -4,11 +4,8 @@ with pkgs; [
   # General packages for development and system management
   act
   alacritty
-  aspell
-  aspellDicts.en
   bash-completion
   bat
-  btop
   coreutils
   difftastic
   du-dust
@@ -24,6 +21,10 @@ with pkgs; [
   caprine-bin
   joplin-desktop
 
+  # Photo and image editing tools
+  gimp
+  darktable
+
   # Encryption and security tools
   age
   age-plugin-yubikey
@@ -38,22 +39,14 @@ with pkgs; [
   docker
   docker-compose
   awscli2
-  cloudflared
-  flyctl
-  google-cloud-sdk
-  go
-  gopls
-  ngrok
   ssm-session-manager-plugin
-  terraform
-  terraform-ls
-  tflint
 
   # Media-related packages
   emacs-all-the-icons-fonts
   dejavu_fonts
   ffmpeg
   fd
+  imagemagick
   font-awesome
   glow
   hack-font
@@ -80,10 +73,8 @@ with pkgs; [
   jetbrains-mono
   jq
   ripgrep
-  slack
   tree
   tmux
-  unrar
   unzip
   zsh-powerlevel10k
 
