@@ -25,6 +25,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    secrets = {
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
+      flake = false;
+    };
   };
 
   outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
@@ -53,8 +57,6 @@
         '')}/bin/${scriptName}";
       };
       mkLinuxApps = system: {
-        "install" = mkApp "install" system;
-        "installWithSecrets" = mkApp "installWithSecrets" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
