@@ -57,6 +57,8 @@
         '')}/bin/${scriptName}";
       };
       mkLinuxApps = system: {
+        "install" = mkApp "install" system;
+        "installWithSecrets" = mkApp "installWithSecrets" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
