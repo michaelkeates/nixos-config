@@ -1,6 +1,6 @@
 { config, inputs, pkgs, agenix, ... }:
 
-let user = "%USER%";
+let user = "mike";
     keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p" ]; in
 {
   imports = [
@@ -19,12 +19,12 @@ let user = "%USER%";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "Europe/London";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
-  networking.hostName = "felix"; # Define your hostname.
+  networking.hostName = "mAir"; # Define your hostname.
   networking.useDHCP = false;
   networking.interfaces.eno1.useDHCP = true;
 
@@ -103,44 +103,44 @@ let user = "%USER%";
   boot.kernelModules = [ "uinput" ];
 
   # Sync state between machines
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    dataDir = "/home/${user}/.local/share/syncthing";
-    configDir = "/home/${user}/.config/syncthing";
-    user = "${user}";
-    group = "users";
-    guiAddress = "127.0.0.1:8384";
-    overrideFolders = true;
-    overrideDevices = true;
+  #services.syncthing = {
+  #  enable = true;
+  #  openDefaultPorts = true;
+  #  dataDir = "/home/${user}/.local/share/syncthing";
+  #  configDir = "/home/${user}/.config/syncthing";
+  #  user = "${user}";
+  #  group = "users";
+  #  guiAddress = "127.0.0.1:8384";
+  #  overrideFolders = true;
+  #  overrideDevices = true;
 
-    settings.devices = {
-      "Macbook Pro" = {
-        id = "P2FYLQW-PKDFJGZ-EUGI2T7-OW4AH4I-KI462HD-U2VL3X3-GN55PP2-VNRE5AH";
-        autoAcceptFolders = true;
-        allowedNetwork = "192.168.0.0/16";
-        addresses = [ "tcp://192.168.0.99:51820" ];
-      };
-      "Home Lab" = {
-        id = "WW5O366-THBBBA3-HKQAYCP-EWADS4I-4KDDC5Z-3JCO42M-RLBZ3DY-NM7PEQA";
-        allowedNetwork = "192.168.0.0/16";
-        autoAcceptFolders = true;
-        addresses = [ "tcp://192.168.0.103:51820" ];
-      };
-    };
+   # settings.devices = {
+   #   "Macbook Pro" = {
+   #     id = "P2FYLQW-PKDFJGZ-EUGI2T7-OW4AH4I-KI462HD-U2VL3X3-GN55PP2-VNRE5AH";
+   #     autoAcceptFolders = true;
+   #     allowedNetwork = "192.168.0.0/16";
+   #     addresses = [ "tcp://192.168.0.99:51820" ];
+   #   };
+   #   "Home Lab" = {
+   #     id = "WW5O366-THBBBA3-HKQAYCP-EWADS4I-4KDDC5Z-3JCO42M-RLBZ3DY-NM7PEQA";
+   #     allowedNetwork = "192.168.0.0/16";
+   #     autoAcceptFolders = true;
+   #     addresses = [ "tcp://192.168.0.103:51820" ];
+   #   };
+   # };
 
-    settings.folders = {
-      "XDG Share" = {
-        id = "ukrub-quh7k";
-        path = "/home/${user}/.local/share";
-        devices = [ "Macbook Pro" "Home Lab" ];
-      };
-    };
+   # settings.folders = {
+   #   "XDG Share" = {
+   #     id = "ukrub-quh7k";
+   #     path = "/home/${user}/.local/share";
+   #     devices = [ "Macbook Pro" "Home Lab" ];
+   #   };
+   # };
 
-    settings.options.globalAnnounceEnabled = false; # Only sync on LAN
-    settings.gui.insecureSkipHostcheck = true;
-    settings.gui.insecureAdminAccess = true;
-  };
+  #  settings.options.globalAnnounceEnabled = false; # Only sync on LAN
+  #  settings.gui.insecureSkipHostcheck = true;
+  #  settings.gui.insecureAdminAccess = true;
+  #};
 
   # Add docker daemon
   virtualisation.docker.enable = true;
