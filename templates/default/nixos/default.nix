@@ -24,9 +24,9 @@ let user = "mike";
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
-  networking.hostName = "mAir"; # Define your hostname.
-  networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
+  # networking.hostName = "mAir"; # Define your hostname.
+  # networking.useDHCP = false;
+  # networking.interfaces.eno1.useDHCP = true;
 
   # Turn on flag for proprietary software
   nix = {
@@ -75,8 +75,8 @@ let user = "mike";
   };
 
   # Turn Caps Lock into Ctrl
-  services.xserver.layout = "uk";
-  services.xserver.xkbOptions = "ctrl:nocaps";
+  # services.xserver.layout = "uk";
+  # services.xserver.xkbOptions = "ctrl:nocaps";
 
   # Enable CUPS to print documents
   services.printing.enable = true;
