@@ -75,7 +75,7 @@ let user = "mike";
   };
 
   # Turn Caps Lock into Ctrl
-  services.xserver.layout = "us";
+  services.xserver.layout = "uk";
   services.xserver.xkbOptions = "ctrl:nocaps";
 
   # Enable CUPS to print documents
