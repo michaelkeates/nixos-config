@@ -52,7 +52,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
+      #url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
+      url = "git+ssh://git@github.com:michaelkeates/nix-secrets.git";
+      #url = "https://github.com/michaelkeates/nix-secrets.git";
       flake = false;
     };
   };
