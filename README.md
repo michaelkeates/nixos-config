@@ -23,7 +23,7 @@
 </p>
 This is a group of personal configuration files using Nix that runs on MacOS as well as NixOs. This is 100% Flake driven with no configuration.nix as well as channels.
 This is my first time delving into everything that is Nix and while so far has been tested on a MacOS VM, this will soon become my daily driver. 🤓
-Please note this is a work in progress so there are bugs as I am learning to improve and set up for my personal needs.
+Please note this is a work in progress so there are bugs as I am learning to improve and set up for my personal needs.h
 <br></br>
 <h1 align="left">Installing</h1>
 <h2 align="left">MacOS</h2>
