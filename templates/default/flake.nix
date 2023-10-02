@@ -27,7 +27,7 @@
     };
     secrets = {
       url = "github:michaelkeates/nix-secrets/main"; # Change this!
-      #url = "git+ssh://git@github.com:michaelkeates/nix-secrets.git";
+      #url = "github:dustinlyons/nix-secrets/main";
       flake = false;
     };
   };
