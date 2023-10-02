@@ -99,6 +99,7 @@
         default = {
           path = ./templates/default;
           description = "Starter configuration";
+        };
       };
       devShells = forAllSystems devShell;
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
