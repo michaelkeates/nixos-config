@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -exu
 
 check_installer() {
   if [ -e /etc/NIXOS ]; then
@@ -22,7 +22,12 @@ download_config() {
 }
 
 run_apply() {
-  ./bin/apply
+  /mnt/etc/nixos/bin/apply
+  if [ ! -f /tmp/username.txt ]; then
+    echo -e "\e[1;31mError: /tmp/username.txt does not exist.\e[0m"
+    exit 1
+  fi
+  export USERNAME=$(cat /tmp/username.txt)
 }
 
 run_disko() {
@@ -37,7 +42,7 @@ setup_files() {
 }
 
 install_nixos() {
-  sudo nixos-install --flake .#felix
+  sudo nixos-install --flake .#nixos
   sudo chmod -R 775 /mnt/etc/nixos
 }
 
@@ -49,6 +54,7 @@ prompt_reboot() {
   esac
 }
 
+cleanup
 check_installer
 download_config
 run_disko

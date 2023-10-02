@@ -1,6 +1,6 @@
 
 {
-  description = "Mike's Configuration for NixOS and MacOS";
+  description = "Dustin's Configuration for NixOS and MacOS";
 
   inputs = {
     nixpkgs.url = "github:dustinlyons/nixpkgs/master";
@@ -52,15 +52,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
-      #url = "git+ssh://git@github.com:michaelkeates/nix-secrets.git";
-      #url = "https://github.com/michaelkeates/nix-secrets.git";
+      url = "git+ssh://git@github.com/dustinlyons/nix-secrets.git";
       flake = false;
     };
   };
   outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
-      user = "mike";
+      user = "dustin";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" ];
       forAllLinuxSystems = f: nixpkgs.lib.genAttrs linuxSystems (system: f system);
@@ -98,15 +96,19 @@
     in
     {
       templates = {
-        default = {
-          path = ./templates/default;
+        starter = {
+          path = ./templates/starter;
           description = "Starter configuration";
+        };
+        starterWithSecrets = {
+          path = ./templates/starterWithSecrets;
+          description = "Starter configuration with secrets";
         };
       };
       devShells = forAllSystems devShell;
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
-      darwinConfigurations = let user = "mike"; in {
-        "Mikes-MBP" = darwin.lib.darwinSystem {
+      darwinConfigurations = let user = "dustin"; in {
+        "Dustins-MBP" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [
