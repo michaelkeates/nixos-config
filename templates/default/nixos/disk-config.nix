@@ -1,4 +1,4 @@
-{
+{ ... }: {
   disko.devices = {
     disk = {
       vda = {
@@ -8,10 +8,11 @@
           type = "gpt";
           partitions = {
             boot = {
-              size = "1M";
-              type = "EF00"; # for grub MBR
+              type = "EF00";
+              size = "600M";
             };
             root = {
+              start = "600M";
               size = "100%";
               content = {
                 type = "filesystem";
