@@ -2,7 +2,7 @@
  disko.devices = {
   disk = {
    vda = {
-    device = disks !! 0;
+    device = builtins.elemAt disks 0;
     type = "disk";
     content = {
      type = "gpt";
