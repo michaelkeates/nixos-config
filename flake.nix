@@ -47,6 +47,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     secrets = {
       #url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       #url = "git+ssh://git@github.com:michaelkeates/nix-secrets.git";
@@ -55,7 +59,7 @@
       flake = false;
     };
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, agenix, secrets } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
@@ -129,6 +133,7 @@
         system = system;
         specialArgs = inputs;
         modules = [
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
