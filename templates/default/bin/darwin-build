@@ -1,0 +1,61 @@
+#!/bin/sh -e
+
+VERSION=1.0
+
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+CLEAR='\033[0m'
+
+USER=$(whoami)
+FLAKE="Mikes-MBA"
+SYSTEM="darwinConfigurations.$FLAKE.system"
+
+# define an array of paths. must be a better way when i need to build again!?!??!
+paths=(
+    "/Users/mike/.gnupg"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.browser"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.extra"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.gpg-agent.ssh"
+    "/Users/mike/.emacs.d/elpa/gnupg/S.scdaemon"
+    "/Users/mike/Library/Application Support/Code/1.82-main.sock"
+    "/Users/mike/Library/Group Containers/com.nextcloud.desktopclient/.socket"
+)
+
+export NIXPKGS_ALLOW_UNFREE=1
+
+# Navigate to the directory of this script
+cd $(dirname $(readlink -f $0))
+cd ..
+
+# loop through each path
+for path in "${paths[@]}"; do
+    # check if the file/directory exists
+    if [ -e "$path" ]; then
+        # remove the file/directory
+        rm -r "$path"
+        echo "Removed $path"
+    else
+        echo "$path does not exist, skipping removal."
+    fi
+done
+
+echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
+
+# This is reset by nix-homebrew, we need write permission to this dir to manage homebrew taps
+# sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
+# sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
+sudo chmod -R +rwX /opt/
+sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
+
+echo "${GREEN}Starting build...${CLEAR}"
+
+nix --experimental-features 'nix-command flakes' build .#$SYSTEM $@
+
+echo "${GREEN}Switching to new generation...${CLEAR}"
+./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE $@
+
+echo "${GREEN}Cleaning up...${CLEAR}"
+unlink ./result
+
+echo "${GREEN}Done${CLEAR}"

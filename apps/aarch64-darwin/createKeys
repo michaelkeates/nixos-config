@@ -5,7 +5,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-username=${USER}
+username="mike"
 export SSH_DIR=/Users/${username}/.ssh
 
 setup_ssh_directory() {
