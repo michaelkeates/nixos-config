@@ -1,18 +1,19 @@
 { ... }: {
-# This formats the disk with the ext4 filesystem
-# Other examples found here: https://github.com/nix-community/disko/tree/master/example
-    disko.devices = {
-        disk = {
-            vda = {
-                #device = "/dev/disk/by-id/some-disk-id";
-                device = "/dev/vda";
-                type = "disk";
-                content = {
-                    type = "gpt";
-                    partitions = {
-                        ESP = {
-                            type = "EF00";
-              size = "100M";
+  disko.devices = {
+    disk = {
+      main = {
+        type = "disk";
+        device = "/dev/disk/by-id/virtio-vdisk1";
+        content = {
+          type = "gpt";
+          partitions = {
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+            };
+            ESP = {
+              size = "512M";
+              type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
