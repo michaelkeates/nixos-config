@@ -1,33 +1,38 @@
-{ ... }: {
-# This formats the disk with the ext4 filesystem
-# Other examples found here: https://github.com/nix-community/disko/tree/master/example
- disko.devices = {
-  disk = {
-   vdb = {
-    device = builtins.elemAt disks 0;
-    type = "disk";
-    content = {
-     type = "gpt";
-     partitions = {
-      ESP = {
-       size = "500M";
-       content = {
-        type = "filesystem";
-        format = "vfat";
-        mountpoint = "/boot";
-       };
+{ disks ? [ "/dev/vda" ], ... }: {
+  disko.devices = {
+    disk = {
+      vdb = {
+        device = builtins.elemAt disks 0;
+        type = "disk";
+        content = {
+          type = "table";
+          format = "gpt";
+          partitions = [
+            {
+              name = "ESP";
+              start = "1MiB";
+              end = "500MiB";
+              bootable = true;
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            }
+            {
+              name = "root";
+              start = "500MiB";
+              end = "100%";
+              part-type = "primary";
+              content = {
+                type = "filesystem";
+                format = "bcachefs";
+                mountpoint = "/";
+              };
+            }
+          ];
+        };
       };
-      root = {
-       size = "100%";
-       content = {
-        type = "filesystem";
-        format = "ext4";
-        mountpoint = "/";
-       };
-      };
-     };
     };
-   };
   };
- };
 }
