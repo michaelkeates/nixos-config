@@ -5,8 +5,8 @@
         disk = {
             vda = {
                 #device = "/dev/disk/by-id/some-disk-id";
-                device = "/dev/vda";
-                #device = "/dev/disk/by-id/virtio-vdisk1";
+                #device = "/dev/vda";
+                device = "/dev/disk/by-id/virtio-vdisk1";
                 type = "disk";
                 content = {
                     type = "gpt";
