@@ -26,9 +26,13 @@
       #url = "github:dustinlyons/nix-secrets/main";
       flake = false;
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, agenix, secrets } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "mike";
       systems = [ "x86_64-linux" "aarch64-darwin" ];
@@ -79,6 +83,7 @@
           specialArgs = inputs;
           modules = [
             ./nixos
+            disko.nixosModules.disko
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
