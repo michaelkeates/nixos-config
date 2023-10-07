@@ -1,8 +1,8 @@
-{ disks ? [ "/dev/vda" ], ... }: {
+{ ... }: {
   disko.devices = {
     disk = {
       vdb = {
-        device = builtins.elemAt disks 0;
+        device = "/dev/vda";
         type = "disk";
         content = {
           type = "table";
@@ -26,7 +26,7 @@
               part-type = "primary";
               content = {
                 type = "filesystem";
-                format = "bcachefs";
+                format = "ext4";
                 mountpoint = "/";
               };
             }
