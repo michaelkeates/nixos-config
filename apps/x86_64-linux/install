@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -exu
 
 cleanup() {
   rm -rf nixos-config-main.zip nixos-config-main nixos-config
