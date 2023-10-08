@@ -20,6 +20,7 @@ with pkgs; [
   transmission
   caprine-bin
   joplin-desktop
+  vscode
 
   # Photo and image editing tools
   gimp
