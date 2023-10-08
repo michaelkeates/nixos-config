@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-check_installer() {
-  if [ -e /etc/NIXOS ]; then
-    echo -e "\e[1;32mRunning in the NixOS installer environment.\e[0m"
-  else
-    echo -e "\e[1;31mNot running in the NixOS installer environment.\e[0m"
-    exit 1
-  fi
-}
-
 cleanup() {
   rm -rf nixos-config-main.zip nixos-config-main nixos-config
 }
@@ -49,7 +40,6 @@ prompt_reboot() {
   esac
 }
 
-check_installer
 download_config
 run_disko
 setup_files
