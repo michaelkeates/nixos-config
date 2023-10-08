@@ -27,8 +27,9 @@ let user = "mike";
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.hostName = "nixos"; # Define your hostname.
-  networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
+  #networking.useDHCP = false;
+  #networking.interfaces.eno1.useDHCP = true;
+  networking.networkmanager.enable = true;
 
   # Turn on flag for proprietary software
   nix = {
