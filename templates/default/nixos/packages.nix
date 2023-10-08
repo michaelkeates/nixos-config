@@ -78,6 +78,7 @@ shared-packages ++ [
   pcmanfm # Our file browser
   sqlite
   xdg-utils
+  blueman
 
   # Other utilities
   yad # I use yad-calendar with polybar
@@ -88,5 +89,5 @@ shared-packages ++ [
   zathura
 
   # Music and entertainment
-  spotify
+
 ]
