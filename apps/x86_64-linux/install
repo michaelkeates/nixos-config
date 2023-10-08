@@ -21,9 +21,9 @@ download_config() {
   cd nixos-config
 }
 
-run_apply() {
-  ./bin/apply
-}
+#run_apply() {
+#  ./bin/apply
+#}
 
 run_disko() {
   sudo nix run --extra-experimental-features nix-command --extra-experimental-features flakes \
