@@ -67,7 +67,7 @@ let user = "mike";
   services.xserver.displayManager.lightdm = {
     enable = true;
     greeters.slick.enable = true;
-    background = ./config/login-wallpaper.png;
+    background = ./config/login-wallpaper.jpg;
   };
 
   # Tiling window manager

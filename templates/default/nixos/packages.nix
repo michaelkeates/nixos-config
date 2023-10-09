@@ -5,7 +5,7 @@ let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
 
   # Security and authentication
-  _1password-gui
+  bitwarden
   yubikey-manager
   yubikey-manager-qt
   yubikey-agent
@@ -19,10 +19,10 @@ shared-packages ++ [
 
   # Media and design tools
   gimp
-  vlc
   wineWowPackages.stable
   fontconfig
   font-manager
+  nextcloud-client
 
   # Printers and drivers
   brlaser # printer driver
@@ -38,8 +38,6 @@ shared-packages ++ [
   # Messaging and chat applications
   cider # Apple Music on Linux
   discord
-  hexchat # Chat
-  fractal # Matrix.org messaging app
   #tdesktop # telegram desktop
 
   # Testing and development tools
@@ -72,7 +70,6 @@ shared-packages ++ [
   inotify-tools # inotifywait, inotifywatch - For file system events
   i3lock-fancy-rapid
   libnotify
-  ledger-live-desktop
   playerctl # Control media players from command line
   pinentry-curses
   pcmanfm # Our file browser
