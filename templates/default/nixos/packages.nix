@@ -6,10 +6,6 @@ shared-packages ++ [
 
   # Security and authentication
   bitwarden
-  yubikey-manager
-  yubikey-manager-qt
-  yubikey-agent
-  keepassxc
 
   # App and package management
   appimage-run
@@ -23,6 +19,7 @@ shared-packages ++ [
   fontconfig
   font-manager
   nextcloud-client
+  darktable
 
   # Printers and drivers
   brlaser # printer driver
@@ -36,7 +33,6 @@ shared-packages ++ [
   pavucontrol # Pulse audio controls
 
   # Messaging and chat applications
-  cider # Apple Music on Linux
   discord
   #tdesktop # telegram desktop
 
@@ -48,9 +44,9 @@ shared-packages ++ [
   rofi-calc
   rnix-lsp # lsp-mode for nix
   qmk
-  postgresql
   libusb1 # for Xbox controller
   libtool # for Emacs vterm
+  github-desktop
 
   # Screenshot and recording tools
   flameshot
@@ -73,14 +69,15 @@ shared-packages ++ [
   playerctl # Control media players from command line
   pinentry-curses
   pcmanfm # Our file browser
-  sqlite
   xdg-utils
   blueman
+  onlyoffice-bin
 
   # Other utilities
   yad # I use yad-calendar with polybar
   xdotool
   google-chrome
+  thunderbird-unwrapped
 
   # PDF viewer
   zathura

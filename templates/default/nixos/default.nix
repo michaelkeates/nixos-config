@@ -99,7 +99,7 @@ let user = "mike";
   # hardware.xone.enable = true;
 
   # Crypto wallet support
-  hardware.ledger.enable = true;
+  #hardware.ledger.enable = true;
 
   # Better support for general peripherals
   services.xserver.libinput.enable = true;
