@@ -52,6 +52,11 @@ in
       name = "Adwaita-dark";
       package = pkgs.gnome.adwaita-icon-theme;
     };
+    cursorTheme = {
+      name = "apple-cursor";
+      package = pkgs.apple-cursor;
+    };
+    }
   };
 
   # Screen lock
