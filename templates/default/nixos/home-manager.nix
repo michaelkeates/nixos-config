@@ -56,7 +56,6 @@ in
       name = "apple-cursor";
       package = pkgs.apple-cursor;
     };
-    }
   };
 
   # Screen lock
