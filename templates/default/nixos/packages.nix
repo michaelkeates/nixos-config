@@ -77,7 +77,7 @@ shared-packages ++ [
   yad # I use yad-calendar with polybar
   xdotool
   google-chrome
-  thunderbird-unwrapped
+  thunderbird
 
   # PDF viewer
   zathura
