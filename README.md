@@ -23,10 +23,11 @@
 </p>
 This is a group of personal configuration files using Nix that runs on MacOS as well as NixOs. This is 100% Flake driven with no configuration.nix as well as channels.
 This is my first time delving into everything that is Nix and while so far has been tested on a MacOS VM, this will soon become my daily driver. 🤓
-Please note this is a work in progress so there are bugs as I am learning to improve and set up for my personal needs.h
+Please note this is a work in progress so there are bugs as I am learning to improve and set up for my personal needs.
 <br></br>
 <h1 align="left">Installing</h1>
 <h2 align="left">MacOS</h2>
+<p>Change name for Mac and enable Full Disk Access for Terminal in settings</p>
 <h3 align="left">Install Dependencies</h3>
 <ul>
 <li>So far this has been tested on a clean VM running MacOS Ventura on a Macbook Air (M1)</li>
