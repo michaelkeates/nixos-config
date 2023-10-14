@@ -137,7 +137,7 @@ super + shift + @space
 	pcmanfm
 
 # Take a screenshot with PrintSc
-super + shift + 3
+super + shift + s
         flameshot gui -c -p $HOME/.local/share/img/screenshots
 
 # Lock the screen
