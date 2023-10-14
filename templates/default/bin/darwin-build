@@ -24,7 +24,7 @@ paths=(
 
 export NIXPKGS_ALLOW_UNFREE=1
 
-# Navigate to the directory of this script
+# navigate to the directory of this script
 cd $(dirname $(readlink -f $0))
 cd ..
 
@@ -42,9 +42,9 @@ done
 
 echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
 
-# This is reset by nix-homebrew, we need write permission to this dir to manage homebrew taps
-# sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
-# sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
+# this is reset by nix-homebrew, we need write permission to this dir to manage homebrew taps
+sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
+sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
 sudo chmod -R +rwX /opt/
 sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
 
