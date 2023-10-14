@@ -20,6 +20,7 @@ paths=(
     "/Users/mike/.emacs.d/elpa/gnupg/S.scdaemon"
     "/Users/mike/Library/Application Support/Code/1.82-main.sock"
     "/Users/mike/Library/Group Containers/com.nextcloud.desktopclient/.socket"
+    "/Users/mike/Library/Group Containers/BJ4HAAB9B3.ZoomClient3rd/s.zoomClient"
 )
 
 export NIXPKGS_ALLOW_UNFREE=1

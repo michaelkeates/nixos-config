@@ -21,6 +21,7 @@ with pkgs; [
   caprine-bin
   joplin-desktop
   vscode
+  p7zip
 
   # Photo and image editing tools
   gimp
