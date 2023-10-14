@@ -29,6 +29,7 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 <h2 align="left">MacOS</h2>
 <h3 align="left">Install Dependencies</h3>
 <ul>
+<p>Change name of MacOS and enable Full Disk Access for Terminal from settings</p>
 <li>So far this has been tested on a clean VM running MacOS Ventura on a Macbook Air (M1)</li>
 	<pre>xcode-select --install</pre>
 </ul>
