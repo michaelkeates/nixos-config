@@ -72,18 +72,16 @@
           '';
         };
       };
-  mkApp = scriptName: system: {
-    type = "app";
-    program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
-     #!/usr/bin/env bash
-     PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
-     echo "Running ${scriptName} for ${system}"
-     exec ${self}/apps/${system}/${scriptName}
-    '')}/bin/${scriptName}";
-    postInstall = ''
-      chmod +x $out/bin/${scriptName}
-    '';
-  };
+mkApp = scriptName: system: {
+  type = "app";
+  program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
+    #!/usr/bin/env bash
+    PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
+    echo "Running ${scriptName} for ${system}"
+    chmod +x ${self}/apps/${system}/${scriptName}
+    exec ${self}/apps/${system}/${scriptName}
+  '')}/bin/${scriptName}";
+};
       mkLinuxApps = system: {
         "install" = mkApp "install" system;
         "installWithSecrets" = mkApp "installWithSecrets" system;
