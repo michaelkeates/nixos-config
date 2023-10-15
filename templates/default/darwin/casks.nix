@@ -18,6 +18,7 @@
   "warp"
   "bitwarden"
   "nextcloud"
+  "darktable"
 
   # Entertainment Tools
   "steam"
