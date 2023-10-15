@@ -24,7 +24,7 @@
     secrets = {
       #url = "github:michaelkeates/nix-secrets/main"; # Change this!
       #url = "github:dustinlyons/nix-secrets/main";
-      url = "git+ssh://git@github.com:michaelkeates/nix-secrets.git";
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
     };
     disko = {
