@@ -93,6 +93,8 @@ let user = "mike"; in
 
       finder = {
         _FXShowPosixPathInTitle = false;
+        ShowPathbar = true;
+        ShowStatusBar = true;
       };
 
       trackpad = {
