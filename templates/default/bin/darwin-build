@@ -42,7 +42,11 @@ for path in "${paths[@]}"; do
 done
 
 echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
-sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/
+#sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/
+#sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /.config/
+
+sudo chmod -R 777 /opt/
+sudo chmod -R 777 ~/.config/
 
 sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
 
