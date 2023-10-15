@@ -92,6 +92,7 @@
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
+        "hello" = mkApp "hello" system;
       };
     in
     {
