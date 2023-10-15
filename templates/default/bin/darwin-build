@@ -42,15 +42,8 @@ for path in "${paths[@]}"; do
 done
 
 echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
+sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/
 
-# Check if the directory exists before running chmod
-if [ -d "/opt/homebrew/Library/Taps/homebrew/" ]; then
-  sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
-else
-  echo "${RED}The directory /opt/homebrew/Library/Taps/homebrew/ does not exist. Skipping chmod.${CLEAR}"
-fi
-
-sudo chmod -R +rwX /opt/
 sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
 
 echo "${GREEN}Starting build...${CLEAR}"
