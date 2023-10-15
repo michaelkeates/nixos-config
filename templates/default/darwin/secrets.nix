@@ -18,11 +18,11 @@ let user = "mike"; in
 
   age.secrets."bitwarden-masterpassword" = {
     symlink = false;
-    path = "/Users/${user}/.config/Bitwarden CLI/masterpassword";
+    path = "/Users/${user}/.config/Bitwarden/masterpassword";
     file =  "${secrets}/bitwarden-masterpassword.age";
     mode = "600";
     owner = "${user}";
-    group = "users";
+    group = "staff";
   };
 
   age.secrets."syncthing-key" = {
