@@ -30,4 +30,8 @@ lint_keys() {
   fi
 }
 
+check_ssh_connection() {
+  ssh -T git@github.com
+}
+
 lint_keys
