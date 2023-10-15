@@ -35,9 +35,9 @@ for path in "${paths[@]}"; do
     if [ -e "$path" ]; then
         # remove the file/directory
         rm -r "$path"
-        echo "Removed $path"
+        echo "${GREEN}Removed $path"
     else
-        echo "$path does not exist, skipping removal."
+        echo "${RED}$path does not exist. Skipping removal.${CLEAR}"
     fi
 done
 
