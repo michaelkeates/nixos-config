@@ -16,9 +16,9 @@ let user = "mike"; in
     group = "staff";
   };
 
-    age.secrets."bitwarden-masterpassword" = {
+  age.secrets."bitwarden-masterpassword" = {
     symlink = false;
-    path = "/home/${user}/.config/Bitwarden CLI/masterpassword";
+    path = "/Users/${user}/.config/Bitwarden CLI/masterpassword";
     file =  "${secrets}/bitwarden-masterpassword.age";
     mode = "600";
     owner = "${user}";
