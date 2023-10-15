@@ -9,6 +9,7 @@
   "discord"
   "telegram"
   "zoom"
+  "thunderbird"
 
   # Utility Tools
   "appcleaner"

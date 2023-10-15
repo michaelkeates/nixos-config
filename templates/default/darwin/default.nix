@@ -88,6 +88,7 @@ let user = "mike"; in
         launchanim = true;
         orientation = "bottom";
         tilesize = 32;
+        mineffect = "scale";
       };
 
       finder = {
