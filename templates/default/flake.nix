@@ -66,7 +66,7 @@
                 taps = {
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "homebrew/bundle" = homebrew-bundle;
                 };
                 mutableTaps = false;
                 autoMigrate = true;
