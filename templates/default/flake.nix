@@ -20,7 +20,11 @@
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
-    }; 
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    }
     secrets = {
       url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
@@ -31,7 +35,7 @@
     };
   };
 
-  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "mike";
       systems = [ "x86_64-linux" "aarch64-darwin" ];
