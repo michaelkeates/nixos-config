@@ -44,9 +44,15 @@ done
 echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
 #sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
 #sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
-sudo mkdir ~/.config/
+# Check if the directory exists before running chmod
+if [ -d "~/.config/" ]; then
+  sudo chmod -R 777 ~/.config/
+else
+  echo "${RED}The directory /opt/homebrew/Library/Taps/homebrew/ does not exist. Skipping chmod.${CLEAR}"
+  sudo mkdir ~/.config/
+fi
+
 sudo chmod -R 777 /opt/
-sudo chmod -R 777 ~/.config/
 
 sudo chmod 777 /Users/mike/Library/Group\ Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist
 
