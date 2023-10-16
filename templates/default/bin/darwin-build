@@ -42,8 +42,8 @@ for path in "${paths[@]}"; do
 done
 
 echo "${GREEN}Requesting sudo to set homebrew tap permissions...${CLEAR}"
-sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
-sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
+#sudo mkdir -p /opt/homebrew/Library/Taps/homebrew/
+#sudo /bin/chmod +a "mike allow list,add_file,search,delete,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,writesecurity,chown" /opt/homebrew/Library/Taps/homebrew/
 sudo mkdir ~/.config/
 sudo chmod -R 777 /opt/
 sudo chmod -R 777 ~/.config/
