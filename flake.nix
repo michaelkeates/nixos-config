@@ -50,7 +50,7 @@
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
-    }
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";

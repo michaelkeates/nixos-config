@@ -24,7 +24,7 @@
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
-    }
+    };
     secrets = {
       url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
