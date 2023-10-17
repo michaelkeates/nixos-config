@@ -61,6 +61,7 @@ with pkgs; [
   google-fonts
   xcolor
   wine64Packages.fonts
+  handbrake
 
   # Node.js development tools
   fzf
