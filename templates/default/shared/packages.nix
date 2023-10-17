@@ -23,6 +23,8 @@ with pkgs; [
   vscode
   p7zip
   freerdp
+  rpi-imager
+  audacity
 
   # Photo and image editing tools
   gimp
