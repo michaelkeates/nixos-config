@@ -55,7 +55,8 @@ with pkgs; [
   noto-fonts
   noto-fonts-emoji
   meslo-lgs-nf
-  roboto
+  google-fonts
+  xcolor
 
   # Node.js development tools
   fzf

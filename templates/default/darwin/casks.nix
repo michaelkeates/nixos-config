@@ -19,6 +19,8 @@
   "bitwarden"
   "nextcloud"
   "darktable"
+  "crystalfetch"
+  
 
   # Entertainment Tools
   "steam"
