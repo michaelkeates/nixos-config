@@ -25,6 +25,7 @@
 
   # Entertainment Tools
   "steam"
+  "blender"
 
   # Productivity Tools
   "raycast"

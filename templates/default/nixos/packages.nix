@@ -20,6 +20,7 @@ shared-packages ++ [
   font-manager
   nextcloud-client
   darktable
+  blender
 
   # Printers and drivers
   brlaser # printer driver
