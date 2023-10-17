@@ -20,7 +20,8 @@
   "nextcloud"
   "darktable"
   "crystalfetch"
-  
+  "obs"
+  "github"
 
   # Entertainment Tools
   "steam"

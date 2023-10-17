@@ -22,6 +22,7 @@ with pkgs; [
   joplin-desktop
   vscode
   p7zip
+  freerdp
 
   # Photo and image editing tools
   gimp
@@ -57,6 +58,7 @@ with pkgs; [
   meslo-lgs-nf
   google-fonts
   xcolor
+  wine64Packages.fonts
 
   # Node.js development tools
   fzf

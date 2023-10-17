@@ -78,6 +78,8 @@ shared-packages ++ [
   xdotool
   google-chrome
   thunderbird
+  obs-studio
+  github-desktop
 
   # PDF viewer
   zathura
