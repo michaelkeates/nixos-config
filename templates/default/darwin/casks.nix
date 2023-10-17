@@ -26,6 +26,7 @@
   # Entertainment Tools
   "steam"
   "blender"
+  "iina"
 
   # Productivity Tools
   "raycast"
