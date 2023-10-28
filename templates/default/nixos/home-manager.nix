@@ -151,7 +151,7 @@ in
 
   Service = {
     Type = "simple";
-    ExecStart = "${pkgs.bash}/bin/bash ${HOME}/.local/share/src/nixos-config/nixos/config/bspwmrc";
+    ExecStart = "${pkgs.bash}/bin/bash ${config.home.homeDirectory}/.local/share/src/nixos-config/nixos/config/bspwmrc";
   };
 
   Install = {
