@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
-set -exu
+set -e
+
+check_installer() {
+  if [ -e /etc/NIXOS ]; then
+    echo -e "\e[1;32mRunning in the NixOS installer environment.\e[0m"
+  else
+    echo -e "\e[1;31mNot running in the NixOS installer environment.\e[0m"
+    exit 1
+  fi
+}
 
 cleanup() {
-  sudo rm -rf nixos-config-main.zip nixos-config-main nixos-config
+  rm -rf nixos-config-main.zip nixos-config-main nixos-config
 }
 
 download_config() {
@@ -11,10 +20,6 @@ download_config() {
   mv nixos-config-main/templates/default nixos-config
   cd nixos-config
 }
-
-#run_apply() {
-#  ./bin/apply
-#}
 
 run_disko() {
   sudo nix run --extra-experimental-features 'nix-command flakes' \
@@ -25,11 +30,39 @@ setup_files() {
   sudo mkdir -p /mnt/etc/nixos
   sudo cp -r * /mnt/etc/nixos
   cd /mnt/etc/nixos
+
+  mkdir -p /root/.ssh
+  touch /root/.ssh/known_hosts
+  ssh-keyscan -t ed25519 github.com >> /root/.ssh/known_hosts
+}
+
+setup_ssh_keys() {
+  mkdir -p /mnt/home/mike/.ssh
+  chown nixos /mnt/home/mike/.ssh
+
+  chown nixos /root/.ssh/id_ed25519_agenix{,.pub}
+  cp --preserve=all /root/.ssh/id_ed25519_agenix /mnt/home/mike/.ssh/id_ed25519
+  cp --preserve=all /root/.ssh/id_ed25519_agenix.pub /mnt/home/mike/.ssh/id_ed25519.pub
+
+  chmod 600 /mnt/home/mike/.ssh/id_ed25519{,.pub}
+}
+
+link_home_dir() {
+  ln -s /mnt/home/mike /home/mike # Used to grab initial secrets
 }
 
 install_nixos() {
   sudo nixos-install --flake .#nixos
   sudo chmod -R 775 /mnt/etc/nixos
+}
+
+directory_setup() {
+  sudo chmod -R 777 ~/.local
+  sudo chmod -R 777 ~/.config
+  sudo chmod -R 777 ~/.vscode
+
+  sudo mkdir /home/mike/.local/share/src/nixos-config/nixos/
+  sudo cp -a config/ /home/mike/.local/share/src/nixos-config/nixos/
 }
 
 prompt_reboot() {
@@ -40,10 +73,13 @@ prompt_reboot() {
   esac
 }
 
+check_installer
 download_config
 run_disko
 setup_files
-run_apply
+setup_ssh_keys
+link_home_dir
 install_nixos
 cleanup
+directory_setup
 prompt_reboot

@@ -58,7 +58,6 @@ with pkgs; [
   noto-fonts
   noto-fonts-emoji
   meslo-lgs-nf
-  google-fonts
   xcolor
   wine64Packages.fonts
   handbrake
