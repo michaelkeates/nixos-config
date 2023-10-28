@@ -105,11 +105,16 @@ bspc rule -a Emacs -o desktop='^3'
 sleep .5
 
 # Desktop 5
-# Apple Music, Emacs
-bspc rule -a Cider -o desktop='^5'
-/etc/profiles/per-user/mike/bin/cider &!
+# ChatGPT, Emacs
+bspc rule -a Google-chrome -o desktop='^3'
+/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
 
-sleep 1
+sleep .5
+
+bspc rule -a Emacs -o desktop='^3'
+/run/current-system/sw/bin/emacsclient -c &!
+
+sleep .5
 
 #bspc rule -a Emacs -o desktop='^5'
 #/run/current-system/sw/bin/emacsclient -c &!
