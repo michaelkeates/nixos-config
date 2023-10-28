@@ -143,4 +143,21 @@ in
     Install = { WantedBy = [ "default.target" ]; };
   };
 
+  systemd.user.services.bspwmrc = {
+  Unit = {
+    Description = "Run bspwmrc on user login";
+    After = ["graphical-session.target"];
+  };
+
+  Service = {
+    Type = "simple";
+    ExecStart = "${pkgs.bash}/bin/bash ${HOME}/.local/share/src/nixos-config/nixos/config/bspwmrc";
+  };
+
+  Install = {
+    WantedBy = ["default.target"];
+  };
+};
+
+
 }
