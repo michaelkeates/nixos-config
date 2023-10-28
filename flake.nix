@@ -87,6 +87,7 @@
       };
       mkLinuxApps = system: {
         "install" = mkApp "install" system;
+        "update" = mkApp "update" system;
         "installWithSecrets" = mkApp "installWithSecrets" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
