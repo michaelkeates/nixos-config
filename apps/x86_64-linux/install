@@ -2,7 +2,7 @@
 set -exu
 
 cleanup() {
-  rm -rf nixos-config-main.zip nixos-config-main nixos-config
+  sudo rm -rf nixos-config-main.zip nixos-config-main nixos-config
 }
 
 download_config() {
