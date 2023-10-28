@@ -3,6 +3,7 @@ set -e
 
 cleanup() {
     rm -rf nixos-config-main.zip nixos-config-main nixos-config
+    nix-store --gc
 }
 
 download_config() {
