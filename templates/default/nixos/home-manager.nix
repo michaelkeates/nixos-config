@@ -151,8 +151,8 @@ in
 
   Service = {
     Type = "oneshot";
-    ExecStartPre = "true";
     ExecStart = "${pkgs.bash}/bin/bash ${config.home.homeDirectory}/.local/share/src/nixos-config/nixos/config/bspwmrc";
+    ExecStartPost = "${pkgs.bash}/bin/bash -c 'echo Script completed successfully.'";
     RemainAfterExit = true;
   };
 
