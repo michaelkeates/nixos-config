@@ -66,7 +66,7 @@ in
   };
 
   # Auto mount devices
-  services.udiskie.enable = true;
+  services.udiskie.enable = false;
 
   services.polybar = {
     enable = true;
