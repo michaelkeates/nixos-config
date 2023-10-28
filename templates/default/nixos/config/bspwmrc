@@ -60,11 +60,13 @@ notify-send 'Network found.'
 notify-send 'Starting Emacs...'
 /run/current-system/sw/bin/emacsclient -a "" -e '(progn)' &
 
-# Wait for Emacs daemon to be ready
-while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
+# Wait for the Emacs daemon
+notify-send 'Starting Emacs...'
+while ! dbus-send --session --print-reply=literal --dest=org.gnu.Emacs /org/gnu/Emacs org.gnu.Emacs.DaemonAlive &>/dev/null; do
   sleep 1
 done
 notify-send 'Emacs daemon started.'
+
 
 # Desktop 1
 # Email, Calendar, News (General)
