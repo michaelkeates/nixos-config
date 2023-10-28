@@ -38,7 +38,6 @@ killall -qw chrome
 killall -qw tmux
 killall -qw emacsclient
 killall -qw slack
-killall -qw cider
 killall -qw btop
 killall -qw pcmanfm
 
