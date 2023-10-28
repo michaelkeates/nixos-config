@@ -87,6 +87,6 @@ with pkgs; [
   zsh-powerlevel10k
 
   # Python packages
-  python39
-  python39Packages.virtualenv
+  python310
+  python310Packages.virtualenv
 ]
