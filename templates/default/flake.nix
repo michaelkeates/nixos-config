@@ -26,7 +26,7 @@
       flake = false;
     };
     secrets = {
-      url = "git+ssh://git@github.com/michaelkeates/nix-secrets/main";
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
       flake = false;
     };
     disko = {
