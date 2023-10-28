@@ -151,6 +151,7 @@ in
 
   Service = {
     Type = "oneshot";
+    ExecStartPre = "true";
     ExecStart = "${pkgs.bash}/bin/bash ${config.home.homeDirectory}/.local/share/src/nixos-config/nixos/config/bspwmrc";
     RemainAfterExit = true;
   };
