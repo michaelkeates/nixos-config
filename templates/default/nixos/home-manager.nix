@@ -150,8 +150,9 @@ in
   };
 
   Service = {
-    Type = "simple";
+    Type = "oneshot";
     ExecStart = "${pkgs.bash}/bin/bash ${config.home.homeDirectory}/.local/share/src/nixos-config/nixos/config/bspwmrc";
+    RemainAfterExit = true;
   };
 
   Install = {
