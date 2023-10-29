@@ -1,4 +1,4 @@
-{ user, my, ... }:
+{ user, ... }:
 
 let
   home           = builtins.getEnv "HOME";
@@ -47,32 +47,13 @@ let
     '';
   };
 
-  "${xdg_configHome}/rofi/index.rasi".text = builtins.readFile ./config/rofi/index.rasi;
-  "${xdg_configHome}/rofi/power.rasi".text = builtins.readFile ./config/rofi/power.rasi;
-  "${xdg_configHome}/rofi/emoji.rasi".text = builtins.readFile ./config/rofi/emoji.rasi;
-  "${xdg_configHome}/rofi/calc.rasi".text = builtins.readFile ./config/rofi/calc.rasi;
-  "${xdg_configHome}/rofi/light.rasi".text = let t = my.palette;
-    in ''
-    * {
-      t-bg: ${t."00"}B3;
-      t-fg: ${t."00"};
-      t-border: ${t."03"};
-      t-prompt: ${t."05"};
-      t-text: ${t."0E"};
-      t-select: ${t."00"};
-    }
-  '';
-   "${xdg_configHome}/rofi/dark.rasi".text = let t = my.palette;
-  in ''
-    * {
-      t-bg: ${t."0F"}B3;
-      t-fg: ${t."0F"};
-      t-border: ${t."0B"};
-      t-prompt: ${t."08"};
-      t-text: ${t."02"};
-      t-select: ${t."0E"};
-    }
-  '';
+  "${xdg_configHome}/rofi/colors.rasi".text = builtins.readFile ./config/rofi/colors.rasi;
+  "${xdg_configHome}/rofi/confirm.rasi".text = builtins.readFile ./config/rofi/confirm.rasi;
+  "${xdg_configHome}/rofi/launcher.rasi".text = builtins.readFile ./config/rofi/launcher.rasi;
+  "${xdg_configHome}/rofi/message.rasi".text = builtins.readFile ./config/rofi/message.rasi;
+  "${xdg_configHome}/rofi/networkmenu.rasi".text = builtins.readFile ./config/rofi/networkmenu.rasi;
+  "${xdg_configHome}/rofi/powermenu.rasi".text = builtins.readFile ./config/rofi/powermenu.rasi;
+  "${xdg_configHome}/rofi/styles.rasi".text = builtins.readFile ./config/rofi/styles.rasi;
 
   "${xdg_configHome}/rofi/bin/launcher.sh" = {
     executable = true;

@@ -1,10 +1,19 @@
 /* colors */
 
-* {
+/* old {
   al:   #00000000;
   bg:   #1F1F1FFF;
   bga:  #546e7a33;
   bar:  #FFFFFFFF;
   fg:   #FFFFFFFF;
   ac:   #546e7aFF;
+}*/
+
+* {
+  t-bg: ${t."00"}B3;
+  t-fg: ${t."00"};
+  t-border: ${t."03"};
+  t-prompt: ${t."05"};
+  t-text: ${t."0E"};
+  t-select: ${t."00"};
 }
