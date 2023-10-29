@@ -44,13 +44,21 @@ in
   # Use a dark theme
   gtk = {
     enable = true;
+    #iconTheme = {
+    #  name = "Adwaita-dark";
+    #  package = pkgs.gnome.adwaita-icon-theme;
+    #};
+    #theme = {
+    #  name = "Adwaita-dark";
+    #  package = pkgs.gnome.adwaita-icon-theme;
+    #};
     iconTheme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.adwaita-icon-theme;
+      name = "whitesur-icon-theme";
+      package = pkgs.whitesur-icon-theme;
     };
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.adwaita-icon-theme;
+      name = "whitesur-gtk-theme";
+      package = pkgs.whitesur-gtk-theme;
     };
     cursorTheme = {
       name = "apple-cursor";
