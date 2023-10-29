@@ -13,6 +13,7 @@ download_config() {
     cd nixos-config
 
     sudo cp -r nixos/config/login-wallpaper.jpg /home/mike/.local/share/img/wallpaper/active
+    sudo cp -r shared/config/emacs/config.org /home/mike/.local/share/src/nixos-config/shared/config/emacs/
 
 }
 
