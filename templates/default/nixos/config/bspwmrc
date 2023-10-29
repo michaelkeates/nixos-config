@@ -104,12 +104,12 @@ sleep .5
 
 # Desktop 5
 # ChatGPT, Emacs
-bspc rule -a Google-chrome -o desktop='^3'
+bspc rule -a Google-chrome -o desktop='^5'
 /etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
 
 sleep .5
 
-bspc rule -a Emacs -o desktop='^3'
+bspc rule -a Emacs -o desktop='^5'
 /run/current-system/sw/bin/emacsclient -c &!
 
 sleep .5
