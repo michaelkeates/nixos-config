@@ -11,6 +11,9 @@ download_config() {
     unzip nixos-config-main.zip
     mv nixos-config-main/templates/default nixos-config
     cd nixos-config
+
+    sudo cp -r nixos/config/login-wallpaper.jpg /home/mike/.local/share/img/wallpaper/active
+
 }
 
 setup_files() {
