@@ -44,8 +44,8 @@ in
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.my.whitesur-gtk;
-      name = "WhiteSur-light";
+      package = pkgs.whitesur-gtk-theme;
+      name = "WhiteSur-gtk-theme";
     };
     iconTheme = {
       package = pkgs.whitesur-icon-theme;
