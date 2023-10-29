@@ -4,6 +4,7 @@ with pkgs; [
   # General packages for development and system management
   act
   alacritty
+  kitty
   bash-completion
   bat
   coreutils
