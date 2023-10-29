@@ -41,28 +41,24 @@ in
     stateVersion = "21.05";
   };
 
-  # Use a dark theme
   gtk = {
     enable = true;
-    #iconTheme = {
-    #  name = "Adwaita-dark";
-    #  package = pkgs.gnome.adwaita-icon-theme;
-    #};
-    #theme = {
-    #  name = "Adwaita-dark";
-    #  package = pkgs.gnome.adwaita-icon-theme;
-    #};
-    iconTheme = {
-      name = "whitesur-icon-theme";
-      package = pkgs.whitesur-icon-theme;
-    };
     theme = {
-      name = "whitesur-gtk-theme";
-      package = pkgs.whitesur-gtk-theme;
+      package = pkgs.my.whitesur-gtk;
+      name = "WhiteSur-light";
+    };
+    iconTheme = {
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur";
+    };
+    font = {
+      name = "SF Pro Text";
+      size = 11;
     };
     cursorTheme = {
-      name = "apple-cursor";
-      package = pkgs.apple-cursor;
+      name = "capitaine-cursors-white";
+      package = pkgs.capitaine-cursors;
+      size = 30;
     };
   };
 
