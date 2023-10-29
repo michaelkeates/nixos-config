@@ -5,11 +5,6 @@ let
   xdg_configHome = "${home}/.config";
   xdg_dataHome   = "${home}/.local/share";
   xdg_stateHome  = "${home}/.local/state";
-  
-  palette = builtins.fromJSON (builtins.readFile ./path/to/palette.json);
-
-  lightColors = palette."0";
-  darkColors = palette."1";
   in
 {
 
@@ -60,7 +55,6 @@ let
   "${xdg_configHome}/rofi/networkmenu.rasi".text = builtins.readFile ./config/rofi/networkmenu.rasi;
   "${xdg_configHome}/rofi/powermenu.rasi".text = builtins.readFile ./config/rofi/powermenu.rasi;
   "${xdg_configHome}/rofi/styles.rasi".text = builtins.readFile ./config/rofi/styles.rasi;
-  
 
   "${xdg_configHome}/rofi/bin/launcher.sh" = {
     executable = true;
