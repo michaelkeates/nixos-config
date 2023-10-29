@@ -203,8 +203,8 @@ let user = "mike";
 
       blur-kern = "3x3box";
       blur = {
-        method = "dual-kawase";
-        strength = 5;
+        method = "dual_kawase";
+        strength = 20;
         background = false;
         background-frame = false;
         background-fixed = false;
