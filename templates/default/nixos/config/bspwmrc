@@ -71,7 +71,7 @@ notify-send 'Emacs daemon started.'
 #bspc rule -a Google-chrome -o desktop='^1'
 #/etc/profiles/per-user/mike/bin/google-chrome-stable "https://www.fastmail.com" "https://calendar.google.com/calendar/u/0/r" &!
 bsp rule -a Thunderbird -o desktop='^1'
-run/profiles/per-user/mike/bin/thunderbird &!
+/etc/profiles/per-user/mike/bin/thunderbird &!
 
 sleep 1
 
