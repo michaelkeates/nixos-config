@@ -87,8 +87,10 @@ bspc rule -a Alacritty -o desktop='^2'
 
 sleep 1
 
-bspc rule -a Emacs -o desktop='^2'
-/run/current-system/sw/bin/emacsclient -c &!
+#bspc rule -a Emacs -o desktop='^2'
+#/run/current-system/sw/bin/emacsclient -c &!
+bspc rule -a Alacritty -o desktop='^2'
+/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
 
 sleep .5
 
@@ -99,8 +101,8 @@ bspc rule -a Google-chrome -o desktop='^3'
 
 sleep .5
 
-bspc rule -a Emacs -o desktop='^3'
-/run/current-system/sw/bin/emacsclient -c &!
+bspc rule -a Alacritty -o desktop='^3'
+/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
 
 sleep .5
 
@@ -111,8 +113,8 @@ bspc rule -a Google-chrome -o desktop='^5'
 
 sleep .5
 
-bspc rule -a Emacs -o desktop='^5'
-/run/current-system/sw/bin/emacsclient -c &!
+bspc rule -a Alacritty -o desktop='^5'
+/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
 
 sleep .5
 
