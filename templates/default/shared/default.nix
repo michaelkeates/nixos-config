@@ -2,22 +2,9 @@
 
 let
   emacsOverlaySha256 = "06413w510jmld20i4lik9b36cfafm501864yq8k4vxl5r4hn0j0h";
+in
+{
 
-  min = pkgs.buildFHSUserEnv {
-    name = "min";
-    targetPkgs = pkgs: [ pkgs.nodejs pkgs.libsecret pkgs.electron19 ];
-
-    runScript = ''
-      git clone https://github.com/minbrowser/min.git
-      cd min
-      npm install
-      npm run build
-      cp -r * $out
-    '';
-
-  };
-
-in {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -27,6 +14,7 @@ in {
     };
 
     overlays =
+      # Apply each overlay found in the /overlays directory
       let path = ../overlays; in with builtins;
       map (n: import (path + ("/" + n)))
           (filter (n: match ".*\\.nix" n != null ||
@@ -38,9 +26,4 @@ in {
                sha256 = emacsOverlaySha256;
            }))];
   };
-
-  environment.systemPackages = with pkgs; [
-    # ... (existing packages) ...
-    min  // Add 'min' to the list of system packages
-  ];
 }
