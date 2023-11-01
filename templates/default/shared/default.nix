@@ -33,7 +33,7 @@ let
       esac
     done
 
-    rm -rf fonts.zip $out/share/fonts  # Clean up downloaded fonts
+    rm -f fonts.zip
   '';
 
   emacsOverlaySha256 = "06413w510jmld20i4lik9b36cfafm501864yq8k4vxl5r4hn0j0h";
