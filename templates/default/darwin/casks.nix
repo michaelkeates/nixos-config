@@ -3,7 +3,6 @@
 [
   # Development Tools
   "homebrew/cask/docker"
-  "visual-studio-code"
 
   # Communication Tools
   "discord"
@@ -30,6 +29,7 @@
 
   # Productivity Tools
   "raycast"
+  "amethyst"
 
   # Browsers
   "min"
