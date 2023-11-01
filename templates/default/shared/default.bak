@@ -1,21 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  fontDir = ./fonts;
-
-  installFonts = pkgs.writeText "install-fonts.sh" ''
-    mkdir -p $out/share/fonts
-
-    if [ "$(uname -s)" = "Darwin" ]; then
-      cp -r ${fontDir}/* $out/Library/Fonts/
-    else
-      cp -r ${fontDir}/* $out/share/fonts/
-    fi
-  '';
-
   emacsOverlaySha256 = "06413w510jmld20i4lik9b36cfafm501864yq8k4vxl5r4hn0j0h";
 in
 {
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -36,12 +25,5 @@ in
                url = "https://github.com/dustinlyons/emacs-overlay/archive/refs/heads/master.tar.gz";
                sha256 = emacsOverlaySha256;
            }))];
-
-    fonts = pkgs.stdenv.mkDerivation {
-      name = "my-fonts";
-      src = null;  # No source needed, as we're using local files
-      buildInputs = [ pkgs.bash ];  # Ensure bash is available
-      installPhase = installFonts;
-    };
   };
 }
