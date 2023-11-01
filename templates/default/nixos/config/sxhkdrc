@@ -20,6 +20,14 @@ super + d
 super + f
 	bspc node --state \~fullscreen
 
+# Resize window bigger
+super + shift + l
+    bspc node -z right 10 0 || bspc node -z right 10 0
+
+# Resize window smaller
+super + shift + j
+    bspc node -z right -10 0 || bspc node -z right -10 0
+
 # Swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
