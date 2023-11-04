@@ -16,6 +16,7 @@ initialize_config() {
     sudo chmod -R +rwX /etc/nixos
     cd /etc/nixos
     nix flake init -t github:michaelkeates/nixos-config#default
+    sudo mv /etc/nix/nix.conf /etc/nix/nix.confg.before-nix-darwin
 }
 
 darwin_build() {
