@@ -11,7 +11,7 @@ FLAKE="Mikes-MBA"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
 cleanup() {
-  rm -rf nixos-config-main.zip nixos-config-main nixos-config
+  rm -rf Users/mike/nixos-config-main.zip nixos-config-main nixos-config
   #nix-store --gc
 }
 
