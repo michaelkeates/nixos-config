@@ -62,6 +62,7 @@ directory_setup() {
   sudo chmod -R 777 ~/.vscode
 
   sudo mkdir /home/mike/.local/share/src/nixos-config/nixos/
+  sudo mkdir /home/mike/.local/share/downloads/
   sudo cp -a config/ /home/mike/.local/share/src/nixos-config/nixos/
 }
 

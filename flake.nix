@@ -87,7 +87,7 @@
       };
       mkLinuxApps = system: {
         "install" = mkApp "install" system;
-        "update" = mkApp "update" system;
+        "rebuild" = mkApp "rebuild" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;

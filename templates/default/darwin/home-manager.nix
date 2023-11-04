@@ -119,12 +119,14 @@ in
       section = "others";
     }
     {
-      path = "${config.users.users.${user}.home}/.local/share/";
+      #path = "${config.users.users.${user}.home}/.local/share/";
+      path = "/Users/${user}/.local/share/";
       section = "others";
       options = "--sort name --view grid --display folder";
     }
     {
-      path = "${config.users.users.${user}.home}/.local/share/downloads";
+      #path = "${config.users.users.${user}.home}/.local/share/downloads";
+      path = "/Users/${user}/.local/share/downloads";
       section = "others";
       options = "--sort name --view grid --display stack";
     }
