@@ -24,7 +24,7 @@ with pkgs; [
   vscode
   p7zip
   freerdp
-  rpi-imager
+  #rpi-imager
   audacity
 
   # Photo and image editing tools
@@ -61,7 +61,7 @@ with pkgs; [
   meslo-lgs-nf
   xcolor
   wine64Packages.fonts
-  handbrake
+  #handbrake
 
   # Node.js development tools
   fzf
