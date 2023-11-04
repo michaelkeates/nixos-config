@@ -34,8 +34,6 @@ in
   # $ mas search <app name>
   #
   homebrew.masApps = {
-    "hidden-bar" = 1452453066;
-    "magnet" = 441258766;
     "Microsoft Remote Desktop" = 1295203466;
     "Infuse" = 1136220934;
     "Spark" = 1176895641;
