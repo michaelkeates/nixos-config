@@ -12,6 +12,7 @@ SYSTEM="darwinConfigurations.$FLAKE.system"
 
 cleanup() {
   rm -rf nixos-config-main.zip nixos-config-main nixos-config
+  nix-store --gc
 }
 
 download_config() {
@@ -27,6 +28,8 @@ setup_files() {
 }
 
 rebuild_nixos() {
+    nix --experimental-features 'nix-command flakes' build .#$SYSTEM "$@"
+    
     echo "${GREEN}Switching to new generation...${CLEAR}"
     ./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE "$@"
 
