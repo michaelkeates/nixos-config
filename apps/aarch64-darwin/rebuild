@@ -11,7 +11,6 @@ FLAKE="Mikes-MBA"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
 cleanup() {
-  cd
   rm -rf nixos-config-main.zip nixos-config-main nixos-config
   #nix-store --gc
 }
@@ -25,7 +24,7 @@ download_config() {
 
 setup_files() {
     echo "${GREEN}Cloning Update...${CLEAR}"
-    sudo cp -r nixos-config/* /etc/nixos
+    sudo cp -r nixos-config/templates/default/* /etc/nixos
     cd /etc/nixos
 }
 
