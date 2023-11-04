@@ -49,7 +49,7 @@ if [ -d "~/.config/" ]; then
   sudo chmod -R 777 ~/.config/
 else
   echo "${RED}The directory /opt/homebrew/Library/Taps/homebrew/ does not exist. Skipping chmod.${CLEAR}"
-  sudo mkdir ~/.config/
+  sudo mkdir -p ~/.config/
 fi
 
 sudo chmod -R 777 /opt/
