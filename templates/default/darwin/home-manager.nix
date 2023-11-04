@@ -112,7 +112,7 @@ in
     { path = "/System/Applications/Messages.app/"; }
     { path = "/Applications/Min.app/"; }
     { path = "/Applications/Thunderbird.app/"; }
-    { path = "/Applications/Visual Studio Code.app/"; }
+    { path = "${pkgs.alacritty}/Applications/Visual Studio Code.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
     { path = "/System/Applications/System Settings.app/"; }
     {

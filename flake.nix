@@ -97,6 +97,7 @@
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
         "install" = mkApp "install" system;
+        "rebuild" = mkApp "rebuild" system;
       };
     in
     {
