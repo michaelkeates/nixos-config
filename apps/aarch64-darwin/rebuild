@@ -28,11 +28,10 @@ setup_files() {
 }
 
 rebuild_nixos() {
-    #nix --experimental-features 'nix-command flakes' build .#$SYSTEM "$@"
+    nix --experimental-features 'nix-command flakes' build .#$SYSTEM "$@"
 
     echo "${GREEN}Switching to new generation...${CLEAR}"
-    #./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE "$@"
-    darwin-rebuild switch --flake .#$FLAKE "$@"
+    ./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE "$@"
 
     echo "${GREEN}Cleaning up...${CLEAR}"
     unlink ./result
