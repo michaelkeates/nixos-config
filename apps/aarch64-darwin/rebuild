@@ -10,10 +10,10 @@ USER=$(whoami)
 FLAKE="Mikes-MBA"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
-cleanup() {
-  rm -rf nixos-config-main.zip nixos-config-main nixos-config
-  nix-store --gc
-}
+#cleanup() {
+#  rm -rf nixos-config-main.zip nixos-config-main nixos-config
+#  nix-store --gc
+#}
 
 download_config() {
   git clone https://github.com/michaelkeates/nixos-config.git
@@ -36,8 +36,7 @@ rebuild_nixos() {
     echo "${GREEN}Done${CLEAR}"
 }
 
-cleanup
 download_config
 setup_files
 rebuild_nixos
-cleanup
+#cleanup
