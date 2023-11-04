@@ -16,6 +16,9 @@ SYSTEM="darwinConfigurations.$FLAKE.system"
 #}
 
 download_config() {
+  if [ -d "nixos-config" ]; then
+    rm -rf nixos-config
+  fi
   git clone https://github.com/michaelkeates/nixos-config.git
 }
 
