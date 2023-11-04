@@ -18,7 +18,6 @@ initialize_config() {
     sudo mkdir -p /Users/mike/.local/share/src/nixos-config/nixos/
 
     cd /etc/nixos
-    sudo cp -a config/ /Users/mike/.local/share/src/nixos-config/nixos/
     nix flake init -t github:michaelkeates/nixos-config#default
     sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
 }
@@ -65,6 +64,8 @@ darwin_build() {
 
     echo "${GREEN}Switching to new generation...${CLEAR}"
     ./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE "$@"
+
+    sudo cp -a config/ /Users/mike/.local/share/src/nixos-config/nixos/
 
     echo "${GREEN}Cleaning up...${CLEAR}"
     unlink ./result
