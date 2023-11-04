@@ -81,9 +81,5 @@ unlink ./result
 echo "${GREEN}Done${CLEAR}"
 }
 
-
-
-
-
-
 initialize_config
+darwin_build
