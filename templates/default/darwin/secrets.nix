@@ -7,15 +7,6 @@ let user = "mike"; in
     "/Users/${user}/.ssh/id_ed25519"
   ];
 
-  age.secrets."syncthing-cert" = {
-    symlink = true;
-    path = "/Users/${user}/Library/Application Support/Syncthing/cert.pem";
-    file =  "${secrets}/darwin-syncthing-cert.age";
-    mode = "644";
-    owner = "${user}";
-    group = "staff";
-  };
-
   age.secrets."bitwarden-masterpassword" = {
     symlink = false;
     path = "/Users/${user}/.config/Bitwarden/masterpassword";
@@ -24,31 +15,4 @@ let user = "mike"; in
     owner = "${user}";
     group = "staff";
   };
-
-  age.secrets."syncthing-key" = {
-    symlink = true;
-    path = "/Users/${user}/Library/Application Support/Syncthing/key.pem";
-    file =  "${secrets}/darwin-syncthing-key.age";
-    mode = "600";
-    owner = "${user}";
-    group = "staff";
-  };
-
-  age.secrets."github-ssh-key" = {
-    symlink = true;
-    path = "/Users/${user}/.ssh/id_github";
-    file =  "${secrets}/github-ssh-key.age";
-    mode = "600";
-    owner = "${user}";
-    group = "staff";
-  };
-
-  age.secrets."github-signing-key" = {
-    symlink = false;
-    path = "/Users/${user}/.ssh/pgp_github.key";
-    file =  "${secrets}/github-signing-key.age";
-    mode = "600";
-    owner = "${user}";
-  };
-
 }
