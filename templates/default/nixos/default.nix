@@ -1,7 +1,10 @@
 { config, inputs, pkgs, agenix, ... }:
 
-let user = "mike";
-    keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvRJAUfWwvBBevXaWocawnwMZ09ornbuR76TO+YlVoE" ]; in
+let
+  user = "mike";
+  keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvRJAUfWwvBBevXaWocawnwMZ09ornbuR76TO+YlVoE" ];
+  nixpkgs.config.allowUnfree = true;  # Add this line
+in
 {
   imports = [
     ./secrets.nix
