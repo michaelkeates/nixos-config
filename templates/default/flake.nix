@@ -94,6 +94,12 @@
               home-manager.users.${user} = import ./nixos/home-manager.nix;
             }
           ];
+         config = {
+            allowBroken = true;
+            permittedInsecurePackages = [
+                "openssl-1.0.2u"
+                ];
+            };
         };
       };
   };
