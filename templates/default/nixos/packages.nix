@@ -99,4 +99,5 @@ shared-packages ++ [
   gtk4
   libxml2
   libglibutil
+  gtk-engine-murrine
 ]
