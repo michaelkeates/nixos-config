@@ -27,15 +27,15 @@ setup_files() {
 }
 
 rebuild_nixos() {
-    sudo nixos-rebuild switch --flake .#nixos
+    sudo nixos-rebuild switch --impure --flake .#nixos
 }
 
 prompt_reboot() {
-  read -p "Do you want to reboot now? (y/yes) " choice
-  case "$choice" in
-  y|Y|yes|YES ) echo -e "\e[1;32mRebooting...\e[0m" && sudo reboot;;
-  * ) echo -e "\e[1;33mReboot skipped.\e[0m";;
-  esac
+    read -p "Do you want to reboot now? (y/yes) " choice
+    case "$choice" in
+        y|Y|yes|YES ) echo -e "\e[1;32mRebooting...\e[0m" && sudo reboot;;
+        * ) echo -e "\e[1;33mReboot skipped.\e[0m";;
+    esac
 }
 
 cleanup
