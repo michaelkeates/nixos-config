@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+export NIXPKGS_ALLOW_UNFREE=1
+
 cleanup() {
     rm -rf nixos-config-main.zip nixos-config-main nixos-config
     nix-store --gc
@@ -25,7 +27,6 @@ setup_files() {
 }
 
 rebuild_nixos() {
-    export NIXPKGS_ALLOW_UNFREE=1
     sudo nixos-rebuild switch --flake .#nixos
 }
 
