@@ -94,6 +94,7 @@
               home-manager.users.${user} = import ./nixos/home-manager.nix;
             }
           ];
+        };
       };
   };
 }
