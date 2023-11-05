@@ -218,6 +218,7 @@ in
 
       shadow-exclude = [
         "class_g = 'Dunst'"
+         "override_redirect = true"
       ];
 
       blur-background-exclude = [
