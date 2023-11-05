@@ -81,7 +81,7 @@ shared-packages ++ [
   thunderbird
   obs-studio
   github-desktop
-  mailspring
+  #mailspring
 
   # PDF viewer
   zathura
