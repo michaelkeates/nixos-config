@@ -15,7 +15,7 @@ initialize_config() {
     sudo chown -R $USER /etc/nixos
     sudo chmod -R +rwX /etc/nixos
 
-    sudo mkdir -p /Users/mike/.local/share/src/nixos-config/nixos/
+    #sudo mkdir -p /Users/mike/.local/share/src/nixos-config/nixos/
 
     cd /etc/nixos
     nix flake init -t github:michaelkeates/nixos-config#default
