@@ -71,6 +71,7 @@ shared-packages ++ [
   pinentry-curses
   # pcmanfm # Our file browser
   gnome.nautilus
+  xfce.thunar 
   xdg-utils
   blueman
   onlyoffice-bin
