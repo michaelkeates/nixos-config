@@ -12,8 +12,8 @@ download_config() {
     fi
     git clone https://github.com/michaelkeates/nixos-config.git
 
-    sudo cp -r nixos/config/login-wallpaper.jpg /home/mike/.local/share/img/wallpaper/active
-    sudo cp -r shared/config/emacs/config.org /home/mike/.local/share/src/nixos-config/shared/config/emacs/
+    #sudo cp -r nixos/config/login-wallpaper.jpg /home/mike/.local/share/img/wallpaper/active
+    #sudo cp -r shared/config/emacs/config.org /home/mike/.local/share/src/nixos-config/shared/config/emacs/
 }
 
 setup_files() {
