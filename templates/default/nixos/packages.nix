@@ -69,7 +69,8 @@ shared-packages ++ [
   libnotify
   playerctl # Control media players from command line
   pinentry-curses
-  pcmanfm # Our file browser
+  # pcmanfm # Our file browser
+  gnome.nautilus
   xdg-utils
   blueman
   onlyoffice-bin
