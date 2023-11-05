@@ -98,4 +98,5 @@ shared-packages ++ [
   sassc
   gtk4
   libxml2
+  libglibutil
 ]
