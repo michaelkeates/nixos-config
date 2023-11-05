@@ -94,6 +94,7 @@ shared-packages ++ [
   glib
   xcur2png
   rubyPackages.glib2
-  libcanberra-gtk3  
-
+  libcanberra-gtk3
+  sassc
+  gtk4
 ]
