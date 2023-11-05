@@ -25,6 +25,7 @@ setup_files() {
 }
 
 rebuild_nixos() {
+    export NIXPKGS_ALLOW_UNFREE=1
     sudo nixos-rebuild switch --flake .#nixos
 }
 
