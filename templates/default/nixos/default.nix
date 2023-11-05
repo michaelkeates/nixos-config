@@ -67,7 +67,7 @@ in
   '';
 
   # LightDM Display Manager
-  services.xserver.displayManager.defaultSession = "none+bspwm";
+  services.xserver.displayManager.defaultSession = "gtk+bspwm";
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.displayManager.gnome.enable = true;
   services.xserver.displayManager.lightdm = {
