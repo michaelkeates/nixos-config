@@ -17,6 +17,7 @@ download_config() {
 }
 
 setup_files() {
+    cd nixos-config/templates/default
     sudo cp -r * /etc/nixos
     cd /etc/nixos
 
