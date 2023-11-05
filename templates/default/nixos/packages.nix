@@ -88,4 +88,11 @@ shared-packages ++ [
 
   # Music and entertainment
 
+  # GTK Customisation
+  gtk3
+  glib
+  xcur2png
+  rubyPackages.glib2
+  libcanberra-gtk3  
+
 ]
