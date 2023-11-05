@@ -97,7 +97,7 @@
          config = {
             allowBroken = true;
             permittedInsecurePackages = [
-                "openssl-1.0.2u"
+                "mailspring-1.11.0"
                 ];
             };
         };
