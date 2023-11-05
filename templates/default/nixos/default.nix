@@ -67,14 +67,15 @@ in
   '';
 
   # LightDM Display Manager
-  services.xserver.displayManager.defaultSession = "none+bspwm";
-  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.defaultSession = "none+bspwm";
+  services.xserver.displayManager.defaultSession = "gnome3+bspwm";
+  services.xserver.displayManager.gdm.enable = true;
   # services.xserver.displayManager.gnome.enable = true;
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    greeters.slick.enable = true;
-    background = ./config/login-wallpaper.jpg;
-  };
+  # services.xserver.displayManager.lightdm = {
+  #  enable = true;
+  #  greeters.slick.enable = true;
+  #  background = ./config/login-wallpaper.jpg;
+  #};
 
   # Tiling window manager
   services.xserver.windowManager.bspwm = {
