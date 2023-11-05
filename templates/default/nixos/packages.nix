@@ -97,4 +97,5 @@ shared-packages ++ [
   libcanberra-gtk3
   sassc
   gtk4
+  libxml2
 ]
