@@ -94,13 +94,6 @@
               home-manager.users.${user} = import ./nixos/home-manager.nix;
             }
           ];
-         config = {
-            allowBroken = true;
-            permittedInsecurePackages = [
-                "mailspring-1.11.0"
-                ];
-            };
-        };
       };
   };
 }
