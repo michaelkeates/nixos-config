@@ -94,6 +94,9 @@
               home-manager.users.${user} = import ./nixos/home-manager.nix;
             }
           ];
+          configuration = {
+            nixpkgs.config.allowBroken = true;
+          };
         };
       };
   };
