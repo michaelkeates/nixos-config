@@ -27,8 +27,7 @@ setup_files() {
 }
 
 rebuild_nixos() {
-    #sudo nixos-rebuild switch --impure --flake .#nixos
-    sudo NIXPKGS_ALLOW_UNFREE=1 nixos-rebuild switch --impure --flake .#nixos
+    sudo nixos-rebuild switch --impure --flake .#nixos
 }
 
 prompt_reboot() {
