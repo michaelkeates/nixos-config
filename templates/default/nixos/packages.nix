@@ -89,7 +89,6 @@ shared-packages ++ [
   libglvnd
   libsecret
   libtool
-  libxkbfile
   nss_latest
   #mailspring
 
