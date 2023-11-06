@@ -70,8 +70,8 @@ notify-send 'Emacs daemon started.'
 # Email, Calendar, News (General)
 #bspc rule -a Google-chrome -o desktop='^1'
 #/etc/profiles/per-user/mike/bin/google-chrome-stable "https://www.fastmail.com" "https://calendar.google.com/calendar/u/0/r" &!
-bsp rule -a Thunderbird -o desktop='^1'
-/etc/profiles/per-user/mike/bin/thunderbird &!
+#bsp rule -a Thunderbird -o desktop='^1'
+#/etc/profiles/per-user/mike/bin/thunderbird &!
 
 sleep 1
 
@@ -107,16 +107,25 @@ bspc rule -a Alacritty -o desktop='^3'
 sleep .5
 
 # Desktop 5
-# ChatGPT, Emacs
-bspc rule -a Google-chrome -o desktop='^5'
+# Mailspring
+#bspc rule -a Google-chrome -o desktop='^5'
+#/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
+
+#sleep .5
+
+#bspc rule -a Alacritty -o desktop='^5'
+#/etc/profiles/per-user/mike/bin/mailspring &!
+
+#sleep .5
+
+# Desktop 6
+# Mailspring
+bspc rule -a Mailspring -o desktop='^6'
+/etc/profiles/per-user/mike/bin/mailspring &!
+
+sleep .5
+
+bspc rule -a Google-chrome -o desktop='^6'
 /etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
 
 sleep .5
-
-bspc rule -a Alacritty -o desktop='^5'
-/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
-
-sleep .5
-
-#bspc rule -a Emacs -o desktop='^5'
-#/run/current-system/sw/bin/emacsclient -c &!
