@@ -89,7 +89,7 @@ shared-packages ++ [
   libsecret
   libtool
   nss_latest
-  #mailspring
+  mailspring
 
   # PDF viewer
   zathura
