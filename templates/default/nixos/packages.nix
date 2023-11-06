@@ -88,6 +88,7 @@ shared-packages ++ [
   libsecret
   libtool
   nss_latest
+  libsecret
   mailspring
 
   # PDF viewer
