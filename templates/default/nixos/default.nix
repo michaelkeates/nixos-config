@@ -37,6 +37,10 @@ in
 
   # Turn on flag for proprietary software
   nix = {
+    permittedInsecurePackages = [
+      "mailspring"
+      # Add any other insecure packages you want to allow here
+    ];
     nixPath = [ "nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos" ];
     settings.allowed-users = [ "${user}" ];
     package = pkgs.nixUnstable;
