@@ -166,7 +166,7 @@ systemd.user.services.bspwmrc = {
 
 nixpkgs.config.permittedInsecurePackages = [
   mailspring
-]
+];
 
 
 }
