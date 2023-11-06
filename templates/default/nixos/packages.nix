@@ -69,8 +69,8 @@ shared-packages ++ [
   libnotify
   playerctl # Control media players from command line
   pinentry-curses
-  # pcmanfm # Our file browser
-  gnome.nautilus
+  pcmanfm # Our file browser
+  #gnome.nautilus
   xdg-utils
   blueman
   onlyoffice-bin
@@ -82,7 +82,7 @@ shared-packages ++ [
   thunderbird
   obs-studio
   github-desktop
-  #electron
+  electron
   mailspring
 
   # PDF viewer
