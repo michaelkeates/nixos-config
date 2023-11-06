@@ -82,6 +82,7 @@ shared-packages ++ [
   thunderbird
   obs-studio
   github-desktop
+  electron
   #mailspring
 
   # PDF viewer
@@ -100,4 +101,5 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
+  gnome-keyring
 ]
