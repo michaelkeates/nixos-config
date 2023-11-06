@@ -84,6 +84,7 @@ with pkgs; [
   tmux
   unzip
   zsh-powerlevel10k
+  nodePackages_latest.node-gyp
 
   # Python packages
   python310
