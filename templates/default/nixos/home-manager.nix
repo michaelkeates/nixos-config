@@ -164,9 +164,11 @@ systemd.user.services.bspwmrc = {
   };
 };
 
-nixpkgs.config.permittedInsecurePackages = [
-  mailspring
-];
+  # Add the following section to allow mailspring
+  nixpkgs.config.permittedInsecurePackages = [
+    "mailspring-1.11.0"
+  ];
+
 
 
 }
