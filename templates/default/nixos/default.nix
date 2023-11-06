@@ -3,7 +3,10 @@
 let
   user = "mike";
   keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvRJAUfWwvBBevXaWocawnwMZ09ornbuR76TO+YlVoE" ];
-  nixpkgs.config.allowUnfree = true;  # Add this line
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "mailspring-1.11.0"
+  ];
 in
 {
   imports = [
@@ -37,10 +40,6 @@ in
 
   # Turn on flag for proprietary software
   nix = {
-    permittedInsecurePackages = [
-      "mailspring"
-      # Add any other insecure packages you want to allow here
-    ];
     nixPath = [ "nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos" ];
     settings.allowed-users = [ "${user}" ];
     package = pkgs.nixUnstable;

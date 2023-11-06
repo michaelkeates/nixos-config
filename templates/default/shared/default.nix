@@ -8,7 +8,7 @@ in
     config = {
       allowUnfree = true;
       allowBroken = true;
-      allowInsecure = false;
+      allowInsecure = true;
       allowUnsupportedSystem = true;
     };
 
