@@ -30,6 +30,12 @@ let
     "/home/${user}/.ssh/pgp_github.key"
     "/home/${user}/.ssh/pgp_github.pub"
   ];
+
+    # Add the permittedInsecurePackages configuration here
+  permittedInsecurePackages = [
+    "mailspring-1.11.0"
+    # Add any other insecure packages you want to permit here
+  ];
 in
 {
   home = {
@@ -163,6 +169,12 @@ systemd.user.services.bspwmrc = {
     WantedBy = ["default.target"];
   };
 };
+
+  # Add the permittedInsecurePackages configuration to your home-manager settings
+  home-manager = {
+    # ... (your existing home-manager configuration)
+    permittedInsecurePackages = permittedInsecurePackages;
+  };
 
 
 }
