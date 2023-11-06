@@ -83,7 +83,15 @@ shared-packages ++ [
   obs-studio
   github-desktop
   electron
-  mailspring
+  c-ares
+  haskellPackages.ctemplate
+  gtk3
+  libglvnd
+  libsecret
+  libtool
+  libxkbfile
+  nss_latest
+  #mailspring
 
   # PDF viewer
   zathura
@@ -91,7 +99,6 @@ shared-packages ++ [
   # Music and entertainment
 
   # GTK Customisation
-  gtk3
   glib
   xcur2png
   rubyPackages.glib2
