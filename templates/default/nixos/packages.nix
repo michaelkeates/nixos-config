@@ -101,5 +101,5 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
-  gnome-keyring
+  gnome.gnome-keyring
 ]
