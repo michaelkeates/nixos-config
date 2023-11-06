@@ -90,6 +90,7 @@ shared-packages ++ [
   nss_latest
   libsecret
   libgnome-keyring
+  gnome.gnome-keyring
   mailspring
 
   # PDF viewer
