@@ -83,7 +83,7 @@ shared-packages ++ [
   obs-studio
   github-desktop
   electron
-  #mailspring
+  mailspring
 
   # PDF viewer
   zathura
