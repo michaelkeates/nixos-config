@@ -164,13 +164,4 @@ systemd.user.services.bspwmrc = {
   };
 };
 
-users.mike = {
-    packages = {
-      permittedInsecurePackages = [
-        "mailspring-1.11.0"
-        # Add any other insecure packages you want to permit here
-      ];
-    };
-  };
-
 }
