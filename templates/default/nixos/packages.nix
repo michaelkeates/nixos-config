@@ -83,7 +83,7 @@ shared-packages ++ [
   obs-studio
   github-desktop
   electron
-  #mailspring
+  mailspring
 
   # PDF viewer
   zathura
@@ -101,5 +101,4 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
-  gnome.gnome-keyring
 ]
