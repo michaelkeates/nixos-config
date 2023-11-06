@@ -25,8 +25,9 @@ setup_files() {
 }
 
 rebuild_nixos() {
-    export NIXPKGS_ALLOW_UNFREE=1
-    sudo nixos-rebuild switch --impure --flake .#nixos
+    #sudo nixos-rebuild switch --flake .#nixos
+    #allow insecure like mailspring
+    sudo NIXPKGS_ALLOW_INSECURE=1 nixos-rebuild --impure switch --flake .#nixos
 }
 
 prompt_reboot() {
