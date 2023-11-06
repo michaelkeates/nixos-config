@@ -84,7 +84,6 @@ shared-packages ++ [
   github-desktop
   electron
   c-ares
-  haskellPackages.ctemplate
   gtk3
   libglvnd
   libsecret
