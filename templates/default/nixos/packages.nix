@@ -82,7 +82,7 @@ shared-packages ++ [
   thunderbird
   obs-studio
   github-desktop
-  electron
+  #electron
   mailspring
 
   # PDF viewer
