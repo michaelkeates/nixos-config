@@ -110,6 +110,9 @@ in
   # Crypto wallet support
   #hardware.ledger.enable = true;
 
+  # Enable gnome-keyring daemon
+  services.gnome3.gnome-keyring.enable = true;
+
   # Better support for general peripherals
   services.xserver.libinput.enable = true;
   boot.kernelModules = [ "uinput" ];
