@@ -8,7 +8,6 @@
   "discord"
   "telegram"
   "zoom"
-  "thunderbird"
   "mailspring"
 
   # Utility Tools
