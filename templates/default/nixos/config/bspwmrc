@@ -16,8 +16,8 @@ bspc config gapless_monocle      true
 # Padding outside of the window
 bspc config top_padding            30
 bspc config bottom_padding         1
-bspc config left_padding           10
-bspc config right_padding          10
+bspc config left_padding           7
+bspc config right_padding          7
 
 # Move floating windows
 bspc config pointer_action1 move
