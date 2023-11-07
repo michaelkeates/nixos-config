@@ -126,6 +126,6 @@ bspc rule -a Mailspring -o desktop='^6'
 sleep .5
 
 bspc rule -a Google-chrome -o desktop='^6'
-/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
+/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://cloud.michaelkeates.co.uk/" &!
 
 sleep .5
