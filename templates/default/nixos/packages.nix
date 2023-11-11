@@ -81,6 +81,7 @@ shared-packages ++ [
   yad # I use yad-calendar with polybar
   xdotool
   ungoogled-chromium
+  google-chrome
   obs-studio
   github-desktop
   electron
