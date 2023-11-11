@@ -3,58 +3,15 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium-browser-attrs = [
-    pkgs.lib
-    pkgs.stdenv
-    pkgs.fetchurl
-    pkgs.autoPatchelfHook
-    pkgs.dpkg
-    pkgs.wrapGAppsHook
-    pkgs.alsa-lib
-    pkgs.at-spi2-atk
-    pkgs.at-spi2-core
-    pkgs.cairo
-    pkgs.cups
-    pkgs.curl
-    pkgs.dbus
-    pkgs.expat
-    pkgs.ffmpeg
-    pkgs.fontconfig
-    pkgs.freetype
-    pkgs.glib
-    pkgs.glibc
-    pkgs.gtk3
-    pkgs.gtk4
-    pkgs.libcanberra
-    pkgs.liberation_ttf
-    pkgs.libexif
-    pkgs.libglvnd
-    pkgs.libkrb5
-    pkgs.libnotify
-    pkgs.libpulseaudio
-    pkgs.libu2f-host
-    pkgs.libva
-    pkgs.libxkbcommon
-    pkgs.mesa
-    pkgs.nspr
-    pkgs.nss
-    pkgs.pango
-    pkgs.pciutils
-    pkgs.pipewire
-    pkgs.qt6
-    pkgs.speechd
-    pkgs.udev
-    pkgs._7zz
-    pkgs.vaapiVdpau
-    pkgs.vulkan-loader
-    pkgs.wayland
-    pkgs.wget
-    pkgs.xdg-utils
-    pkgs.xfce
-    pkgs.xorg
-  ];
-
-  thorium-browser = import ./thorium-browser.nix (builtins.fromAttrs thorium-browser-attrs);
+  thorium-browser = import ./thorium-browser.nix {
+    inherit
+      pkgs lib stdenv fetchurl autoPatchelfHook dpkg wrapGAppsHook
+      alsa-lib at-spi2-atk at-spi2-core cairo cups curl dbus expat ffmpeg
+      fontconfig freetype glib glibc gtk3 gtk4 libcanberra liberation_ttf
+      libexif libglvnd libkrb5 libnotify libpulseaudio libu2f-host libva
+      libxkbcommon mesa nspr nss pango pciutils pipewire qt6 speechd udev
+      _7zz vaapiVdpau vulkan-loader wayland wget xdg-utils xfce xorg;
+};
 in
 shared-packages ++ [
 
