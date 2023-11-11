@@ -2,6 +2,7 @@
 set -e
 
 cleanup() {
+    cd
     rm -rf nixos-config-main.zip nixos-config-main nixos-config
     nix-store --gc
 }
