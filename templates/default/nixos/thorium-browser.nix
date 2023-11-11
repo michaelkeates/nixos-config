@@ -3,7 +3,7 @@
   stdenv,
   fetchurl,
   autoPatchelfHook,
-  dpkg,
+  dpkgOverride,
   wrapGAppsHook,
   alsa-lib,
   at-spi2-atk,
@@ -59,7 +59,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     autoPatchelfHook
-    dpkg
+    dpkgOverride
     wrapGAppsHook
     qt6.wrapQtAppsHook
   ];
