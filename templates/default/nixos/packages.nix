@@ -3,7 +3,7 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium = import ./thorium.nix { inherit pkgs fetchurl; };
+  thorium = import ./thorium.nix { inherit pkgs fetchurl lib; };
 in
 shared-packages ++ [
 
