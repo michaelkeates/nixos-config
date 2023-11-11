@@ -125,7 +125,7 @@ in
     };
   };
 
-  programs = shared-programs // { gpg.enable = true; thorium = true; };
+  programs = shared-programs // { gpg.enable = true; };
 
   # This installs my GPG signing keys for Github
   systemd.user.services.gpg-import-keys = {

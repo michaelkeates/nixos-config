@@ -1,53 +1,7 @@
-{
-  lib,
-  stdenv,
-  fetchurl,
-  autoPatchelfHook,
-  dpkg,
-  wrapGAppsHook,
-  alsa-lib,
-  at-spi2-atk,
-  at-spi2-core,
-  cairo,
-  cups,
-  curl,
-  dbus,
-  expat,
-  ffmpeg,
-  fontconfig,
-  freetype,
-  glib,
-  glibc,
-  gtk3,
-  gtk4,
-  libcanberra,
-  liberation_ttf,
-  libexif,
-  libglvnd,
-  libkrb5,
-  libnotify,
-  libpulseaudio,
-  libu2f-host,
-  libva,
-  libxkbcommon,
-  mesa,
-  nspr,
-  nss,
-  pango,
-  pciutils,
-  pipewire,
-  qt6,
-  speechd,
-  udev,
-  _7zz,
-  vaapiVdpau,
-  vulkan-loader,
-  wayland,
-  wget,
-  xdg-utils,
-  xfce,
-  xorg,
-}:
+# thorium.nix
+
+{ stdenv, fetchurl, autoPatchelfHook, dpkg, wrapGAppsHook, qt6.wrapQtAppsHook, lib }:
+
 stdenv.mkDerivation rec {
   pname = "thorium-browser";
   version = "117.0.5938.157";
@@ -66,59 +20,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     stdenv.cc.cc.lib
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    cairo
-    cups
-    curl
-    dbus
-    expat
-    ffmpeg
-    fontconfig
-    freetype
-    glib
-    glibc
-    gtk3
-    gtk4
-    libcanberra
-    liberation_ttf
-    libexif
-    libglvnd
-    libkrb5
-    libnotify
-    libpulseaudio
-    libu2f-host
-    libva
-    libxkbcommon
-    mesa
-    nspr
-    nss
-    qt6.qtbase
-    pango
-    pciutils
-    pipewire
-    speechd
-    udev
-    _7zz
-    vaapiVdpau
-    vulkan-loader
-    wayland
-    wget
-    xdg-utils
-    xfce.exo
-    xorg.libxcb
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXxf86vm
+    # ... Other dependencies are omitted here, as they are specified in packages.nix
   ];
 
   autoPatchelfIgnoreMissingDeps = [
