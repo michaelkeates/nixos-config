@@ -3,9 +3,10 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
+  thorium-browser = import ./thorium-browser.nix { inherit pkgs; };
 in
 shared-packages ++ [
-  
+
   # Security and authentication
   bitwarden
 
