@@ -3,7 +3,7 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium = import ./thorium.nix { inherit pkgs fetchurl lib fontconfig stdenv xorg liberation_ttf gtk3 nss; };
+  thorium = import ./thorium.nix { inherit pkgs fetchurl lib fontconfig stdenv xorg liberation_ttf gtk3 nss cairo; };
 in
 shared-packages ++ [
 
