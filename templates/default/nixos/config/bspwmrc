@@ -92,19 +92,19 @@ sleep 1
 bspc rule -a Alacritty -o desktop='^2'
 /etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
 
-sleep .5
+sleep 1
 
 # Desktop 3
 # ChatGPT, Emacs
 bspc rule -a Google-chrome -o desktop='^3'
 /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://chat.openai.com" &!
 
-sleep .5
+sleep 1
 
 bspc rule -a Alacritty -o desktop='^3'
 /etc/profiles/per-user/mike/bin/alacritty -e sh -c 'emacs -nw' &
 
-sleep .5
+sleep 1
 
 # Desktop 5
 # Mailspring
@@ -123,9 +123,9 @@ sleep .5
 bspc rule -a Mailspring -o desktop='^6'
 /etc/profiles/per-user/mike/bin/mailspring &!
 
-sleep .5
+sleep 1
 
 bspc rule -a Google-chrome -o desktop='^6'
 /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://cloud.michaelkeates.co.uk/" &!
 
-sleep .5
+sleep 1
