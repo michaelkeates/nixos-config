@@ -6,8 +6,6 @@ let
   thorium = import ./thorium.nix { inherit pkgs; };
 in
 shared-packages ++ [
-
-  # Add Thorium to the list
   thorium.packages.x86_64-linux.thorium
 
   # Security and authentication
