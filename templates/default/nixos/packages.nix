@@ -111,6 +111,44 @@ shared-packages ++ [
   libglibutil
   gtk-engine-murrine
 
-  # Thorium Browser
-  thorium-browser
+  # test for thorium
+  lib
+  stdenv
+  fetchurl
+  autoPatchelfHook
+  dpkg
+  wrapGAppsHook
+  alsa-lib
+  at-spi2-atk
+  at-spi2-core
+  cairo
+  cups
+  curl
+  dbus
+  expat
+  ffmpeg
+  freetype
+  glibc
+  libcanberra
+  liberation_ttf
+  libexif
+  libkrb5
+  libpulseaudio
+  libu2f-host
+  libva
+  libxkbcommon
+  mesa
+  nspr
+  pango
+  pciutils
+  pipewire
+  qt6
+  speechd
+  udev
+  _7zz
+  vaapiVdpau
+  vulkan-loader
+  wayland
+  wget
+  xfce
 ]
