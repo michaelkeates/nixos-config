@@ -2,6 +2,7 @@
 
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
+  thorium = import ./thorium.nix { inherit pkgs; };
 in
 shared-packages ++ [
 
@@ -109,4 +110,7 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
+
+  # Add Thorium browser to the list
+  thorium
 ]
