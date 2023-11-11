@@ -75,7 +75,7 @@ notify-send 'Emacs daemon started.'
 
 sleep 1
 
-bspc rule -a Google-chrome -o desktop='^1'
+bspc rule -a Chromium-browser -o desktop='^1'
 /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://www.techmeme.com" "https://www.inoreader.com/" &!
 
 sleep 1
@@ -96,7 +96,7 @@ sleep 1
 
 # Desktop 3
 # ChatGPT, Emacs
-bspc rule -a Google-chrome -o desktop='^3'
+bspc rule -a Chromium-browser -o desktop='^3'
 /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://chat.openai.com" &!
 
 sleep 1
@@ -125,7 +125,7 @@ bspc rule -a Mailspring -o desktop='^6'
 
 sleep 1
 
-bspc rule -a Google-chrome -o desktop='^6'
+bspc rule -a Chromium-browser -o desktop='^6'
 /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://cloud.michaelkeates.co.uk/" &!
 
 sleep 1
