@@ -23,78 +23,78 @@ in
                sha256 = emacsOverlaySha256;
            }))];
 
-    packages.thorium-browser = pkgs.stdenv.mkDerivation rec {
+    packages.thorium-browser = stdenv.mkDerivation rec {
       pname = "thorium-browser";
       version = "117.0.5938.157";
 
-      src = pkgs.fetchurl {
+      src = stdenv.fetchurl {
         url = "https://github.com/Alex313031/thorium/releases/download/M${version}/thorium-browser_${version}_amd64.deb";
         hash = "sha256-muNBYP6832PmP0et9ESaRpd/BIwYZmwdkHhsMNBLQE4=";
       };
 
       nativeBuildInputs = [
-        pkgs.autoPatchelfHook
-        pkgs.dpkg
-        pkgs.wrapGAppsHook
-        pkgs.qt6.wrapQtAppsHook
+        stdenv.autoPatchelfHook
+        stdenv.dpkg
+        stdenv.wrapGAppsHook
+        stdenv.qt6.wrapQtAppsHook
       ];
 
-      buildInputs = (if pkgs.stdenv.isLinux then [
-        pkgs.stdenv.cc.cc.lib
-        pkgs.alsa-lib
-        pkgs.at-spi2-atk
-        pkgs.at-spi2-core
-        pkgs.cairo
-        pkgs.cups
-        pkgs.curl
-        pkgs.dbus
-        pkgs.expat
-        pkgs.ffmpeg
-        pkgs.fontconfig
-        pkgs.freetype
-        pkgs.glib
-        pkgs.glibc
-        pkgs.gtk3
-        pkgs.gtk4
-        pkgs.libcanberra
-        pkgs.liberation_ttf
-        pkgs.libexif
-        pkgs.libglvnd
-        pkgs.libkrb5
-        pkgs.libnotify
-        pkgs.libpulseaudio
-        pkgs.libu2f-host
-        pkgs.libva
-        pkgs.libxkbcommon
-        pkgs.mesa
-        pkgs.nspr
-        pkgs.nss
-        pkgs.qt6.qtbase
-        pkgs.pango
-        pkgs.pciutils
-        pkgs.pipewire
-        pkgs.speechd
-        pkgs.udev
-        pkgs.unrar
-        pkgs.vaapiVdpau
-        pkgs.vulkan-loader
-        pkgs.wayland
-        pkgs.wget
-        pkgs.xdg-utils
-        pkgs.xfce.exo
-        pkgs.xorg.libxcb
-        pkgs.xorg.libX11
-        pkgs.xorg.libXcursor
-        pkgs.xorg.libXcomposite
-        pkgs.xorg.libXdamage
-        pkgs.xorg.libXext
-        pkgs.xorg.libXfixes
-        pkgs.xorg.libXi
-        pkgs.xorg.libXrandr
-        pkgs.xorg.libXrender
-        pkgs.xorg.libXtst
-        pkgs.xorg.libXxf86vm
-      ] else [] ) ++ (if pkgs.stdenv.isDarwin then [
+      buildInputs = (if stdenv.isLinux then [
+        stdenv.cc.cc.lib
+        stdenv.alsa-lib
+        stdenv.at-spi2-atk
+        stdenv.at-spi2-core
+        stdenv.cairo
+        stdenv.cups
+        stdenv.curl
+        stdenv.dbus
+        stdenv.expat
+        stdenv.ffmpeg
+        stdenv.fontconfig
+        stdenv.freetype
+        stdenv.glib
+        stdenv.glibc
+        stdenv.gtk3
+        stdenv.gtk4
+        stdenv.libcanberra
+        stdenv.liberation_ttf
+        stdenv.libexif
+        stdenv.libglvnd
+        stdenv.libkrb5
+        stdenv.libnotify
+        stdenv.libpulseaudio
+        stdenv.libu2f-host
+        stdenv.libva
+        stdenv.libxkbcommon
+        stdenv.mesa
+        stdenv.nspr
+        stdenv.nss
+        stdenv.qt6.qtbase
+        stdenv.pango
+        stdenv.pciutils
+        stdenv.pipewire
+        stdenv.speechd
+        stdenv.udev
+        stdenv.unrar
+        stdenv.vaapiVdpau
+        stdenv.vulkan-loader
+        stdenv.wayland
+        stdenv.wget
+        stdenv.xdg-utils
+        stdenv.xfce.exo
+        stdenv.xorg.libxcb
+        stdenv.xorg.libX11
+        stdenv.xorg.libXcursor
+        stdenv.xorg.libXcomposite
+        stdenv.xorg.libXdamage
+        stdenv.xorg.libXext
+        stdenv.xorg.libXfixes
+        stdenv.xorg.libXi
+        stdenv.xorg.libXrandr
+        stdenv.xorg.libXrender
+        stdenv.xorg.libXtst
+        stdenv.xorg.libXxf86vm
+      ] else [] ) ++ (if stdenv.isDarwin then [
         # Add macOS-specific dependencies here
       ] else []);
 
@@ -122,17 +122,17 @@ in
         addAutoPatchelfSearchPath $out/chromium.org/thorium
         addAutoPatchelfSearchPath $out/chromium.org/thorium/lib
         substituteInPlace $out/opt/chromium.org/thorium/thorium-browser \
-          --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${ pkgs.lib.makeLibraryPath buildInputs }:$out/chromium.org/thorium:$out/chromium.org/thorium/lib" \
+          --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${ stdenv.lib.makeLibraryPath buildInputs }:$out/chromium.org/thorium:$out/chromium.org/thorium/lib" \
           --replace /usr $out
 
         runHook postInstall
       '';
 
-      meta = with pkgs.lib; {
+      meta = with stdenv.lib; {
         description = "Compiler-optimized private Chromium fork";
         homepage = "https://thorium.rocks/index.html";
-        sourceProvenance = with pkgs.sourceTypes; [ binaryNativeCode ];
-        license = pkgs.licenses.unfree;
+        sourceProvenance = with stdenv.sourceTypes; [ binaryNativeCode ];
+        license = stdenv.licenses.unfree;
         platforms = [ "x86_64-linux" ];
         mainProgram = "thorium-browser";
       };
