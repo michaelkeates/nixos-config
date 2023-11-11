@@ -65,6 +65,12 @@ while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
 done
 notify-send 'Emacs daemon started.'
 
+# Wait for nextcloud to be ready
+while ! /etc/profiles/per-user/mike/bin/nextcloud -e '(progn)' &>/dev/null; do
+  sleep 1
+done
+notify-send 'Nextcloud started.'
+
 
 # Desktop 1
 # Email, Calendar, News (General)
