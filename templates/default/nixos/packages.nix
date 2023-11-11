@@ -3,7 +3,7 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium = import ./thorium.nix { inherit pkgs fetchurl lib fontconfig; };
+  thorium = import ./thorium.nix { inherit pkgs fetchurl lib fontconfig stdenv; };
 in
 shared-packages ++ [
 
@@ -111,7 +111,4 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
-
-  # Add Thorium to the list
-  thorium.packages.x86_64-linux.thorium
 ]
