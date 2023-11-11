@@ -1,12 +1,8 @@
 { pkgs }:
 
 with pkgs;
-let
-  shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium = import ./thorium.nix { inherit pkgs; };
-in
+let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
-  thorium.packages.x86_64-linux.thorium
 
   # Security and authentication
   bitwarden
