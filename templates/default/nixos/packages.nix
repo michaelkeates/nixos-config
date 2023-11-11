@@ -111,4 +111,7 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
+
+  # Thorium Browser
+  thorium-browser
 ]
