@@ -76,7 +76,7 @@ notify-send 'Emacs daemon started.'
 sleep 1
 
 bspc rule -a Google-chrome -o desktop='^1'
-/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://www.techmeme.com" "https://www.inoreader.com/" &!
+/etc/profiles/per-user/mike/bin/chromium --new-window "https://www.techmeme.com" "https://www.inoreader.com/" &!
 
 sleep 1
 
@@ -97,7 +97,7 @@ sleep .5
 # Desktop 3
 # ChatGPT, Emacs
 bspc rule -a Google-chrome -o desktop='^3'
-/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
+/etc/profiles/per-user/mike/bin/chromium --new-window "https://chat.openai.com" &!
 
 sleep .5
 
@@ -109,7 +109,7 @@ sleep .5
 # Desktop 5
 # Mailspring
 #bspc rule -a Google-chrome -o desktop='^5'
-#/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://chat.openai.com" &!
+#/etc/profiles/per-user/mike/bin/chromium --new-window "https://chat.openai.com" &!
 
 #sleep .5
 
@@ -126,6 +126,6 @@ bspc rule -a Mailspring -o desktop='^6'
 sleep .5
 
 bspc rule -a Google-chrome -o desktop='^6'
-/etc/profiles/per-user/mike/bin/google-chrome-stable --new-window "https://cloud.michaelkeates.co.uk/" &!
+/etc/profiles/per-user/mike/bin/chromium --new-window "https://cloud.michaelkeates.co.uk/" &!
 
 sleep .5
