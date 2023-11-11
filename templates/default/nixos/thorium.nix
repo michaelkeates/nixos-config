@@ -1,6 +1,6 @@
 # thorium.nix
 
-{ stdenv, fetchurl, autoPatchelfHook, dpkg, wrapGAppsHook, qt6.wrapQtAppsHook, lib, qt6 }:
+{ stdenv, fetchurl, autoPatchelfHook, dpkg, wrapGAppsHook, lib, qt6 }:
 
 stdenv.mkDerivation rec {
   pname = "thorium-browser";
