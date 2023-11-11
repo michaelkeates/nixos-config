@@ -7,6 +7,7 @@ let
 in
 shared-packages ++ [
 
+  fetchurl
   thorium
   # Security and authentication
   bitwarden

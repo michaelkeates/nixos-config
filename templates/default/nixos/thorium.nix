@@ -1,124 +1,24 @@
-{
-  lib,
-  stdenv,
-  fetchurl,
-  autoPatchelfHook,
-  dpkg,
-  wrapGAppsHook,
-  alsa-lib,
-  at-spi2-atk,
-  at-spi2-core,
-  cairo,
-  cups,
-  curl,
-  dbus,
-  expat,
-  ffmpeg,
-  fontconfig,
-  freetype,
-  glib,
-  glibc,
-  gtk3,
-  gtk4,
-  libcanberra,
-  liberation_ttf,
-  libexif,
-  libglvnd,
-  libkrb5,
-  libnotify,
-  libpulseaudio,
-  libu2f-host,
-  libva,
-  libxkbcommon,
-  mesa,
-  nspr,
-  nss,
-  pango,
-  pciutils,
-  pipewire,
-  qt6,
-  speechd,
-  udev,
-  _7zz,
-  vaapiVdpau,
-  vulkan-loader,
-  wayland,
-  wget,
-  xdg-utils,
-  xfce,
-  xorg,
-}:
-stdenv.mkDerivation rec {
+{ nixpkgs, ... }:
+
+let
+  # Import the packages from packages.nix
+  packages = import ./packages.nix { inherit nixpkgs; };
+
+in
+packages.thorium-browser.overrideAttrs (oldAttrs: rec {
   pname = "thorium-browser";
   version = "117.0.5938.157";
 
-  src = fetchurl {
+  src = packages.fetchurl {
     url = "https://github.com/Alex313031/thorium/releases/download/M${version}/thorium-browser_${version}_amd64.deb";
     hash = "sha256-muNBYP6832PmP0et9ESaRpd/BIwYZmwdkHhsMNBLQE4=";
   };
 
   nativeBuildInputs = [
-    autoPatchelfHook
-    dpkg
-    wrapGAppsHook
-    qt6.wrapQtAppsHook
-  ];
-
-  buildInputs = [
-    stdenv.cc.cc.lib
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    cairo
-    cups
-    curl
-    dbus
-    expat
-    ffmpeg
-    fontconfig
-    freetype
-    glib
-    glibc
-    gtk3
-    gtk4
-    libcanberra
-    liberation_ttf
-    libexif
-    libglvnd
-    libkrb5
-    libnotify
-    libpulseaudio
-    libu2f-host
-    libva
-    libxkbcommon
-    mesa
-    nspr
-    nss
-    qt6.qtbase
-    pango
-    pciutils
-    pipewire
-    speechd
-    udev
-    _7zz
-    vaapiVdpau
-    vulkan-loader
-    wayland
-    wget
-    xdg-utils
-    xfce.exo
-    xorg.libxcb
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXxf86vm
+    packages.autoPatchelfHook
+    packages.dpkg
+    packages.wrapGAppsHook
+    packages.qt6.wrapQtAppsHook
   ];
 
   autoPatchelfIgnoreMissingDeps = [
@@ -144,13 +44,13 @@ stdenv.mkDerivation rec {
     addAutoPatchelfSearchPath $out/chromium.org/thorium
     addAutoPatchelfSearchPath $out/chromium.org/thorium/lib
     substituteInPlace $out/opt/chromium.org/thorium/thorium-browser \
-      --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${lib.makeLibraryPath buildInputs}:$out/chromium.org/thorium:$out/chromium.org/thorium/lib"
+      --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${packages.lib.makeLibraryPath buildInputs}:$out/chromium.org/thorium:$out/chromium.org/thorium/lib"
     makeWrapper "$out/opt/chromium.org/thorium/thorium-browser" "$out/bin/thorium-browser" \
       --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}"
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = with packages.lib; {
     description = "Compiler-optimized Chromium fork";
     homepage = "https://thorium.rocks";
     sourceProvenance = with sourceTypes; [binaryNativeCode];
@@ -159,4 +59,4 @@ stdenv.mkDerivation rec {
     platforms = ["x86_64-linux"];
     mainProgram = "thorium-browser";
   };
-}
+})
