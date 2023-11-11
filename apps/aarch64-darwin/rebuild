@@ -26,6 +26,10 @@ setup_files() {
     echo "${GREEN}Cloning Update...${CLEAR}"
     sudo cp -r nixos-config/templates/default/* /etc/nixos
     cd /etc/nixos
+
+    echo "${GREEN}Renaming Bashrc...${CLEAR}"
+    sudo rm -R /etc/bashrc-before-darwin
+    sudo mv /etc/bashrc /etc/bashrc-before-darwin
 }
 
 rebuild_nixos() {
