@@ -1,53 +1,53 @@
-{ lib
-, stdenv
-, fetchurl
-, autoPatchelfHook
-, dpkg
-, wrapGAppsHook
-, alsa-lib
-, at-spi2-atk
-, at-spi2-core
-, cairo
-, cups
-, curl
-, dbus
-, expat
-, ffmpeg
-, fontconfig
-, freetype
-, glib
-, glibc
-, gtk3
-, gtk4
-, libcanberra
-, liberation_ttf
-, libexif
-, libglvnd
-, libkrb5
-, libnotify
-, libpulseaudio
-, libu2f-host
-, libva
-, libxkbcommon
-, mesa
-, nspr
-, nss
-, pango
-, pciutils
-, pipewire
-, qt6
-, speechd
-, udev
-, unrar
-, vaapiVdpau
-, vulkan-loader
-, wayland
-, wget
-, xdg-utils
-, xfce
-, xorg
+{
+  lib,
+  stdenv,
+  fetchurl,
+  autoPatchelfHook,
+  dpkg,
+  wrapGAppsHook,
+  alsa-lib,
+  at-spi2-atk,
+  at-spi2-core,
+  cairo,
+  cups,
+  curl,
+  dbus,
+  expat,
+  ffmpeg,
+  fontconfig,
+  freetype,
+  glib,
+  glibc,
+  gtk3,
+  gtk4,
+  libcanberra,
+  liberation_ttf,
+  libexif,
+  libglvnd,
+  libkrb5,
+  libnotify,
+  libpulseaudio,
+  libu2f-host,
+  libva,
+  libxkbcommon,
+  mesa,
+  nspr,
+  nss,
+  pango,
+  pciutils,
+  pipewire,
+  qt6,
+  speechd,
+  udev,
+  _7zz,
+  vaapiVdpau,
+  vulkan-loader,
+  wayland,
+  wget,
+  xdg-utils,
+  xfce,
+  xorg,
 }:
-
 stdenv.mkDerivation rec {
   pname = "thorium-browser";
   version = "117.0.5938.157";
@@ -100,7 +100,7 @@ stdenv.mkDerivation rec {
     pipewire
     speechd
     udev
-    unrar
+    _7zz
     vaapiVdpau
     vulkan-loader
     wayland
@@ -129,34 +129,34 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-
     mkdir -p $out
-    cp -r usr/* $out
-    cp -r etc $out
-    cp -r opt $out
+    cp -vr usr/* $out
+    cp -vr etc $out
+    cp -vr opt $out
     ln -sf $out/opt/chromium.org/thorium/thorium-browser $out/bin/thorium-browser
-    rm $out/share/applications/thorium-shell.desktop
-
+    substituteInPlace $out/share/applications/thorium-shell.desktop \
+      --replace /usr/bin $out/bin \
+      --replace /opt $out/opt
     substituteInPlace $out/share/applications/thorium-browser.desktop \
       --replace /usr/bin $out/bin \
       --replace StartupWMClass=thorium StartupWMClass=thorium-browser \
       --replace Icon=thorium-browser Icon=$out/opt/chromium.org/thorium/product_logo_256.png
-
     addAutoPatchelfSearchPath $out/chromium.org/thorium
     addAutoPatchelfSearchPath $out/chromium.org/thorium/lib
     substituteInPlace $out/opt/chromium.org/thorium/thorium-browser \
-      --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${ lib.makeLibraryPath buildInputs }:$out/chromium.org/thorium:$out/chromium.org/thorium/lib" \
-      --replace /usr $out
-
+      --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${lib.makeLibraryPath buildInputs}:$out/chromium.org/thorium:$out/chromium.org/thorium/lib"
+    makeWrapper "$out/opt/chromium.org/thorium/thorium-browser" "$out/bin/thorium-browser" \
+      --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}}"
     runHook postInstall
   '';
 
   meta = with lib; {
-    description = "Compiler-optimized private Chromium fork";
-    homepage = "https://thorium.rocks/index.html";
-    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-    license = licenses.unfree;
-    platforms = [ "x86_64-linux" ];
+    description = "Compiler-optimized Chromium fork";
+    homepage = "https://thorium.rocks";
+    sourceProvenance = with sourceTypes; [binaryNativeCode];
+    maintainers = with maintainers; [isabelroses];
+    license = licenses.bsd3;
+    platforms = ["x86_64-linux"];
     mainProgram = "thorium-browser";
   };
 }
