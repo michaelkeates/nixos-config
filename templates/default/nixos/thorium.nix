@@ -1,163 +1,47 @@
-{ lib
-, stdenv
-, fetchurl
-, autoPatchelfHook
-, dpkg
-, wrapGAppsHook
-, alsa-lib
-, at-spi2-atk
-, at-spi2-core
-, cairo
-, cups
-, curl
-, dbus
-, expat
-, ffmpeg
-, fontconfig
-, freetype
-, glib
-, glibc
-, gtk3
-, gtk4
-, libcanberra
-, liberation_ttf
-, libexif
-, libglvnd
-, libkrb5
-, libnotify
-, libpulseaudio
-, libu2f-host
-, libva
-, libxkbcommon
-, mesa
-, nspr
-, nss
-, pango
-, pciutils
-, pipewire
-, qt6
-, speechd
-, udev
-, unrar
-, vaapiVdpau
-, vulkan-loader
-, wayland
-, wget
-, xdg-utils
-, xfce
-, xorg
-}:
-
-stdenv.mkDerivation rec {
-  inherit lib stdenv fetchurl autoPatchelfHook dpkg wrapGAppsHook alsa-lib at-spi2-atk at-spi2-core cairo cups curl dbus expat ffmpeg fontconfig freetype glib glibc gtk3 gtk4 libcanberra liberation_ttf libexif libglvnd libkrb5 libnotify libpulseaudio libu2f-host libva libxkbcommon mesa nspr nss pango pciutils pipewire qt6 speechd udev unrar vaapiVdpau vulkan-loader wayland wget xdg-utils xfce.exo xorg.libxcb xorg.libX11 xorg.libXcursor xorg.libXcomposite xorg.libXdamage xorg.libXext xorg.libXfixes xorg.libXi xorg.libXrandr xorg.libXrender xorg.libXtst xorg.libXxf86vm;
-  pname = "thorium-browser";
-  version = "117.0.5938.157";
-
-  src = fetchurl {
-    url = "https://github.com/Alex313031/thorium/releases/download/M${version}/thorium-browser_${version}_amd64.deb";
-    hash = "sha256-muNBYP6832PmP0et9ESaRpd/BIwYZmwdkHhsMNBLQE4=";
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-    dpkg
-    wrapGAppsHook
-    qt6.wrapQtAppsHook
-  ];
+  outputs = { self, nixpkgs, ... }:
+    let
+      buildThorium = { system, name, version, url, sha256, appimageContents }:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        pkgs.appimageTools.wrapType2 {
+          inherit name version src = pkgs.fetchurl { url = url; sha256 = sha256; };
+          extraInstallCommands = ''
+            install -m 444 -D ${appimageContents}/thorium-browser.desktop $out/share/applications/thorium-browser.desktop
+            install -m 444 -D ${appimageContents}/thorium.png $out/share/icons/hicolor/512x512/apps/thorium.png
+            substituteInPlace $out/share/applications/thorium-browser.desktop \
+              --replace 'Exec=AppRun --no-sandbox %U' "Exec=${name} %U"
+          '';
+        };
 
-  buildInputs = [
-    stdenv.cc.cc.lib
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    cairo
-    cups
-    curl
-    dbus
-    expat
-    ffmpeg
-    fontconfig
-    freetype
-    glib
-    glibc
-    gtk3
-    gtk4
-    libcanberra
-    liberation_ttf
-    libexif
-    libglvnd
-    libkrb5
-    libnotify
-    libpulseaudio
-    libu2f-host
-    libva
-    libxkbcommon
-    mesa
-    nspr
-    nss
-    qt6.qtbase
-    pango
-    pciutils
-    pipewire
-    speechd
-    udev
-    unrar
-    vaapiVdpau
-    vulkan-loader
-    wayland
-    wget
-    xdg-utils
-    xfce.exo
-    xorg.libxcb
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXxf86vm
-  ];
+      thoriumConfig = {
+        x86_64-linux = buildThorium {
+          system = "x86_64-linux";
+          name = "thorium";
+          version = "117.0.5938.157 - 53";
+          url = "https://github.com/Alex313031/thorium/releases/download/M117.0.5938.157/Thorium_Browser_117.0.5938.157_x64.AppImage";
+          sha256 = "sha256-dlfClBbwSkQg4stKZdSgNg3EFsWksoI21cxRG5SMrOM=";
+          appimageContents = pkgs.appimageTools.extractType2 { inherit name; src = pkgs.fetchurl { url = url; sha256 = sha256; }; };
+        };
 
-  autoPatchelfIgnoreMissingDeps = [
-    "libQt5Widgets.so.5"
-    "libQt5Gui.so.5"
-    "libQt5Core.so.5"
-  ];
-
-  installPhase = ''
-    runHook preInstall
-
-    mkdir -p $out
-    cp -r usr/* $out
-    cp -r etc $out
-    cp -r opt $out
-    ln -sf $out/opt/chromium.org/thorium/thorium-browser $out/bin/thorium-browser
-    rm $out/share/applications/thorium-shell.desktop
-
-    substituteInPlace $out/share/applications/thorium-browser.desktop \
-      --replace /usr/bin $out/bin \
-      --replace StartupWMClass=thorium StartupWMClass=thorium-browser \
-      --replace Icon=thorium-browser Icon=$out/opt/chromium.org/thorium/product_logo_256.png
-
-    addAutoPatchelfSearchPath $out/chromium.org/thorium
-    addAutoPatchelfSearchPath $out/chromium.org/thorium/lib
-    substituteInPlace $out/opt/chromium.org/thorium/thorium-browser \
-      --replace 'export LD_LIBRARY_PATH' "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:${ lib.makeLibraryPath buildInputs }:$out/chromium.org/thorium:$out/chromium.org/thorium/lib" \
-      --replace /usr $out
-
-    runHook postInstall
-  '';
-
-  meta = with lib; {
-    description = "Compiler-optimized private Chromium fork";
-    homepage = "https://thorium.rocks/index.html";
-    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-    license = licenses.unfree;
-    platforms = [ "x86_64-linux" ];
-    mainProgram = "thorium-browser";
-  };
+        aarch64-linux = buildThorium {
+          system = "aarch64-linux";
+          name = "thorium";
+          version = "117.0.5938.157 - 53";
+          url = "https://github.com/Alex313031/Thorium-Raspi/releases/download/M117.0.5938.157/Thorium_Browser_117.0.5938.157_arm64.AppImage";
+          sha256 = ""; # You should provide the correct sha256 value
+          appimageContents = pkgs.appimageTools.extractType2 { inherit name; src = pkgs.fetchurl { url = url; sha256 = sha256; }; };
+        };
+      };
+    in
+    {
+      packages = { inherit (thoriumConfig) x86_64-linux aarch64-linux; };
+      apps = { inherit (thoriumConfig) x86_64-linux aarch64-linux; };
+      defaultPackage = self.packages.x86_64-linux.thorium;
+    };
 }
