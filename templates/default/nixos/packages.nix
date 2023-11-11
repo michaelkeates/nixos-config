@@ -6,6 +6,7 @@ let
   thorium-browser = import ./thorium-browser.nix { inherit pkgs; };
 in
 shared-packages ++ [
+  fetchurl
 
   # Security and authentication
   bitwarden
