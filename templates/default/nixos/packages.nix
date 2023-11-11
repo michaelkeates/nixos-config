@@ -3,6 +3,7 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
+  thorium = import ./thorium.nix { inherit lib stdenv fetchurl autoPatchelfHook dpkg wrapGAppsHook alsa-lib at-spi2-atk at-spi2-core cairo cups curl dbus expat ffmpeg fontconfig freetype glib glibc gtk3 gtk4 libcanberra liberation_ttf libexif libglvnd libkrb5 libnotify libpulseaudio libu2f-host libva libxkbcommon mesa nspr nss pango pciutils pipewire speechd udev _7zz vaapiVdpau vulkan-loader wayland wget xdg-utils xfce xorg; };
 in
 shared-packages ++ [
 
@@ -151,4 +152,6 @@ shared-packages ++ [
   wayland
   wget
   xfce
+
+  thorium
 ]
