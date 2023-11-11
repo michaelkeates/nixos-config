@@ -3,7 +3,6 @@
 with pkgs;
 let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
-  thorium = import ./thorium.nix { inherit lib stdenv fetchurl autoPatchelfHook dpkg wrapGAppsHook alsa-lib at-spi2-atk at-spi2-core cairo cups curl dbus expat ffmpeg fontconfig freetype glib glibc gtk3 gtk4 libcanberra liberation_ttf libexif libglvnd libkrb5 libnotify libpulseaudio libu2f-host libva libxkbcommon mesa nspr nss pango pciutils pipewire speechd udev _7zz vaapiVdpau vulkan-loader wayland wget xdg-utils xfce xorg qt6; };
 in
 shared-packages ++ [
 
@@ -111,47 +110,4 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
-
-  # test for thorium
-  lib
-  stdenv
-  fetchurl
-  autoPatchelfHook
-  dpkg
-  wrapGAppsHook
-  alsa-lib
-  at-spi2-atk
-  at-spi2-core
-  cairo
-  cups
-  curl
-  dbus
-  expat
-  ffmpeg
-  freetype
-  glibc
-  libcanberra
-  liberation_ttf
-  libexif
-  libkrb5
-  libpulseaudio
-  libu2f-host
-  libva
-  libxkbcommon
-  mesa
-  nspr
-  pango
-  pciutils
-  pipewire
-  qt6
-  speechd
-  udev
-  _7zz
-  vaapiVdpau
-  vulkan-loader
-  wayland
-  wget
-  xfce
-
-  thorium
 ]
