@@ -5,7 +5,7 @@ let
   shared-packages = import ../shared/packages.nix { inherit pkgs; };
   thorium-browser = import ./thorium-browser.nix {
     inherit
-      pkgs lib stdenv fetchurl autoPatchelfHook dpkg wrapGAppsHook
+      pkgs lib stdenv fetchurl autoPatchelfHook dpkgOverride wrapGAppsHook
       alsa-lib at-spi2-atk at-spi2-core cairo cups curl dbus expat ffmpeg
       fontconfig freetype glib glibc gtk3 gtk4 libcanberra liberation_ttf
       libexif libglvnd libkrb5 libnotify libpulseaudio libu2f-host libva
