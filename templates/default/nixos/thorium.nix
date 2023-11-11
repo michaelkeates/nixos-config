@@ -13,7 +13,7 @@ let
       '';
 
     in
-    pkgs.writeScriptBin "installThorium" ''
+    pkgs'.writeScriptBin "installThorium" ''
       source $stdenv/setup
       $commands
     '';
@@ -27,7 +27,7 @@ let
         version = "117.0.5938.157 - 53";
         url = "https://github.com/Alex313031/thorium/releases/download/M117.0.5938.157/Thorium_Browser_117.0.5938.157_x64.AppImage";
         sha256 = "sha256-dlfClBbwSkQg4stKZdSgNg3EFsWksoI21cxRG5SMrOM=";
-        appimageContents = pkgs.appimageTools.extractType2 { inherit name; src = pkgs.fetchurl { url = url; sha256 = "sha256-dlfClBbwSkQg4stKZdSgNg3EFsWksoI21cxRG5SMrOM="; }; };
+        appimageContents = pkgs.appimageTools.extractType2 { inherit name; src = fetchurl; };
       };
     };
 
