@@ -23,6 +23,7 @@ setup_files() {
     cd /etc/nixos
 
     sudo cp -r /etc/nixos/nixos/config /home/mike/.local/share/src/nixos-config/nixos/
+    sudo cp -r /etc/nixos/nixos/config/login-wallpaper.jpg /home/mike/.local/share/img/wallpaper/active/
 }
 
 rebuild_nixos() {
