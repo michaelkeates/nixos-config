@@ -67,7 +67,7 @@ notify-send 'Emacs daemon started.'
 
 # start nextcloud
 notify-send 'Starting Nextcloud...'
-systemctl --user start nextcloud
+/etc/profiles/per-user/mike/bin/nextcloud &!
 
 
 # Desktop 1

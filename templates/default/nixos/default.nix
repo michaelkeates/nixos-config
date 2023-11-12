@@ -76,7 +76,6 @@ in
   services.xserver.displayManager.lightdm = {
    enable = true;
    greeters.slick.enable = true;
-   greeters.slick.theme.name = "adwaita";
    background = ./config/login-wallpaper.jpg;
   };
 
