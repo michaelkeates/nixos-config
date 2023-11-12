@@ -75,7 +75,10 @@ in
   #services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.lightdm = {
    enable = true;
-   greeters.slick.enable = true;
+   #greeters.slick.enable = true;
+   webkitTheme = fetchTarball {
+     url = "https://github.com/Litarvan/lightdm-webkit-theme-litarvan/releases/download/v3.2.0/lightdm-webkit-theme-litarvan-3.2.0.tar.gz";
+     sha256 = "1TfNhwM8xVAEWQa5bBdv8WlmE3Q9AkpworEDDGsLbR4I=";
    background = ./config/login-wallpaper.jpg;
   };
 
