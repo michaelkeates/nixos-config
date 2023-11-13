@@ -115,7 +115,7 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 </ul>
 <h3 align="left">Mentions</h3>
 <ul>
-<p>dustinlyons for his Nix configuration files that this is heavily based on and what I learnt from so all rights to him <a href="https://github.com/dustinlyons/nixos-config">Repository</a>.</p>
+<p>dustinlyons for his Nix configuration files that this is heavily based on and what I learnt from so all rights to him.</p><a href="https://github.com/dustinlyons/nixos-config">Repository</a>
 </ul>
 <h3 align="left">Author</h3>
 <ul>
