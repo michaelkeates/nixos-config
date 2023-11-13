@@ -51,7 +51,7 @@ in
       workstation = true;
       userServices = true;
       domain = true;
-    }
+    };
   };
 
   # Turn on flag for proprietary software
