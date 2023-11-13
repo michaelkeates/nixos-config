@@ -25,6 +25,7 @@ with pkgs; [
   freerdp
   #rpi-imager
   audacity
+  google-chrome
 
   # Photo and image editing tools
   gimp
