@@ -34,6 +34,7 @@ shared-packages ++ [
   # Audio tools
   cava # Terminal audio visualizer
   pavucontrol # Pulse audio controls
+  uxplay
 
   # Messaging and chat applications
   discord

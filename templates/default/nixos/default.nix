@@ -27,6 +27,9 @@ in
   boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
