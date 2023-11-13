@@ -2,25 +2,7 @@
   <img src="https://repository-images.githubusercontent.com/692780762/0ca1031a-ffad-434b-8fab-f6074d020b94" width="300px" height="300px"/>
 </p>
 <h1 align="center">Nix Configurations for MacOS + NixOS</h1>
-<p align="center">
 
-<a href="http://unlicense.org/">
-<img src="https://img.shields.io/badge/license-Unlicense-blue.svg" alt="License: Unlicense">
-</a>
-
-<a href="https://github.com/michaelkeates/nixos-config/issues">
-<img src="https://img.shields.io/github/issues/michaelkeates/nixos-config.svg" alt="Issues">
-</a>
-
-<a href="https://github.com/michaelkeates/nixos-config/fork">
-<img src="https://img.shields.io/github/forks/michaelkeates/nixos-config.svg" alt="Forks">
-</a>
-
-<a href="https://github.com/michaelkeates/nixos-config">
-<img src="https://img.shields.io/github/stars/michaelkeates/nixos-config.svg" alt="Stars">
-</a>
-
-</p>
 This is a group of personal configuration files using Nix that runs on MacOS as well as NixOS. This is 100% Flake driven with no configuration.nix as well as channels.
 This is my first time delving into everything that is Nix and while so far has been tested on a MacOS VM and a NixOS VM running on unRaid, this is my daily driver for both. 🤓
 Please note this is a work in progress so there are bugs as I am learning to improve and set up for my personal needs.
