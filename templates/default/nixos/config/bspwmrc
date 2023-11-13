@@ -69,6 +69,10 @@ notify-send 'Emacs daemon started.'
 notify-send 'Starting Nextcloud...'
 /etc/profiles/per-user/mike/bin/nextcloud &!
 
+# start bitwarden
+notify-send 'Starting Bitwarden...'
+/etc/profiles/per-user/mike/bin/bitwarden &!
+
 
 # Desktop 1
 # Email, Calendar, News (General)
