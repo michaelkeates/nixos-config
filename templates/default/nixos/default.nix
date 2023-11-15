@@ -29,6 +29,8 @@ in
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnAtBoot = true;
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
