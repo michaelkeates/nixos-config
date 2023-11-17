@@ -32,7 +32,6 @@
   "amethyst"
 
   # Browsers
-  "min"
   "alex313031-thorium"
 
   # AI

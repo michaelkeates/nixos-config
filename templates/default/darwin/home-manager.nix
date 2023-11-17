@@ -38,7 +38,7 @@ in
     "Infuse" = 1136220934;
     "Spark" = 1176895641;
     "Tailscale" = 1475387142;
-    "WhatsApp" = 1147396723;
+    "WhatsApp Messenger" = 310633997;
     "Steam Link" = 1246969117;
     "Color Picker" = 1545870783;
     "Prime Video" = 545519333;

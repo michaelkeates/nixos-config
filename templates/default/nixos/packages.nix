@@ -39,6 +39,7 @@ shared-packages ++ [
   # Messaging and chat applications
   discord
   #tdesktop # telegram desktop
+  whatsapp-for-linux
 
   # Testing and development tools
   cypress # Functional testing framework using headless chrome
