@@ -30,6 +30,7 @@
   # Productivity Tools
   "raycast"
   "amethyst"
+  "onlyoffice"
 
   # Browsers
   "alex313031-thorium"
