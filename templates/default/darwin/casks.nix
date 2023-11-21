@@ -36,5 +36,5 @@
   "alex313031-thorium"
 
   # AI
-
+  "ollama"
 ]
