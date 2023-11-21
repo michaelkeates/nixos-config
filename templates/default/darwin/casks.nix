@@ -37,4 +37,5 @@
 
   # AI
   "ollama"
+  "diffusionbee"
 ]
