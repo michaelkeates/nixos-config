@@ -103,7 +103,6 @@ in
   services.xserver.displayManager.sddm = {
     enable = true;
     theme = "breeze";
-    numlock = true;
   };
 
   # Tiling window manager
