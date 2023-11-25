@@ -95,11 +95,11 @@ in
   # services.xserver.displayManager.defaultSession = "hyprland";
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.lightdm = {
-   enable = true;
-   greeters.slick.enable = true;
-   background = ./config/login-wallpaper.jpg;
-  };
+  #services.xserver.displayManager.lightdm = {
+  # enable = true;
+  # greeters.slick.enable = true;
+  # background = ./config/login-wallpaper.jpg;
+  #};
 
   services.xserver.displayManager.sddm = {
     enable = true;
