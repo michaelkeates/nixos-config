@@ -116,7 +116,7 @@ in
     enable = true;
     xwayland.hidpi = true;
     xwayland.enable = true;
-  }
+  };
 
   # Hint Electon apps to use wayland
   environment.sessionVariables = {
