@@ -93,8 +93,8 @@ in
   # LightDM Display Manager
   services.xserver.displayManager.defaultSession = "none+bspwm";
   # services.xserver.displayManager.defaultSession = "hyprland";
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
   #services.xserver.displayManager.lightdm = {
   # enable = true;
   # greeters.slick.enable = true;
