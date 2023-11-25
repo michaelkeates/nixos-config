@@ -36,6 +36,6 @@
   "alex313031-thorium"
 
   # AI
-  "ollama"
+  # "ollama"
   "diffusionbee"
 ]

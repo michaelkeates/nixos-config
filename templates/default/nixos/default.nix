@@ -106,10 +106,21 @@ in
   };
 
   # Tiling window manager
-  services.xserver.windowManager.bspwm = {
+  #services.xserver.windowManager.bspwm = {
+  #  enable = true;
+  #  configFile = ./config/bspwmrc;
+  #  sxhkd.configFile = ./config/sxhkdrc;
+  #};
+
+  programs.hyprland = {
     enable = true;
-    configFile = ./config/bspwmrc;
-    sxhkd.configFile = ./config/sxhkdrc;
+    xwayland.hidpi = true;
+    xwayland.enable = true;
+  }
+
+  # Hint Electon apps to use wayland
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
   };
 
   # Turn Caps Lock into Ctrl
@@ -336,6 +347,12 @@ in
     agenix.packages."${pkgs.system}".default # "x86_64-linux"
     gitAndTools.gitFull
     inetutils
+
+    hyprland
+    swww # for wallpapers
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    xwayland
   ];
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
