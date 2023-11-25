@@ -114,7 +114,6 @@ in
 
   programs.hyprland = {
     enable = true;
-    xwayland.hidpi = true;
     xwayland.enable = true;
   };
 
