@@ -107,7 +107,7 @@ sleep 1
 # bspc rule -a Chromium-browser -o desktop='^3'
 # /etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://chat.openai.com" &!
 bspc rule -a Alacritty -o desktop='^3'
-/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'docker exec -it ollama ollama run llama2-uncensored' &
+/etc/profiles/per-user/mike/bin/alacritty -e sh -c 'docker exec -it ollama ollama run codellama:13b' &
 
 sleep 1
 
