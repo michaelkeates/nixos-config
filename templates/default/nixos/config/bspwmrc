@@ -84,7 +84,7 @@ notify-send 'Starting Bitwarden...'
 sleep 1
 
 bspc rule -a Chromium-browser -o desktop='^1'
-/etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://www.techmeme.com" &!
+/etc/profiles/per-user/mike/bin/chromium-browser --new-window "https://www.michaelkeates.co.uk" &!
 
 sleep 1
 
