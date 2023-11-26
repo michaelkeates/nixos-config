@@ -201,8 +201,15 @@ in
   #};
 
   # Add docker daemon
-  virtualisation.docker.enable = true;
-  virtualisation.docker.logDriver = "json-file";
+  #virtualisation.docker.enable = true;
+  #virtualisation.docker.logDriver = "json-file";
+  #virtualisation.docker.enableNvidia = true;
+
+  virtualisation.docker = {
+    enable = true;
+    logDriver = "json-file";
+    enableNvidia = true;
+  };
 
   # Picom, my window compositor with fancy effects
   #
