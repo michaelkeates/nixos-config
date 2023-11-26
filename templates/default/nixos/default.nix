@@ -350,7 +350,7 @@ in
 
     # sddm
     libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.gt5.qtgraphicaleffects
+    libsForQt5.qt5.qtgraphicaleffects
 
     # hyprland
     # swww # for wallpapers
