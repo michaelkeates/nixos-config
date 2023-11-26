@@ -5,7 +5,7 @@ let
   keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvRJAUfWwvBBevXaWocawnwMZ09ornbuR76TO+YlVoE" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "mailspring-1.12.0"
+    "mailspring"
   ];
 in
 {
