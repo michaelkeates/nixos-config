@@ -112,4 +112,7 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
+
+  # ai
+  nvidia-podman
 ]
