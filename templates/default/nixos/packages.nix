@@ -96,6 +96,7 @@ shared-packages ++ [
   libgnome-keyring
   gnome.gnome-keyring
   mailspring
+  remmina
 
   # PDF viewer
   zathura
