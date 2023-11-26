@@ -92,6 +92,7 @@ in
 
   # LightDM Display Manager
   services.xserver.displayManager.defaultSession = "none+bspwm";
+  services.xserver.desktopManager.plasma5.enable = true;
   # services.xserver.displayManager.defaultSession = "hyprland";
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
@@ -109,8 +110,9 @@ in
     rev = "2d0b631e73f2a6479fb72655de65c74054ac2846";
     sha256 = "17pkxpk4lfgm14yfwg6rw6zrkdpxilzv90s48s2hsicgl3vmyr3x";
   })}";
-
   };
+
+
 
   # Tiling window manager
   services.xserver.windowManager.bspwm = {
