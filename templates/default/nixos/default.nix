@@ -103,7 +103,7 @@ in
 
   services.xserver.displayManager.sddm = {
     enable = true;
-    theme = "sddm-chili-theme";
+    theme = "chili";
   };
 
   # Tiling window manager
@@ -347,6 +347,10 @@ in
     agenix.packages."${pkgs.system}".default # "x86_64-linux"
     gitAndTools.gitFull
     inetutils
+
+    # sddm
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.gt5.qtgraphicaleffects
 
     # hyprland
     # swww # for wallpapers
