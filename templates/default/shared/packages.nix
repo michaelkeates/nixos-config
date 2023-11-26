@@ -42,8 +42,8 @@ with pkgs; [
   tailscale
 
   # Cloud-related tools and SDKs
-  docker
-  docker-compose
+  #docker
+  #docker-compose
   awscli2
   ssm-session-manager-plugin
 
