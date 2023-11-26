@@ -4,6 +4,8 @@ with pkgs; [
   # General packages for development and system management
   act
   alacritty
+  docker
+  docker-compose
   kitty
   bash-completion
   bat
