@@ -41,6 +41,13 @@ in
     stateVersion = "21.05";
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "adwaita-dark";
+    style.package = pkgs.adwaita-qt;
+  };
+
   gtk = {
     enable = true;
     theme = {
