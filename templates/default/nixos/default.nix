@@ -104,12 +104,7 @@ in
 
   services.xserver.displayManager.sddm = {
     enable = true;
-    theme = "${(pkgs.fetchFromGitHub {
-    owner = "3ximus";
-    repo = "aerial-sddm-theme";
-    rev = "2d0b631e73f2a6479fb72655de65c74054ac2846";
-    sha256 = "17pkxpk4lfgm14yfwg6rw6zrkdpxilzv90s48s2hsicgl3vmyr3x";
-  })}";
+    theme = "chili";
   };
 
 
@@ -357,6 +352,7 @@ in
     inetutils
 
     # sddm
+    libsForQt5.sddm-kcmsudo
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
 
