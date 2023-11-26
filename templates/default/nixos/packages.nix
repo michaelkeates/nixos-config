@@ -113,5 +113,5 @@ shared-packages ++ [
   libglibutil
   gtk-engine-murrine
 
-  nvidia-docker
+  nvidia-podman
 ]
