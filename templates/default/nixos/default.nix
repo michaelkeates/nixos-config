@@ -352,7 +352,7 @@ in
     inetutils
 
     # sddm
-    libsForQt5.sddm-kcmsudo
+    libsForQt5.sddm-kcm
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
 
