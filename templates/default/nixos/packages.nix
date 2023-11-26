@@ -114,5 +114,5 @@ shared-packages ++ [
   gtk-engine-murrine
 
   # ai
-  nvidia-podman
+  nvidia-docker
 ]
