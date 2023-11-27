@@ -30,6 +30,8 @@ in
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.experimental = true;
+  hardware.bluetooth.supportedAdapters = [ "intel" ];
   hardware.bluetooth.package = pkgs.bluez;
   services.blueman.enable = true;
 
