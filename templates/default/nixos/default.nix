@@ -156,9 +156,9 @@ in
   # Enable gnome-keyring daemon
   services.gnome.gnome-keyring.enable = true;
 
-  # Better support for general peripherals
+  # Better support for general peripheralss
   services.xserver.libinput.enable = true;
-  boot.kernelModules = [ "uinput" ];
+  boot.kernelModules = [ "uinput" "btintel" "btqca" "btusb" "hci_qca" "hci_uart" ];
 
   # Sync state between machines
   #services.syncthing = {
