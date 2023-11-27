@@ -6,6 +6,10 @@
     nixpkgs.url = "github:dustinlyons/nixpkgs/master";
     agenix.url = "github:ryantm/agenix";
     home-manager.url = "github:nix-community/home-manager";
+    darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -31,10 +35,10 @@
     };
   };
 
-  outputs = { self, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "mike";
-      systems = [ "x86_64-linux" ];
+      systems = [ "x86_64-linux" "aarch64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
       devShell = system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -51,6 +55,31 @@
     {
 
       devShells = forAllSystems devShell;
+
+      darwinConfigurations = let user = "mike"; in {
+        Mikes-MBA = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = inputs;
+          modules = [
+            nix-homebrew.darwinModules.nix-homebrew
+            home-manager.darwinModules.home-manager
+            {
+              nix-homebrew = {
+                enable = true;
+                user = "${user}";
+                taps = {
+                  "homebrew/homebrew-core" = homebrew-core;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/bundle" = homebrew-bundle;
+                };
+                mutableTaps = false;
+                autoMigrate = true;
+              };
+            }
+            ./darwin
+          ];
+        };
+      };
 
       nixosConfigurations = let user = "mike"; in {
         nixos = nixpkgs.lib.nixosSystem {
