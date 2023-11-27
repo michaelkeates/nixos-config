@@ -26,7 +26,7 @@ in
   boot.initrd.availableKernelModules = [ "virtio_net" "virtio_pci" "virtio_mmio" "virtio_blk" "virtio_scsi" "9p" "9pnet_virtio" ];
   boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" "8821cu" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ]
+  boot.extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
 
   # Enable bluetooth
   services.blueman.enable = true;
