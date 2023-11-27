@@ -33,7 +33,6 @@ in
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    supportedAdapters = [ "intel" ];
     package = pkgs.blueman;
     settings = {
       General = {
