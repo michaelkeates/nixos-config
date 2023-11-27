@@ -33,7 +33,7 @@ in
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    package = pkgs.blueman;
+    package = pkgs.bluez;
     settings = {
       General = {
         Name = "Hello";
