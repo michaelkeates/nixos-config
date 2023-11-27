@@ -28,9 +28,24 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  #hardware.bluetooth.enable = true;
+  #hardware.bluetooth.powerOnBoot = true;
+  #services.blueman.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Name = "Hello";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
