@@ -115,6 +115,6 @@ shared-packages ++ [
   gtk-engine-murrine
 
   # test
-  bluez5-experimental
+  bluez
   rtl8761b-firmware
 ]
