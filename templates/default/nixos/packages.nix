@@ -116,4 +116,5 @@ shared-packages ++ [
 
   # test
   bluez5-experimental
+  rtl8761b-firmware
 ]
