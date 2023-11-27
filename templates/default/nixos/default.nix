@@ -24,7 +24,7 @@ in
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   # make sure to include modules, these are needed for VMs to work
   boot.initrd.availableKernelModules = [ "virtio_net" "virtio_pci" "virtio_mmio" "virtio_blk" "virtio_scsi" "9p" "9pnet_virtio" ];
-  boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" "8821cu" ];
+  boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable bluetooth
@@ -34,10 +34,11 @@ in
     enable = true;
     powerOnBoot = true;
     package = pkgs.bluez;
+    kernelModules = [ "btusb" "hci_uart" "btintel" "btqca" "hci_qca" "rtl_bt" "rtl8723bs_bt" "btrtl" ];
     settings = {
       General = {
         Name = "Hello";
-        ControllerMode = "dual";
+        ControllerMode = "dual"; 
         FastConnectable = "true";
         Experimental = "true";
       };
