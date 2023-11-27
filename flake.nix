@@ -81,7 +81,7 @@
           path = ./templates/default;
           description = "Starter configuration";
         };
-        default = {
+        steam = {
           path = ./templates/steam;
           description = "SteamOS";
         };
