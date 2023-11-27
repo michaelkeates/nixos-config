@@ -61,7 +61,7 @@
       };
       mkLinuxApps = system: {
         "install" = mkApp "install" system;
-        "install_test" = mkApps "install_test" system;
+        "install_test" = mkApp "install_test" system;
         "rebuild" = mkApp "rebuild" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
