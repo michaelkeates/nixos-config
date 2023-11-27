@@ -116,6 +116,6 @@ shared-packages ++ [
 
   # test
   bluez
-  rtl8761b-firmware
+  linuxKernel.kernels.linux_5_4
   at-spi2-atk
 ]
