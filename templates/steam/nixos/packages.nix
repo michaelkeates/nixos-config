@@ -1,10 +1,6 @@
 { pkgs }:
 
 with pkgs;
-let
-  shared-packages = import ../shared/packages.nix { inherit pkgs; };
-in
-shared-packages ++ [
 
   # Security and authentication
   bitwarden
@@ -16,30 +12,17 @@ shared-packages ++ [
   home-manager
 
   # Media and design tools
-  gimp
   wineWowPackages.stable
   fontconfig
   font-manager
   nextcloud-client
-  darktable
-  blender
-
-  # Printers and drivers
-  brlaser # printer driver
-
-  # Calculators
-  bc # old school calculator
-  galculator
 
   # Audio tools
-  cava # Terminal audio visualizer
   pavucontrol # Pulse audio controls
   uxplay
 
   # Messaging and chat applications
   discord
-  #tdesktop # telegram desktop
-  whatsapp-for-linux
 
   # Testing and development tools
   cypress # Functional testing framework using headless chrome
@@ -51,7 +34,6 @@ shared-packages ++ [
   qmk
   libusb1 # for Xbox controller
   libtool # for Emacs vterm
-  github-desktop
 
   # Screenshot and recording tools
   flameshot
@@ -95,11 +77,8 @@ shared-packages ++ [
   libsecret
   libgnome-keyring
   gnome.gnome-keyring
-  mailspring
-  remmina
 
   # PDF viewer
-  zathura
 
   # Music and entertainment
 
@@ -113,4 +92,3 @@ shared-packages ++ [
   libxml2
   libglibutil
   gtk-engine-murrine
-]
