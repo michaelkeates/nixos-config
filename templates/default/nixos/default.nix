@@ -29,7 +29,7 @@ in
   boot.blacklistedKernelModules = [ "rtl8xxxu" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8192eu ];
   #boot.extraModulePackages = [ config.boot.kernelPackages.rtl8761b-firmware ];
-  boot.hardware.firmware = [ pkgs.rtl8761b-firmware ];
+  hardware.firmware = [ pkgs.rtl8761b-firmware ];
 
   # Enable bluetooth
   services.blueman.enable = true;
