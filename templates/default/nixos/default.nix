@@ -358,6 +358,9 @@ in
   # My shell
   programs.zsh.enable = true;
 
+  # steam
+  programs.steam.enable = true;
+
   # My editor runs as a daemon
   services.emacs = {
     enable = true;

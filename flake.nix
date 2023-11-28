@@ -61,7 +61,6 @@
       };
       mkLinuxApps = system: {
         "install" = mkApp "install" system;
-        "install_test" = mkApp "install_test" system;
         "rebuild" = mkApp "rebuild" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
@@ -80,10 +79,6 @@
         default = {
           path = ./templates/default;
           description = "Starter configuration";
-        };
-        steam = {
-          path = ./templates/steam;
-          description = "SteamOS";
         };
       };
       devShells = forAllSystems devShell;
