@@ -9,7 +9,7 @@ let user = "mike"; in
 
   age.secrets."secret" = {
     symlink = false;
-    path = "/home/${user}/.config/Bitwarden/masterpassword";
+    path = "/home/${user}/.config/Bitwarden/masterpassword.txt";
     file =  "${secrets}/secret.age";
     mode = "600";
     owner = "${user}";
