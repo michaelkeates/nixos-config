@@ -25,11 +25,11 @@ in
   # make sure to include modules, these are needed for VMs to work
   boot.initrd.availableKernelModules = [ "virtio_net" "virtio_pci" "virtio_mmio" "virtio_blk" "virtio_scsi" "9p" "9pnet_virtio" ];
   boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" ];
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_linuxPackages_5_4;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.blacklistedKernelModules = [ "rtl8xxxu" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8192eu ];
   #boot.extraModulePackages = [ config.boot.kernelPackages.rtl8761b-firmware ];
+  boot.hardware.firmware = [ pkgs.rtl8761b-firmware ];
 
   # Enable bluetooth
   services.blueman.enable = true;
