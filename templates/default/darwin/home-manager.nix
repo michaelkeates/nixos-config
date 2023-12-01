@@ -42,6 +42,7 @@ in
     "Steam Link" = 1246969117;
     "Color Picker" = 1545870783;
     "Prime Video" = 545519333;
+    "Xcode" = 497799835;
   };
 
   # Enable home-manager
