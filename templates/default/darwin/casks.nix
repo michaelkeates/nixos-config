@@ -3,6 +3,7 @@
 [
   # Development Tools
   "homebrew/cask/docker"
+  "visual-studio"
 
   # Communication Tools
   "discord"
