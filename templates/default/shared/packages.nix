@@ -92,4 +92,7 @@ with pkgs; [
   # Python packages
   python310
   python310Packages.virtualenv
+
+  # Gaming
+  pcsx2
 ]
