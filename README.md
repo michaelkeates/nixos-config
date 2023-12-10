@@ -85,6 +85,10 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 <ul>
 	<pre>nix run github:michaelkeates/nixos-config#createKeys</pre>
 </ul>
+<li>This opens an editor to accept, encrypt, and write your secret to disk. Then push the age file to your private github repo</li>
+<ul>
+    <pre>EDITOR=vim nix run github:ryantm/agenix -- -e secret.age</pre>
+</ul>
 <h3 align="left">Installation</h3>
 <ul>
 	<pre>nix run --experimental-features 'nix-command flakes' github:michaelkeates/nixos-config#install</pre>

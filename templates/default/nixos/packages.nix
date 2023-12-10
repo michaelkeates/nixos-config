@@ -124,5 +124,4 @@ shared-packages ++ [
   duckstation
   ryujinx
   rpcs3
-  dolphin-emu
 ]
