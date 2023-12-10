@@ -34,14 +34,10 @@ in
   # Enable bluetooth
   services.blueman.enable = true;
 
-  services.bluetooth = {
-    enable = true;
-    userspaceHID = true;
-  };
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    userspaceHID = true;
     package = pkgs.bluez;
     settings = {
       General = {
