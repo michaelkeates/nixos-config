@@ -92,7 +92,6 @@ shared-packages ++ [
   libsecret
   libtool
   nss_latest
-  libsecret
   libgnome-keyring
   gnome.gnome-keyring
   mailspring
@@ -122,4 +121,7 @@ shared-packages ++ [
 
   # Gaming
   steam-rom-manager
+  duckstation
+  ryujinx
+  rpcs3
 ]
