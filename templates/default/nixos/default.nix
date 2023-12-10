@@ -26,10 +26,10 @@ in
   boot.initrd.availableKernelModules = [ "virtio_net" "virtio_pci" "virtio_mmio" "virtio_blk" "virtio_scsi" "9p" "9pnet_virtio" ];
   boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.blacklistedKernelModules = [ "rtl8xxxu" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8192eu ];
+  #boot.blacklistedKernelModules = [ "rtl8xxxu" ];
+  #boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8192eu ];
   #boot.extraModulePackages = [ config.boot.kernelPackages.rtl8761b-firmware ];
-  hardware.firmware = [ pkgs.rtl8761b-firmware ];
+  #hardware.firmware = [ pkgs.rtl8761b-firmware ];
 
   # Enable bluetooth
   services.blueman.enable = true;
@@ -37,7 +37,6 @@ in
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    userspaceHID = true;
     package = pkgs.bluez;
     settings = {
       General = {
