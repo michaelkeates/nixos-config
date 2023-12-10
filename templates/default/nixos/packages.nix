@@ -119,4 +119,7 @@ shared-packages ++ [
   linuxKernel.kernels.linux_5_4
   at-spi2-atk
   rtl8761b-firmware
+
+  # Gaming
+  steam-rom-manager
 ]
