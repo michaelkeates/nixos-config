@@ -95,5 +95,5 @@ with pkgs; [
 
   # Gaming
   pcsx2
-  dolphin-emu
+  #dolphin-emu
 ]
