@@ -121,6 +121,7 @@ shared-packages ++ [
 
   # Gaming
   steam-rom-manager
+  pcsx2
   duckstation
   ryujinx
   rpcs3
