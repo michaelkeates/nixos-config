@@ -95,7 +95,7 @@ in
             /bin/launchctl load ${plistPath}
           '';
 
-      home.stateVersion = "21.11";
+      home.stateVersion = "23.11";
       programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
 
       # Marked broken Oct 20, 2022 check later to remove this
