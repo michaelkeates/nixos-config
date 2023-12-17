@@ -61,6 +61,15 @@ directory_setup() {
   sudo chmod -R 777 ~/.config
 }
 
+portainer_setup() {
+  docker volume create portainer_data
+  docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce:2.9.3
+}
+
 prompt_reboot() {
   read -p "Do you want to reboot now? (y/yes) " choice
   case "$choice" in
@@ -78,4 +87,5 @@ link_home_dir
 install_nixos
 cleanup
 #directory_setup
+portainer_setup
 prompt_reboot
