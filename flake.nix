@@ -65,7 +65,7 @@
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
-        "install_test" = mkApp "install_test" system;
+        "install_test" = mkApp "docker/install_test" system;
       };
       mkDarwinApps = system: {
         "copyKeys" = mkApp "copyKeys" system;
