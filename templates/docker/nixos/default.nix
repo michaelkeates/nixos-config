@@ -28,6 +28,36 @@ in {
     '';
   };
 
+    # It's me, it's you, it's everyone
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "docker"
+    ];
+    shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = keys;
+  };
+
+  # Root user
+  users.users.root = {
+    openssh.authorizedKeys.keys = keys;
+  };
+
+  # Don't require password for users in `wheel` group for these commands
+  security.sudo = {
+    enable = true;
+    extraRules = [{
+      commands = [
+       {
+         command = "${pkgs.systemd}/bin/reboot";
+         options = [ "NOPASSWD" ];
+        }
+      ];
+      groups = [ "wheel" ];
+    }];
+  };
+
   programs.gnupg.agent.enable = true;
   services.openssh.enable = true;
   programs.zsh.enable = true;
