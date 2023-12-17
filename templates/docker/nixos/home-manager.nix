@@ -6,7 +6,6 @@ in {
   home = {
     enableNixpkgsReleaseCheck = false;
     username = "${user}";
-    homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix {};
     stateVersion = "21.05";
   };
