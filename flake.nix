@@ -53,13 +53,9 @@
           echo "Running ${scriptName} for ${system} with template ${template}"
           exec ${self}/apps/${system}/${template}/${scriptName}
         '';
-      mkApps = system: template: {
-        "install" = mkApp "install" template system;
-        "rebuild" = mkApp "rebuild" template system;
-        "copyKeys" = mkApp "copyKeys" "default" system;
-        "createKeys" = mkApp "createKeys" "default" system;
-        "checkKeys" = mkApp "checkKeys" "default" system;
-      };
+      mkApps = system: template: nixpkgs.lib.genAttrs (names: mkApp names template system) [
+        "install" "rebuild"
+      ];
     in
     {
       templates = {
