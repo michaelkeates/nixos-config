@@ -9,9 +9,9 @@ in {
   ];
 
   home-manager.users.${user} = {
-   home = {
-      homeDirectory = lib.mkForce "/home/${user}";
-   };
+    home = {
+      homeDirectory = "/home/${user}";
+    };
   };
 
   boot.loader.systemd-boot.enable = true;
