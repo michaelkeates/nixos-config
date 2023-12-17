@@ -39,9 +39,12 @@
       user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" ];
-      devShell = system:
-        nixpkgs.legacyPackages.${system}.mkShell {
-          nativeBuildInputs = [ nixpkgs.legacyPackages.${system}.bashInteractive nixpkgs.legacyPackages.${system}.git nixpkgs.legacyPackages.${system}.age nixpkgs.legacyPackages.${system}.age-plugin-yubikey ];
+      forAllLinuxSystems = f: nixpkgs.lib.genAttrs linuxSystems (system: f system);
+      forAllDarwinSystems = f: nixpkgs.lib.genAttrs darwinSystems (system: f system);
+      forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) (system: f system);
+      devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in
+        pkgs.mkShell {
+          nativeBuildInputs = [ pkgs.bashInteractive pkgs.git pkgs.age pkgs.age-plugin-yubikey ];
           shellHook = ''
             export EDITOR=vim
           '';
@@ -103,7 +106,7 @@
           };
         };
       
-      nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: templates: nixpkgs.lib.nixosSystem {
+      nixosConfigurations = forAllSystems (system: templates: nixpkgs.lib.nixosSystem {
         system = system;
         specialArgs = inputs;
         modules = [
