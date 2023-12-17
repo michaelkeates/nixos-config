@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:dustinlyons/nixpkgs/master";
-    agenix.url = "github:ryantm/agenix";
     home-manager.url = "github:nix-community/home-manager";
     disko = {
       url = "github:nix-community/disko";
