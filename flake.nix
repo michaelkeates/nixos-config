@@ -59,21 +59,20 @@
           exec ${self}/apps/${system}/${scriptName}
         '')}/bin/${scriptName}";
       };
-      mkLinuxApps = system: template: {
-        "install" = mkApp "install" system template;
-        "rebuild" = mkApp "rebuild" system template;
-        "copyKeys" = mkApp "copyKeys" system template;
-        "createKeys" = mkApp "createKeys" system template;
-        "checkKeys" = mkApp "checkKeys" system template;
-        "install_test" = mkApp "install_test" system template;
+      mkLinuxApps = system: {
+        "install" = mkApp "install" system;
+        "rebuild" = mkApp "rebuild" system;
+        "copyKeys" = mkApp "copyKeys" system;
+        "createKeys" = mkApp "createKeys" system;
+        "checkKeys" = mkApp "checkKeys" system;
+        "install_test" = mkApp "install_test" system;
       };
-
-      mkDarwinApps = system: template: {
-        "copyKeys" = mkApp "copyKeys" system template;
-        "createKeys" = mkApp "createKeys" system template;
-        "checkKeys" = mkApp "checkKeys" system template;
-        "install" = mkApp "install" system template;
-        "rebuild" = mkApp "rebuild" system template;
+      mkDarwinApps = system: {
+        "copyKeys" = mkApp "copyKeys" system;
+        "createKeys" = mkApp "createKeys" system;
+        "checkKeys" = mkApp "checkKeys" system;
+        "install" = mkApp "install" system;
+        "rebuild" = mkApp "rebuild" system;
       };
     in
     {
