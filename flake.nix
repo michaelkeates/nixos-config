@@ -42,22 +42,21 @@
       forAllLinuxSystems = f: nixpkgs.lib.genAttrs linuxSystems (system: f system);
       forAllDarwinSystems = f: nixpkgs.lib.genAttrs darwinSystems (system: f system);
       forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) (system: f system);
-      devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in {
-        default = with pkgs; mkShell {
-          nativeBuildInputs = with pkgs; [ bashInteractive git age age-plugin-yubikey ];
-          shellHook = with pkgs; ''
+      devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in
+        pkgs.mkShell {
+          nativeBuildInputs = [ pkgs.bashInteractive pkgs.git pkgs.age pkgs.age-plugin-yubikey ];
+          shellHook = ''
             export EDITOR=vim
           '';
         };
-      };
       mkApp = scriptName: template: system: {
         type = "app";
-        program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
+        program = nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
           #!/usr/bin/env bash
           PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
           echo "Running ${scriptName} for ${system} with template ${template}"
           exec ${self}/apps/${system}/${template}/${scriptName}
-        '')}/bin/${scriptName}";
+        '';
       };
       mkLinuxApps = system: template: {
         "install" = mkApp "install" template system;
@@ -90,30 +89,31 @@
       apps = nixpkgs.lib.genAttrs linuxSystems (system: nixpkgs.lib.genAttrs (templates: mkLinuxApps system templates) (self.templates)) // 
              nixpkgs.lib.genAttrs darwinSystems (system: nixpkgs.lib.genAttrs (templates: mkDarwinApps system templates) (self.templates));
 
-      darwinConfigurations = let user = "mike"; in {
-        "Mikes-MBA" = darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          specialArgs = inputs;
-          modules = [
-            home-manager.darwinModules.home-manager
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                user = "${user}";
-                taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-cask" = homebrew-cask;
-                  "homebrew/bundle" = homebrew-bundle;
+      darwinConfigurations = let user = "mike"; in
+        {
+          "Mikes-MBA" = darwin.lib.darwinSystem {
+            system = "aarch64-darwin";
+            specialArgs = inputs;
+            modules = [
+              home-manager.darwinModules.home-manager
+              nix-homebrew.darwinModules.nix-homebrew
+              {
+                nix-homebrew = {
+                  enable = true;
+                  user = "${user}";
+                  taps = {
+                    "homebrew/homebrew-core" = homebrew-core;
+                    "homebrew/homebrew-cask" = homebrew-cask;
+                    "homebrew/bundle" = homebrew-bundle;
+                  };
+                  mutableTaps = false;
+                  autoMigrate = true;
                 };
-                mutableTaps = false;
-                autoMigrate = true;
-              };
-            }
-            ./darwin
-          ];
+              }
+              ./darwin
+            ];
+          };
         };
-      };
       
       nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: templates: nixpkgs.lib.nixosSystem {
         system = system;
