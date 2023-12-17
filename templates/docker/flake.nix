@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  outputs = { self, home-manager, nixpkgs, disko } @inputs:
     let
       user = "mike";
       systems = [ "x86_64-linux" ];
