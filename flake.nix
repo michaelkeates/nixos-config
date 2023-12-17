@@ -39,12 +39,9 @@
       user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" ];
-      forAllLinuxSystems = f: nixpkgs.lib.genAttrs linuxSystems (system: f system);
-      forAllDarwinSystems = f: nixpkgs.lib.genAttrs darwinSystems (system: f system);
-      forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) (system: f system);
-      devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in
-        pkgs.mkShell {
-          nativeBuildInputs = [ pkgs.bashInteractive pkgs.git pkgs.age pkgs.age-plugin-yubikey ];
+      devShell = system:
+        nixpkgs.legacyPackages.${system}.mkShell {
+          nativeBuildInputs = [ nixpkgs.legacyPackages.${system}.bashInteractive nixpkgs.legacyPackages.${system}.git nixpkgs.legacyPackages.${system}.age nixpkgs.legacyPackages.${system}.age-plugin-yubikey ];
           shellHook = ''
             export EDITOR=vim
           '';
@@ -75,7 +72,7 @@
           description = "Docker Server";
         };
       };
-      devShells = forAllSystems devShell;
+      devShells = nixpkgs.lib.genAttrs linuxSystems devShell;
 
       apps = nixpkgs.lib.genAttrs linuxSystems (system: nixpkgs.lib.genAttrs (templates: mkApps system templates) (self.templates)) // 
              nixpkgs.lib.genAttrs darwinSystems (system: nixpkgs.lib.genAttrs (templates: mkApps system templates) (self.templates));
@@ -106,7 +103,7 @@
           };
         };
       
-      nixosConfigurations = forAllSystems (system: templates: nixpkgs.lib.nixosSystem {
+      nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: templates: nixpkgs.lib.nixosSystem {
         system = system;
         specialArgs = inputs;
         modules = [
