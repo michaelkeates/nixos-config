@@ -50,23 +50,23 @@
           '';
         };
       };
-mkApp = scriptName: template: system: {
-  type = "app";
-  program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
-    #!/usr/bin/env bash
-    PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
-    echo "Running ${scriptName} for ${system} with template ${template}"
-    exec ${self}/apps/${system}/${template}/${scriptName}
-  '')}/bin/${scriptName}";
-};
-mkLinuxApps = system: template: {
-  "install" = mkApp "install" template system;
-  "rebuild" = mkApp "rebuild" template system;
-  "copyKeys" = mkApp "copyKeys" template system;
-  "createKeys" = mkApp "createKeys" template system;
-  "checkKeys" = mkApp "checkKeys" template system;
-  "install_test" = mkApp "install" "docker" system;
-};
+      mkApp = scriptName: system: {
+        type = "app";
+        program = "${(nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
+          #!/usr/bin/env bash
+          PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
+          echo "Running ${scriptName} for ${system}"
+          exec ${self}/apps/${system}/${scriptName}
+        '')}/bin/${scriptName}";
+      };
+      mkLinuxApps = system: {
+        "install" = mkApp "install" system;
+        "rebuild" = mkApp "rebuild" system;
+        "copyKeys" = mkApp "copyKeys" system;
+        "createKeys" = mkApp "createKeys" system;
+        "checkKeys" = mkApp "checkKeys" system;
+        "install_test" = mkApp "docker/install_test" system;
+      };
       mkDarwinApps = system: {
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
