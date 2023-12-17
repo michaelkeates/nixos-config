@@ -8,6 +8,12 @@ in {
     ./disk-config.nix
   ];
 
+  home-manager.users.${user} = {
+   home = {
+      homeDirectory = lib.mkForce "/home/${user}";
+   };
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "nixos";
