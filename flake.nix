@@ -54,7 +54,7 @@
           exec ${self}/apps/${system}/${template}/${scriptName}
         '';
       mkApps = system: template: nixpkgs.lib.genAttrs (names: mkApp names template system) [
-        "install" "rebuild"
+        "install" "rebuild" "copyKeys" "createKeys" "checkKeys"
       ];
     in
     {
