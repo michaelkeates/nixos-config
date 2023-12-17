@@ -74,8 +74,7 @@
       };
       devShells = nixpkgs.lib.genAttrs linuxSystems devShell;
 
-      apps = nixpkgs.lib.genAttrs linuxSystems (system: nixpkgs.lib.genAttrs (templates: mkApps system templates) (self.templates)) // 
-             nixpkgs.lib.genAttrs darwinSystems (system: nixpkgs.lib.genAttrs (templates: mkApps system templates) (self.templates));
+      apps = nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) (system: nixpkgs.lib.genAttrs (templates: mkApps system templates) (self.templates));
 
       darwinConfigurations = let user = "mike"; in
         {
@@ -103,7 +102,7 @@
           };
         };
       
-      nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: templates: nixpkgs.lib.nixosSystem {
+      nixosConfigurations = nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) (system: templates: nixpkgs.lib.nixosSystem {
         system = system;
         specialArgs = inputs;
         modules = [
