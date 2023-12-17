@@ -1,12 +1,20 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 let
   user = "mike";
   keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ2s50ZOnMkQVFIPmgfcMFt8VlwXYQ4ek4wyNtAAeouO" ];
 in {
+  inputs = inputs // Add other inputs as needed;
+
   imports = [
     ./disk-config.nix
   ];
+
+  home-manager.users.${user} = {
+    home = {
+      homeDirectory = lib.mkForce "/home/${user}";
+    };
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
