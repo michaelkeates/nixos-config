@@ -1,20 +1,32 @@
-# home-manager.nix
-
 { config, pkgs, lib, ... }:
 
 let
   homeuser = "mike";
   name = "Michael Keates";
-  user = "michaelkeates";
   email = "mail@michaelkeates.co.uk";
   xdg_configHome  = "/home/${homeuser}/.config";
 in
 {
-home-manager.users.${homeuser} = {
-    enableNixpkgsReleaseCheck = false;
-    username = "${homeuser}";
-    homeDirectory = "/home/${homeuser}";
-    packages = pkgs.callPackage ./packages.nix {};
+  home-manager.users.${homeuser} = {
+    enable = true;
+    home.file.".bashrc".text = ''
+      export EDITOR=vim
+    '';
+
+    packages = with pkgs; [
+        # General packages for development and system management
+        docker
+        docker-compose
+        git
+        gh
+
+        # App and package management
+        appimage-run
+        gnumake
+        cmake
+        home-manager
+    ];
+
     stateVersion = "23.11";
     git = {
       enable = true;
