@@ -10,4 +10,6 @@
   pkgs.gnumake
   pkgs.cmake
   pkgs.home-manager
+
+  pkgs.git
 ]
