@@ -1,15 +1,17 @@
 { pkgs }:
 
-[
-  # General packages for development and system management
-  pkgs.docker
-  pkgs.docker-compose
-  pkgs.git
-  pkgs.gh
+with pkgs;
+let
+  shared-packages = import ../shared/packages.nix { inherit pkgs; };
+in
+shared-packages ++ [
+
+  # Security and authentication
+  bitwarden
 
   # App and package management
-  pkgs.appimage-run
-  pkgs.gnumake
-  pkgs.cmake
-  pkgs.home-manager
+  appimage-run
+  gnumake
+  cmake
+  home-manager
 ]
