@@ -12,12 +12,9 @@ in
 {
   home-manager.users.${homeuser} = {
     enable = true;
-    home.file.".bashrc".text = ''
-      export EDITOR=vim
-    '';
 
     # Adding the shared packages to the user configuration
-    home.packages = shared-packages;
+    packages = shared-packages;
 
     stateVersion = "23.11";
     git = {
