@@ -2,9 +2,6 @@
 
 let
   user = "mike";
-  name = "Michael Keates";
-  user = "michaelkeates";
-  email = "mail@michaelkeates.co.uk"; 
   keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ2s50ZOnMkQVFIPmgfcMFt8VlwXYQ4ek4wyNtAAeouO" ];
 in {
   imports = [
