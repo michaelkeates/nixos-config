@@ -13,11 +13,5 @@ let name = "Michael Keates";
     lfs = {
       enable = true;
     };
-    extraConfig = {
-      init.defaultBranch = "main";
-      commit.gpgsign = true;
-      pull.rebase = true;
-      rebase.autoStash = true;
-    };
   };
 }
