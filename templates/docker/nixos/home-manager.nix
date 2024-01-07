@@ -1,15 +1,17 @@
 { config, pkgs, lib, ... }:
 
 let
-  user = "mike";
-  xdg_configHome  = "/home/${user}/.config";
-  shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
+  homeuser = "mike";
+  name = "Michael Keates";
+  user = "michaelkeates";
+  email = "mail@michaelkeates.co.uk";
+  xdg_configHome  = "/home/${homeuser}/.config";
 in
 {
   home = {
     enableNixpkgsReleaseCheck = false;
-    username = "${user}";
-    homeDirectory = "/home/${user}";
+    username = "${homeuser}";
+    homeDirectory = "/home/${homeuser}";
     packages = pkgs.callPackage ./packages.nix {};
     stateVersion = "23.11";
   };
@@ -17,6 +19,14 @@ in
   # Auto mount devices
   services.udiskie.enable = true;
 
-  programs = shared-programs // { gpg.enable = true; };
+git = {
+    enable = true;
+    ignores = [ "*.swp" ];
+    userName = name;
+    userEmail = email;
+    lfs = {
+      enable = true;
+    };
+};
 
 }
