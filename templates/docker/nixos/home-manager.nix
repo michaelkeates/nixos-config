@@ -11,7 +11,6 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix {};
-    file = shared-files // import ./files.nix { inherit user; };
     stateVersion = "21.05";
   };
 
@@ -19,5 +18,5 @@ in
   services.udiskie.enable = true;
 
   programs = shared-programs // { gpg.enable = true; };
-  
+
 }
