@@ -6,7 +6,6 @@ with pkgs; [
   alacritty
   docker
   docker-compose
-  kitty
   bash-completion
   bat
   coreutils
