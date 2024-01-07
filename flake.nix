@@ -60,8 +60,8 @@
         '')}/bin/${scriptName}";
       };
       mkLinuxApps = system: {
-        "install" = mkApp "install" system;
-        "rebuild" = mkApp "rebuild" system;
+        "install" = mkApp "default/install" system;
+        "rebuild" = mkApp "default/rebuild" system;
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
@@ -71,8 +71,8 @@
         "copyKeys" = mkApp "copyKeys" system;
         "createKeys" = mkApp "createKeys" system;
         "checkKeys" = mkApp "checkKeys" system;
-        "install" = mkApp "install" system;
-        "rebuild" = mkApp "rebuild" system;
+        "install" = mkApp "default/install" system;
+        "rebuild" = mkApp "default/rebuild" system;
       };
     in
     {
