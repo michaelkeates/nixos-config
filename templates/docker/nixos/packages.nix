@@ -5,6 +5,7 @@
   pkgs.docker
   pkgs.docker-compose
   pkgs.git
+  pkgs.gh
 
   # App and package management
   pkgs.appimage-run
