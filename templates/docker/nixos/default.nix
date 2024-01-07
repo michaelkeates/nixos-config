@@ -16,6 +16,9 @@ in {
   boot.initrd.kernelModules = [ "virtio_balloon" "virtio_console" "virtio_rng" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # enable zram for swap
+  zramSwap.enable = true;
+
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/London";
