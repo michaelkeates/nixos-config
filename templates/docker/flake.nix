@@ -1,8 +1,10 @@
+
 {
-  description = "Starter Configuration for NixOS";
+  description = "Starter Configuration for NixOS and MacOS";
 
   inputs = {
     nixpkgs.url = "github:dustinlyons/nixpkgs/master";
+    home-manager.url = "github:nix-community/home-manager";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +14,7 @@
   outputs = { self, home-manager, nixpkgs, disko } @inputs:
     let
       user = "mike";
-      systems = [ "x86_64-linux" ];
+      systems = [ "x86_64-linux" "aarch64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
       devShell = system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -37,7 +39,7 @@
           modules = [
             ./nixos
             disko.nixosModules.disko
-              home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${user} = import ./nixos/home-manager.nix;

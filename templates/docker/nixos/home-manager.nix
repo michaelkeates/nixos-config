@@ -5,6 +5,9 @@ let
   name = "Michael Keates";
   email = "mail@michaelkeates.co.uk";
   xdg_configHome  = "/home/${homeuser}/.config";
+  
+  # Importing the shared packages from packages.nix
+  shared-packages = import ./packages.nix { inherit pkgs; };
 in
 {
   home-manager.users.${homeuser} = {
@@ -13,19 +16,8 @@ in
       export EDITOR=vim
     '';
 
-    packages = with pkgs; [
-        # General packages for development and system management
-        docker
-        docker-compose
-        git
-        gh
-
-        # App and package management
-        appimage-run
-        gnumake
-        cmake
-        home-manager
-    ];
+    # Adding the shared packages to the user configuration
+    home.packages = shared-packages;
 
     stateVersion = "23.11";
     git = {
