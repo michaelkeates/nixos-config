@@ -8,7 +8,7 @@
   "android-studio"
 
   # Communication Tools
-  "discord"
+  #"discord"
   "telegram"
   "zoom"
   "mailspring"

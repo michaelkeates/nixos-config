@@ -16,7 +16,7 @@ shared-packages ++ [
   home-manager
 
   # Media and design tools
-  gimp
+  #gimp
   wineWowPackages.stable
   fontconfig
   font-manager
@@ -37,7 +37,6 @@ shared-packages ++ [
   uxplay
 
   # Messaging and chat applications
-  discord
   #tdesktop # telegram desktop
   whatsapp-for-linux
 
