@@ -6,8 +6,9 @@ let
 in
 shared-packages ++ [
 
-  # Security and authentication
-  bitwarden
+  # General packages for development and system management
+  docker
+  docker-compose
 
   # App and package management
   appimage-run
