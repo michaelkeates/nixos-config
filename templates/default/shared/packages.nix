@@ -63,6 +63,7 @@ with pkgs; [
   meslo-lgs-nf
   xcolor
   wine64Packages.fonts
+  google-fonts
   #handbrake
 
   # Node.js development tools
