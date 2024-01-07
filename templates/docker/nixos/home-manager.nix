@@ -13,9 +13,6 @@ in
   home-manager.users.${homeuser} = {
     enable = true;
 
-    # Adding the shared packages to the user configuration
-    packages = shared-packages;
-
     stateVersion = "23.11";
     git = {
       enable = true;
@@ -30,4 +27,7 @@ in
 
   # Auto mount devices
   services.udiskie.enable = true;
+
+  # Adding the shared packages to the user configuration
+  home-manager.${homeuser}.packages = shared-packages;
 }
