@@ -2,16 +2,10 @@
 
 { config, pkgs, ... }:
 
-let
-  homeuser = "mike";
-  
-  # Importing the shared packages from packages.nix
-  shared-packages = import ./packages.nix { inherit pkgs; };
-in
 {
-  home-manager.users.${homeuser} = {
+  home-manager.users.mike = {
     enable = true;
-    packages = shared-packages;
+    packages = import ./packages.nix { inherit pkgs; };
   };
 
   # Auto mount devices
