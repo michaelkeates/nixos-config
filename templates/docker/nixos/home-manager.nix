@@ -11,7 +11,7 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix {};
-    stateVersion = "21.05";
+    stateVersion = "23.11";
   };
 
   # Auto mount devices
