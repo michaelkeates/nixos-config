@@ -108,7 +108,7 @@ in
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/System/Applications/Messages.app/"; }
-    { path = "/Applications/Thorium.app/"; }
+    { path = "/Applications/Chromium.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
     { path = "/System/Applications/System Settings.app/"; }
     {
