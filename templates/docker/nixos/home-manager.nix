@@ -4,8 +4,8 @@ let
   homeuser = "mike";
   name = "Michael Keates";
   email = "mail@michaelkeates.co.uk";
-  xdg_configHome = "/home/${homeuser}/.config";
-
+  xdg_configHome  = "/home/${homeuser}/.config";
+  
   # Importing the shared packages from packages.nix
   shared-packages = import ./packages.nix { inherit pkgs; };
 in
@@ -25,7 +25,9 @@ in
     };
 
     # Adding the shared packages to the user configuration
-    packages = shared-packages;
+    home-manager.${homeuser} = {
+      packages = shared-packages;
+    };
   };
 
   # Auto mount devices
