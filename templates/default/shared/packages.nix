@@ -81,7 +81,7 @@ with pkgs; [
   htop
   hunspell
   iftop
-  jetbrains-mono
+  #jetbrains-mono
   jq
   ripgrep
   tree
