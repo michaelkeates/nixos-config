@@ -71,6 +71,10 @@ in {
     enableNvidia = false;
   };
 
+  environment.systemPackages = with pkgs; [
+  docker-compose
+];
+
   programs.git.enable = true;
 
   system.stateVersion = "21.05";
