@@ -71,5 +71,11 @@ in {
     enableNvidia = false;
   };
 
+  programs.git = {
+    enable = true;
+    userName  = "michaelkeates";
+    userEmail = "mail@michaelkeates.co.uk";
+  };
+
   system.stateVersion = "21.05";
 }
