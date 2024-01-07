@@ -37,6 +37,7 @@
 
   # Browsers
   "alex313031-thorium"
+  "eloston-chromium"
 
   # AI
   # "ollama"
