@@ -5,7 +5,7 @@
     disk = {
       vdb = {
         # device = "/dev/disk/by-id/some-disk-id";
-        device = "/dev/vda";
+        device = "/dev/sda";
         type = "disk";
         content = {
           type = "gpt";
