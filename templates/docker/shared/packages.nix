@@ -12,7 +12,6 @@ with pkgs; [
   gcc
   git-filter-repo
   killall
-  neofetch
   openssh
   pandoc
   wget
