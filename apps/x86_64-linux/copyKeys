@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-
+#ds
 unmount_usb() {
   if mountpoint -q /mnt/usb; then
     sudo umount /mnt/usb
