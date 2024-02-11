@@ -93,7 +93,7 @@ shared-packages ++ [
   nss_latest
   libgnome-keyring
   gnome.gnome-keyring
-  mailspring
+  #mailspring
   remmina
 
   # PDF viewer
