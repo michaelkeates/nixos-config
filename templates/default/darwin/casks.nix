@@ -29,6 +29,7 @@
   "steam"
   "blender"
   "iina"
+  "whisky"
 
   # Productivity Tools
   "raycast"
