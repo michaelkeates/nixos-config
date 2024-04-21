@@ -30,6 +30,7 @@
   "blender"
   "iina"
   "whisky"
+  "winetricks"
 
   # Productivity Tools
   "raycast"
