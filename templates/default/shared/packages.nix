@@ -27,6 +27,7 @@ with pkgs; [
   freerdp
   #rpi-imager
   audacity
+  ollama
 
   # Photo and image editing tools
   gimp
@@ -97,7 +98,4 @@ with pkgs; [
   # Gaming
   #pcsx2
   #dolphin-emu
-
-  # ai
-  ollama
 ]
