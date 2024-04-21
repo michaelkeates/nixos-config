@@ -45,6 +45,8 @@ in
     "Xcode" = 497799835;
   };
 
+  homebrew.onActivation.autoUpdate = true;
+
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;
