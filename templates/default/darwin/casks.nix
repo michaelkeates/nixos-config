@@ -30,7 +30,7 @@
   "blender"
   "iina"
   "whisky"
-  "winetricks"
+  #"winetricks"
   "cabextract"
 
   # Productivity Tools
