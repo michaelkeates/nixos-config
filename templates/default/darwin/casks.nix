@@ -31,6 +31,7 @@
   "iina"
   "whisky"
   "winetricks"
+  "cabextract"
 
   # Productivity Tools
   "raycast"
