@@ -97,4 +97,7 @@ with pkgs; [
   # Gaming
   #pcsx2
   #dolphin-emu
+
+  # ai
+  ollama
 ]
