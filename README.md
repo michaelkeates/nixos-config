@@ -59,45 +59,45 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 
 <h3 align="left">Install Nix</h3>
 <ul>
-	<pre>curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install</pre>
+	<pre class="gitcode">curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install</pre>
 </ul>
 
 <h3 align="left">Create Keys</h3>
 <ul>
-	<pre>nix run github:michaelkeates/nixos-config#createKeys</pre>
+	<pre class="gitcode">nix run github:michaelkeates/nixos-config#createKeys</pre>
 </ul>
 
 <h3 align="left">Initialize</h3>
 <ul>
-	<pre>nix flake init -t github:michaelkeates/nixos-config#default</pre>
+	<pre class="gitcode">nix flake init -t github:michaelkeates/nixos-config#default</pre>
 </ul>
 
 <h3 align="left">Installation</h3>
 <ul>
 <li>For the first-time, it is required to move the current /etc/nix/nix.conf out of the way</li>
-<pre>sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin</pre>
+<pre class="gitcode">sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin</pre>
 <li>Then finally run the script below. This wraps the Nix commands, builds and deploys a new Nix Generation as well as removes files that will crash the script.</li>
-<pre>chmod +x bin/darwin-build && chmod +x bin/build && bin/build</pre>
+<pre class="gitcode">chmod +x bin/darwin-build && chmod +x bin/build && bin/build</pre>
 </ul>
 <br></br>
 <h2 align="left">NixOS</h2>
 <h3 align="left">Create Keys</h3>
 <ul>
-	<pre>nix run github:michaelkeates/nixos-config#createKeys</pre>
+	<pre class="gitcode">nix run github:michaelkeates/nixos-config#createKeys</pre>
 </ul>
 <li>This opens an editor to accept, encrypt, and write your secret to disk. Then push the age file to your private github repo</li>
 <ul>
-    <pre>EDITOR=vim nix run github:ryantm/agenix -- -e secret.age</pre>
+    <pre class="gitcode">EDITOR=vim nix run github:ryantm/agenix -- -e secret.age</pre>
 </ul>
 <h3 align="left">Installation</h3>
 <ul>
-	<pre>nix run --experimental-features 'nix-command flakes' github:michaelkeates/nixos-config#install</pre>
+	<pre class="gitcode">nix run --experimental-features 'nix-command flakes' github:michaelkeates/nixos-config#install</pre>
 </ul>
 <br>
 <h1 align="left">Rebuild</h1>
 <h3 align="left">MacOS & NixOS</h3>
 <ul>
-	<pre>nix run github:michaelkeates/nixos-config#rebuild</pre>
+	<pre class="gitcode">nix run github:michaelkeates/nixos-config#rebuild</pre>
 </ul>
 <h3 align="left">Mentions</h3>
 <ul>
