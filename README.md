@@ -54,7 +54,7 @@ Please note this is a work in progress so there are bugs as I am learning to imp
 <h3 align="left">Install Dependencies</h3>
 <ul>
 <li>This is my daily driver on a Macbook Air (M1) running MacOS Sonoma</li>
-	<pre>xcode-select --install</pre>
+	<pre class="gitcode">xcode-select --install</pre>
 </ul>
 
 <h3 align="left">Install Nix</h3>
