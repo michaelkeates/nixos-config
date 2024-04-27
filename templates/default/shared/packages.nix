@@ -28,7 +28,7 @@ with pkgs; [
   #rpi-imager
   audacity
   ollama
-  zed-editor
+  #zed-editor
 
   # Photo and image editing tools
   gimp
