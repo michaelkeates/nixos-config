@@ -51,6 +51,7 @@ shared-packages ++ [
   libusb1 # for Xbox controller
   libtool # for Emacs vterm
   github-desktop
+  zed-editor
 
   # Screenshot and recording tools
   flameshot

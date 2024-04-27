@@ -26,7 +26,7 @@ with pkgs; [
   p7zip
   freerdp
   audacity
-  zed-editor
+  #zed-editor
 
   # Photo and image editing tools
   gimp
