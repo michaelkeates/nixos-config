@@ -2,7 +2,7 @@
 
 [
   # Development Tools
-  "homebrew/cask/docker"
+  #"homebrew/cask/docker"
   "homebrew/cask-versions/mono-mdk-for-visual-studio"
   "visual-studio"
   "android-studio"
