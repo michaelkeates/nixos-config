@@ -29,6 +29,7 @@ with pkgs; [
   audacity
   #zed-editor
   syncthing
+  ollama
 
   # Photo and image editing tools
   gimp
