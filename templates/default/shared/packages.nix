@@ -64,7 +64,6 @@ with pkgs; [
   xcolor
   wine64Packages.fonts
   google-fonts
-  handbrake
   discord
 
   # Node.js development tools
