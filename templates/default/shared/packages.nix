@@ -32,7 +32,7 @@ with pkgs; [
   # Photo and image editing tools
   gimp
   darktable
-  handbrake'
+  handbrake
 
   # Encryption and security tools
   age
