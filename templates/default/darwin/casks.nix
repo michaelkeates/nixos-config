@@ -37,6 +37,7 @@
   "raycast"
   "amethyst"
   # "onlyoffice"
+  "zed"
 
   # Browsers
   "eloston-chromium"
