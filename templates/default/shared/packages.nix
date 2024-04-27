@@ -23,12 +23,12 @@ with pkgs; [
   caprine-bin
   joplin-desktop
   vscode
-  zed-editor
   p7zip
   freerdp
   #rpi-imager
   audacity
   ollama
+  zed-editor
 
   # Photo and image editing tools
   gimp
