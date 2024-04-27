@@ -24,6 +24,11 @@ in
   };
 
   homebrew.enable = true;
+  homebrew.onActivation = {
+    cleanup = "zap";
+    autoUpdate = true;
+    upgrade = true;
+  };
   homebrew.casks = pkgs.callPackage ./casks.nix {};
 
   # These app IDs are from using the mas CLI app
@@ -44,8 +49,6 @@ in
     "Prime Video" = 545519333;
     "Xcode" = 497799835;
   };
-
-  homebrew.onActivation.autoUpdate = true;
 
   # Enable home-manager
   home-manager = {
