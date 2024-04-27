@@ -24,13 +24,10 @@
   "blender"
   "iina"
   "whisky"
-  #"winetricks"
-  #"cabextract"
 
   # Productivity Tools
   "raycast"
   "amethyst"
-  # "onlyoffice"
   "zed"
 
   # Browsers
@@ -38,6 +35,5 @@
   #"alex313031-thorium"
 
   # AI
-  # "ollama"
   "diffusionbee"
 ]
