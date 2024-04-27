@@ -15,9 +15,9 @@
 
   # Utility Tools
   "appcleaner"
-  "syncthing"
+  #"syncthing"
   "keepingyouawake"
-  "warp"
+  # "warp"
   "bitwarden"
   "nextcloud"
   "darktable"
