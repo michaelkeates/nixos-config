@@ -40,7 +40,7 @@
   "zed"
 
   # Browsers
-  "eloston-chromium"
+  # "eloston-chromium"
   "alex313031-thorium"
 
   # AI
