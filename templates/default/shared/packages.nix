@@ -96,6 +96,6 @@ with pkgs; [
   python310Packages.virtualenv
 
   # Gaming
-  #pcsx2
+  pcsx2
   #dolphin-emu
 ]
