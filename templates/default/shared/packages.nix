@@ -25,7 +25,7 @@ with pkgs; [
   vscode
   p7zip
   freerdp
-  #rpi-imager
+  rpi-imager
   audacity
   ollama
   #zed-editor
