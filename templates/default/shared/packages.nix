@@ -99,5 +99,5 @@ with pkgs; [
   python310Packages.virtualenv
 
   # Gaming
-  # dolphin-emu
+  dolphin-emu
 ]
