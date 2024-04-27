@@ -67,6 +67,7 @@ with pkgs; [
   wine64Packages.fonts
   google-fonts
   discord
+  zoom-us
 
   # Node.js development tools
   fzf

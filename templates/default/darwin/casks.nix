@@ -10,7 +10,7 @@
   # Communication Tools
   #"discord"
   "telegram"
-  "zoom"
+  #"zoom"
   "mailspring"
 
   # Utility Tools
@@ -20,7 +20,6 @@
   # "warp"
   "bitwarden"
   "nextcloud"
-  "darktable"
   "crystalfetch"
   "obs"
   "github"
