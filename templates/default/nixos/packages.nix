@@ -84,7 +84,6 @@ shared-packages ++ [
   xdotool
   ungoogled-chromium
   obs-studio
-  github-desktop
   electron
   c-ares
   gtk3
