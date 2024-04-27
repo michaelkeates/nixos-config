@@ -64,7 +64,7 @@ with pkgs; [
   xcolor
   wine64Packages.fonts
   google-fonts
-  #handbrake
+  handbrake
   discord
 
   # Node.js development tools
@@ -96,5 +96,5 @@ with pkgs; [
   python310Packages.virtualenv
 
   # Gaming
-  dolphin-emu
+  # dolphin-emu
 ]
