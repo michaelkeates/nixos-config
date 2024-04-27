@@ -27,7 +27,7 @@ with pkgs; [
   freerdp
   audacity
   ollama
-  #zed-editor
+  zed-editor
 
   # Photo and image editing tools
   gimp
