@@ -31,8 +31,8 @@
   "zed"
 
   # Browsers
-  "eloston-chromium"
-  #"alex313031-thorium"
+  #"eloston-chromium"
+  "alex313031-thorium"
 
   # AI
   "diffusionbee"
