@@ -3,7 +3,6 @@
 with pkgs; [
   # General packages for development and system management
   act
-  alacritty
   warp-terminal
   docker
   docker-compose
