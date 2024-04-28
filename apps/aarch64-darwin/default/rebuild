@@ -28,6 +28,10 @@ setup_files() {
     cd /etc/nixos
 
     echo "${GREEN}Renaming Bashrc...${CLEAR}"
+    if [ ! -f /etc/bashrc ]; then
+        echo "Creating /etc/bashrc"
+        sudo touch /etc/bashrc
+    fi
     sudo rm -R /etc/bashrc-before-darwin
     sudo mv /etc/bashrc /etc/bashrc-before-darwin
 }
