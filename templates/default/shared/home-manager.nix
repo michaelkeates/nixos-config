@@ -31,6 +31,7 @@ let name = "Michael Keates";
     export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
     export PATH=$HOME/.local/share/bin:$PATH
     export PNPM_HOME=~/.pnpm-packages
+    export PATH=/opt/homebrew/bin:$PATH
 
     # Remove history data we don't want to see
     export HISTIGNORE="pwd:ls:cd"
@@ -73,7 +74,7 @@ let name = "Michael Keates";
     };
     extraConfig = {
       init.defaultBranch = "main";
-      core = { 
+      core = {
 	    editor = "vim";
         autocrlf = "input";
       };
