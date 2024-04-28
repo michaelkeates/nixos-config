@@ -38,6 +38,12 @@ rebuild_nixos() {
     echo "${GREEN}Switching to new generation...${CLEAR}"
     ./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE "$@"
 
+    echo "${GREEN}Updating Apps from Appstore...${CLEAR}"
+    sudo /opt/homebrew/bin/mas upgrade
+
+    echo "${GREEN}Updating Apps via Brew...${CLEAR}"
+    sudo /opt/homebrew/bin/mas upgrade
+
     echo "${GREEN}Cleaning up...${CLEAR}"
     unlink ./result
 
