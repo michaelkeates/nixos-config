@@ -33,6 +33,7 @@ darwin_build() {
         "/Users/mike/Library/Application Support/Code/1.82-main.sock"
         "/Users/mike/Library/Group Containers/com.nextcloud.desktopclient/.socket"
         "/Users/mike/Library/Group Containers/BJ4HAAB9B3.ZoomClient3rd/s.zoomClient"
+        "/Users/mike/Library/Group Containers/group.com.apple.secure-control-center-preferences/Library/Preferences/group.com.apple.secure-control-center-preferences.av.plist"
     )
 
     export NIXPKGS_ALLOW_UNFREE=1
