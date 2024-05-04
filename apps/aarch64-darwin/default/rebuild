@@ -38,7 +38,7 @@ setup_files() {
 
 rebuild_nixos() {
     echo "${GREEN}Updating lock file${CLEAR}"
-    #nix flake update
+    nix flake update
 
     echo "${GREEN}Begin Build...${CLEAR}"
     nix --experimental-features 'nix-command flakes' build .#$SYSTEM "$@"
