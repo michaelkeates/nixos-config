@@ -113,7 +113,7 @@ in
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/System/Applications/Messages.app/"; }
-    { path = "/Applications/Thorium.app/"; }x
+    { path = "/Applications/Thorium.app/"; }
     { path = "/System/Applications/System Settings.app/"; }
     {
       path = toString myEmacsLauncher;
