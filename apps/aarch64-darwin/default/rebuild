@@ -49,6 +49,8 @@ rebuild_nixos() {
     echo "${GREEN}Updating Apps from Appstore...${CLEAR}"
     mas upgrade
 
+    brew update-reset
+
     echo "${GREEN}Updating Apps via Brew...${CLEAR}"
     brew upgrade
 
