@@ -25,10 +25,10 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
-    secrets = {
-      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
-      flake = false;
-    };
+    #secrets = {
+    #  url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
+    #  flake = false;
+    #};
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
