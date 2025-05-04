@@ -10,7 +10,7 @@ let
 in
 {
   imports = [
-    #./secrets.nix
+    ./secrets.nix
     ./disk-config.nix
     ../shared
     ../shared/cachix
