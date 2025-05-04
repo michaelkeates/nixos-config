@@ -7,7 +7,7 @@
         # device = "/dev/disk/by-id/some-disk-id";
         # device = "/dev/vda";
         # device = "/dev/sda";
-        device = "/dev/nvme01";
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
