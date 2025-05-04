@@ -34,7 +34,8 @@
     #  flake = false;
     #};
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  #outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix } @inputs:
     let
       user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
