@@ -29,13 +29,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #secrets = {
-    #  url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
-    #  flake = false;
-    #};
+    secrets = {
+      url = "git+ssh://git@github.com/michaelkeates/nix-secrets.git";
+      flake = false;
+    };
   };
-  #outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
-  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "mike";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
